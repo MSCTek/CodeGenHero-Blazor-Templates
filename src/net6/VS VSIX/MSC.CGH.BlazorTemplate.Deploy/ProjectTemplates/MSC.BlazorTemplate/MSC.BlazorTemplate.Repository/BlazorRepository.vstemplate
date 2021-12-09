@@ -1,0 +1,45 @@
+<VSTemplate Version="3.0.0" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005" Type="Project">
+  <TemplateData>
+	<TemplateID>CGH.Blazor.Repository.Net6</TemplateID>
+    <Name>CodeGenHero Repository Class Library for Blazor (.NET 6)</Name>
+	<Description>Repository class library designed for use with CodeGenHero's Enterprise Architecture project template.</Description>
+	<DefaultName>CodeGenHeroBlazor.Repository</DefaultName>
+    <ProvideDefaultName>true</ProvideDefaultName>
+	<Icon>CGH_90x90.png</Icon>
+	<PreviewImage>CGH_200x200.png</PreviewImage>
+	<ProjectType>CSharp</ProjectType>
+	<ProjectSubType></ProjectSubType>
+	<TemplateGroupID>CodeGenHero</TemplateGroupID>
+	<ShowByDefault>false</ShowByDefault>
+	<LanguageTag>C#</LanguageTag>
+	<ProjectTypeTag>CodeGenHero</ProjectTypeTag>
+    <SortOrder>1000</SortOrder>
+    <CreateNewFolder>true</CreateNewFolder>
+    <LocationField>Disabled</LocationField>
+    <EnableLocationBrowseButton>false</EnableLocationBrowseButton>
+    <CreateInPlace>true</CreateInPlace>
+  </TemplateData>
+  <TemplateContent>
+    <Project TargetFileName="$safeprojectname$.csproj" File="MSC.WhittierArtists.Repository.csproj" ReplaceParameters="true">
+      <Folder Name="Entities" TargetFolderName="Entities">        
+      </Folder>
+      <Folder Name="Infrastructure" TargetFolderName="Infrastructure">
+        <ProjectItem ReplaceParameters="true" TargetFileName="Enums.cs">Enums.cs</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="ICRUDOperation.cs">ICRUDOperation.cs</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="IQueryableExtensions.cs">IQueryableExtensions.cs</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="IRepositoryActionResult.cs">IRepositoryActionResult.cs</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="RepositoryActionResult.cs">RepositoryActionResult.cs</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="RepositoryPageDataRequest.cs">RepositoryPageDataRequest.cs</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="RepositoryPageDataResponse.cs">RepositoryPageDataResponse.cs</ProjectItem>
+      </Folder>
+      <Folder Name="Mappers" TargetFolderName="Mappers">        
+      </Folder>
+      <Folder Name="Repositories" TargetFolderName="Repositories">        
+      </Folder>
+    </Project>
+  </TemplateContent>
+  <WizardExtension>
+	<Assembly>CodeGenHero.ProjectTemplate.Blazor6.Wizard, Version=1.0.0.0, Culture=neutral, PublicKeyToken=41ac94ffcf1bf326</Assembly>
+	<FullClassName>CodeGenHero.ProjectTemplate.Blazor6.Wizard.BlazorTemplateWizard</FullClassName>
+  </WizardExtension>
+</VSTemplate>

@@ -1,0 +1,29 @@
+﻿<Window x:Class="CodeGenHero.ProjectTemplate.Blazor6.Wizard.MainWindow" 
+    Title="CodeGenHero Blazor Template"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Height="360" d:DesignWidth="500">
+    <DockPanel Height="Auto" Width="Auto" LastChildFill="True">
+        <TextBlock DockPanel.Dock="Top" Height="23" Margin="10,10,0,0"
+                   Text="Enter a connection string to an EXISTING application database:"/>
+        <TextBox DockPanel.Dock="Top" Height="23" Margin="10,10,10,0" Width="Auto"
+                Name="textAppConnectionString" />
+        <TextBlock DockPanel.Dock="Top" Height="23" Margin="10,10,0,0"
+                   Text="Enter a connection string for use with a NEW Identity Server database:" />
+        <TextBox DockPanel.Dock="Top" Height="23" Margin="10,10,10,0" Width="Auto"
+                 Name="textIDPConnectionString" />
+        <TextBlock DockPanel.Dock="Top" Height="23" Margin="10,10,0,0"
+                   Text="Enter a username for the Identity Server administrator:" />
+        <TextBox DockPanel.Dock="Top" Height="23" Margin="10,10,10,0" Width="Auto"
+                 Name="textAdminUsername" />
+        <TextBlock DockPanel.Dock="Top" Height="23" Margin="10,10,0,0"
+                   Text="Enter the email address for the Identity Server administrator:" />
+        <TextBox DockPanel.Dock="Top" Height="23" Margin="10,10,10,0" Width="Auto"
+                 Name="textAdminEmail" />
+        <Button Content="OK" Height="40" Width="60" Margin="10,10,10,10" VerticalAlignment="Top" HorizontalAlignment="Right" IsDefault="True" 
+                Name="btnOK" Click="btnOK_Click" />
+    </DockPanel>
+</Window>

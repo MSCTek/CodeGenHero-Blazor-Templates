@@ -1,0 +1,22 @@
+﻿@inherits GDPRViewModel
+
+<GdprBanner @ref="_gdprBanner"
+            BannerOpacity="@(_gdprBannerOpacity / 100)"
+            BannerBackgroundColor="@_gdprBannerColor"
+            AnswerValidUntil="@DateTime.Now.AddDays(_gdprBannerConsentValidDays)"
+            ConsentDetails="@_gdprConsents">
+    <Content>
+        <div class="gdpr-banner">
+            <MudGrid>
+                <MudItem lg="8" xs="12" Class="gdpr-banner">
+                    <span class="fa fa-lg fa-cookie-bite m-1" aria-hidden="true" />
+                    <p>We use cookies to give you the best experience on our website. If you continue to browse, then you agree to our&nbsp;privacy&nbsp;policy&nbsp;and&nbsp;cookie&nbsp;policy.&nbsp;</p>
+                </MudItem>
+                <MudItem lg="3" xs="12" Class="gdpr-banner">
+                    <button type="button" class="btn btn-primary m-1" @onclick="async () => await _gdprBanner.AcceptAll()">I&nbsp;agree</button>
+                    <button type="button" class="btn btn-secondary m-1" @onclick="async () => await _gdprBanner.RejectAll()">Disagree</button>
+                </MudItem>
+            </MudGrid>
+        </div>
+    </Content>
+</GdprBanner>

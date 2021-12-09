@@ -1,0 +1,60 @@
+<VSTemplate Version="3.0.0" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005" Type="Project">
+  <TemplateData>
+	<TemplateID>CGH.Blazor.Api.Net6</TemplateID>
+    <Name>CodeGenHero Blazor Api (.NET 6)</Name>
+	<Description>Web API project designed for use with CodeGenHero's Enterprise Architecture project template.</Description>
+	<DefaultName>CodeGenHeroBlazor.Api</DefaultName>
+    <ProvideDefaultName>true</ProvideDefaultName>
+	<Icon>CGH_90x90.png</Icon>
+	<PreviewImage>CGH_200x200.png</PreviewImage>
+    <ProjectType>CSharp</ProjectType>
+    <ProjectSubType>Web</ProjectSubType>
+    <TemplateGroupID>CodeGenHero</TemplateGroupID>
+	<ShowByDefault>false</ShowByDefault>
+	<LanguageTag>C#</LanguageTag>
+	<ProjectTypeTag>CodeGenHero</ProjectTypeTag>
+    <SortOrder>1000</SortOrder>
+    <CreateNewFolder>true</CreateNewFolder>
+    <LocationField>Disabled</LocationField>
+    <EnableLocationBrowseButton>False</EnableLocationBrowseButton>
+    <CreateInPlace>true</CreateInPlace>
+  </TemplateData>
+  <TemplateContent>
+      <Project TargetFileName="$safeprojectname$.csproj" File="MSC.WhittierArtists.Api.csproj" ReplaceParameters="true">
+        <Folder Name="Properties" TargetFolderName="Properties">
+          <ProjectItem ReplaceParameters="true" TargetFileName="launchSettings.json">launchSettings.json</ProjectItem>
+        </Folder>
+        <Folder Name="Authorization" TargetFolderName="Authorization">
+        
+        </Folder>
+        <Folder Name="Controllers" TargetFolderName="Controllers">
+          <ProjectItem ReplaceParameters="true" TargetFileName="IndexController.cs">IndexController.cs</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="TestAuthController.cs">TestAuthController.cs</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="UploadController.cs">UploadController.cs</ProjectItem>
+        </Folder>
+        <Folder Name="Infrastructure" TargetFolderName="Infrastructure">
+          <ProjectItem ReplaceParameters="true" TargetFileName="AddApiVersionToHeader.cs">AddApiVersionToHeader.cs</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="RelatedEntitiesTypeRouteConstraint.cs">RelatedEntitiesTypeRouteConstraint.cs</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="VersionedActionConstraintAttribute.cs">VersionedActionConstraintAttribute.cs</ProjectItem>
+        </Folder>
+        <Folder Name="Logs" TargetFolderName="Logs">
+          
+        </Folder>
+        <Folder Name="Models" TargetFolderName="Models">
+          
+        </Folder>
+        <Folder Name="Services" TargetFolderName="Services">
+          
+        </Folder>
+        <ProjectItem ReplaceParameters="true" TargetFileName="appsettings.json">appsettings.json</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="appsettings.Development.json">appsettings.Development.json</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="appsettings.Production.json">appsettings.Production.json</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="Program.cs">Program.cs</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="Startup.cs">Startup.cs</ProjectItem>
+      </Project>
+  </TemplateContent>
+  <WizardExtension>
+	<Assembly>CodeGenHero.ProjectTemplate.Blazor6.Wizard, Version=1.0.0.0, Culture=neutral, PublicKeyToken=41ac94ffcf1bf326</Assembly>
+	<FullClassName>CodeGenHero.ProjectTemplate.Blazor6.Wizard.BlazorTemplateWizard</FullClassName>
+  </WizardExtension>
+</VSTemplate>

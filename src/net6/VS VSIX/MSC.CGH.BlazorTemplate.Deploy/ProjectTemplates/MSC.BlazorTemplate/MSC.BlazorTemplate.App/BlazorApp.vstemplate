@@ -1,0 +1,118 @@
+<VSTemplate Version="3.0.0" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005" Type="Project">
+  <TemplateData>
+	<TemplateID>CGH.Blazor.App.Net6</TemplateID>
+    <Name>CodeGenHero Blazor App (.NET 6)</Name>
+	<Description>Component library shared by Blazor multi-head projects and designed for use with the CodeGenHero Enterprise Architecture project template.</Description>
+	<DefaultName>CodeGenHeroBlazor.App</DefaultName>
+    <ProvideDefaultName>true</ProvideDefaultName>
+	<Icon>CGH_90x90.png</Icon>
+	<PreviewImage>CGH_200x200.png</PreviewImage>
+	<ProjectType>CSharp</ProjectType>
+	<ProjectSubType>Web</ProjectSubType>
+	<TemplateGroupID>CodeGenHero</TemplateGroupID>
+	<ShowByDefault>false</ShowByDefault>
+	<LanguageTag>C#</LanguageTag>
+	<ProjectTypeTag>CodeGenHero</ProjectTypeTag>
+    <SortOrder>1000</SortOrder>
+    <CreateNewFolder>true</CreateNewFolder>
+    <LocationField>Disabled</LocationField>
+    <EnableLocationBrowseButton>false</EnableLocationBrowseButton>
+    <CreateInPlace>true</CreateInPlace>
+  </TemplateData>
+  <TemplateContent>
+    <Project TargetFileName="$safeprojectname$.csproj" File="MSC.WhittierArtists.App.csproj" ReplaceParameters="true">
+      <Folder Name="Components" TargetFolderName="Components">
+        <ProjectItem ReplaceParameters="true" TargetFileName="ConfirmationDialog.razor">ConfirmationDialog.razor</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="ConfirmationDialog.razor.cs">ConfirmationDialog.razor.cs</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="ConfirmationDialog.razor.css">ConfirmationDialog.razor.css</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="Footer.razor">Footer.razor</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="Footer.razor.cs">Footer.razor.cs</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="GDPR.razor">GDPR.razor</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="GDPR.razor.cs">GDPR.razor.cs</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="LoadingMask.razor">LoadingMask.razor</ProjectItem>		
+      </Folder>
+      <Folder Name="Extensions" TargetFolderName="Extensions">
+        <ProjectItem ReplaceParameters="true" TargetFileName="EnumerableExtensions.cs">EnumerableExtensions.cs</ProjectItem>
+      </Folder>
+      <Folder Name="MessageHandlers" TargetFolderName="MessageHandlers">
+        <ProjectItem ReplaceParameters="true" TargetFileName="MSCApiAuthorizationMessageHandler.cs">MSCApiAuthorizationMessageHandler.cs</ProjectItem>
+      </Folder>
+      <Folder Name="Pages" TargetFolderName="Pages">
+        <Folder Name="admin" TargetFolderName="admin">
+          <ProjectItem ReplaceParameters="true" TargetFileName="AdminPageBase.cs">AdminPageBase.cs</ProjectItem>
+        </Folder>
+        <ProjectItem ReplaceParameters="false" TargetFileName="AccessDenied.razor">AccessDenied.razor</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="AccessDenied.razor.cs">AccessDenied.razor.cs</ProjectItem>
+        <ProjectItem ReplaceParameters="false" TargetFileName="Index.razor">Index.razor</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="Index.razor.cs">Index.razor.cs</ProjectItem>
+        <ProjectItem ReplaceParameters="false" TargetFileName="TestAuth.razor">TestAuth.razor</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="TestAuth.razor.cs">TestAuth.razor.cs</ProjectItem>
+      </Folder>
+      <Folder Name="Services" TargetFolderName="Services">
+        <ProjectItem ReplaceParameters="true" TargetFileName="BaseDataService.cs">BaseDataService.cs</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="IImageUploadDataService.cs">IImageUploadDataService.cs</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="ILocalHttpClientService.cs">ILocalHttpClientService.cs</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="ImageUploadDataService.cs">ImageUploadDataService.cs</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="INavigationService.cs">INavigationService.cs</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="InitialApplicationState.cs">InitialApplicationState.cs</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="ITestAuthDataService.cs">ITestAuthDataService.cs</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="ITokenManager.cs">ITokenManager.cs</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="ITokenProvider.cs">ITokenProvider.cs</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="IWebApiDataServiceBase.cs">IWebApiDataServiceBase.cs</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="LocalHttpClientService.cs">LocalHttpClientService.cs</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="NavigationService.cs">NavigationService.cs</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="TestAuthDataService.cs">TestAuthDataService.cs</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="WebApiDataServiceBase.cs">WebApiDataServiceBase.cs</ProjectItem>
+      </Folder>
+      <Folder Name="Shared" TargetFolderName="Shared">
+        <ProjectItem ReplaceParameters="false" TargetFileName="MainLayout.razor">MainLayout.razor</ProjectItem>
+        <ProjectItem ReplaceParameters="false" TargetFileName="RedirectToLogin.razor">RedirectToLogin.razor</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="RedirectToLogin.razor.cs">RedirectToLogin.razor.cs</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="MSCComponentBase.cs">MSCComponentBase.cs</ProjectItem>
+      </Folder>
+      <Folder Name="ViewModels" TargetFolderName="ViewModels">
+        <ProjectItem ReplaceParameters="true" TargetFileName="BaseViewModel.cs">BaseViewModel.cs</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="MainLayoutViewModel.cs">MainLayoutViewModel.cs</ProjectItem>
+      </Folder>
+      <Folder Name="wwwroot" TargetFolderName="wwwroot">
+        <Folder Name="css" TargetFolderName="css">
+          <Folder Name="bootstrap" TargetFolderName="bootstrap">
+            <ProjectItem ReplaceParameters="false" TargetFileName="bootstrap.min.css">bootstrap.min.css</ProjectItem>
+            <ProjectItem ReplaceParameters="false" TargetFileName="bootstrap.min.css.map">bootstrap.min.css.map</ProjectItem>
+          </Folder>
+          <Folder Name="open-iconic" TargetFolderName="open-iconic">
+            <Folder Name="font" TargetFolderName="font">
+              <Folder Name="css" TargetFolderName="css">
+                <ProjectItem ReplaceParameters="true" TargetFileName="open-iconic-bootstrap.min.css">open-iconic-bootstrap.min.css</ProjectItem>
+              </Folder>
+              <Folder Name="fonts" TargetFolderName="fonts">
+                <ProjectItem ReplaceParameters="false" TargetFileName="open-iconic.eot">open-iconic.eot</ProjectItem>
+                <ProjectItem ReplaceParameters="false" TargetFileName="open-iconic.otf">open-iconic.otf</ProjectItem>
+                <ProjectItem ReplaceParameters="false" TargetFileName="open-iconic.svg">open-iconic.svg</ProjectItem>
+                <ProjectItem ReplaceParameters="false" TargetFileName="open-iconic.ttf">open-iconic.ttf</ProjectItem>
+                <ProjectItem ReplaceParameters="false" TargetFileName="open-iconic.woff">open-iconic.woff</ProjectItem>
+              </Folder>
+            </Folder>
+            <ProjectItem ReplaceParameters="false" TargetFileName="FONT-LICENSE">FONT-LICENSE</ProjectItem>
+            <ProjectItem ReplaceParameters="false" TargetFileName="ICON-LICENSE">ICON-LICENSE</ProjectItem>
+            <ProjectItem ReplaceParameters="false" TargetFileName="README.md">README.md</ProjectItem>
+          </Folder>
+          <ProjectItem ReplaceParameters="true" TargetFileName="site.css">site.css</ProjectItem>
+        </Folder>
+        <Folder Name="js" TargetFolderName="js">
+          <Folder Name="fontawesome" TargetFolderName="fontawesome">
+            <ProjectItem ReplaceParameters="true" TargetFileName="all.js">all.js</ProjectItem>
+            <ProjectItem ReplaceParameters="true" TargetFileName="all.min.js">all.min.js</ProjectItem>
+          </Folder>
+          <ProjectItem ReplaceParameters="true" TargetFileName="GlobalFunctions.js">GlobalFunctions.js</ProjectItem>
+        </Folder>
+        <ProjectItem ReplaceParameters="false" TargetFileName="favicon.ico">favicon.ico</ProjectItem>
+      </Folder>
+      <ProjectItem ReplaceParameters="true" TargetFileName="_imports.razor">_imports.razor</ProjectItem>
+    </Project>
+  </TemplateContent>
+  <WizardExtension>
+	<Assembly>CodeGenHero.ProjectTemplate.Blazor6.Wizard, Version=1.0.0.0, Culture=neutral, PublicKeyToken=41ac94ffcf1bf326</Assembly>
+	<FullClassName>CodeGenHero.ProjectTemplate.Blazor6.Wizard.BlazorTemplateWizard</FullClassName>
+  </WizardExtension>
+</VSTemplate>

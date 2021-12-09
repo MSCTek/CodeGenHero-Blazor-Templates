@@ -1,0 +1,26 @@
+﻿@inherits MainLayoutViewModel
+
+<MudLayout>
+    <MudAppBar Fixed="true">
+        <MudText>Your Blazor App</MudText>
+    </MudAppBar>
+    <MudDrawer Variant="DrawerVariant.Persistent" Open="true" Elevation="1">
+        <MudDrawerHeader>
+            <MudText Typo="Typo.h6">Your Blazor App</MudText>
+        </MudDrawerHeader>
+        <MudDivider />
+        <MudNavMenu>
+            <MudNavLink Href="/Index">Index</MudNavLink>
+        </MudNavMenu>
+    </MudDrawer>
+    <MudMainContent>
+        <div style="padding-top: 50px; padding-left: 20px;">
+            @Body
+        </div>
+    </MudMainContent>
+</MudLayout>
+
+<GDPR />
+<MudThemeProvider />
+<MudDialogProvider />
+<MudSnackbarProvider />

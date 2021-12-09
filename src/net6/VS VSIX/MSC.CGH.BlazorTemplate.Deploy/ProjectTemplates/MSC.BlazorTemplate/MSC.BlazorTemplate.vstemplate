@@ -1,0 +1,52 @@
+<VSTemplate Version="3.0.0" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005" Type="ProjectGroup">
+	<TemplateData>
+        <TemplateID>CGH.Blazor.Net6</TemplateID>
+		<Name>CodeGenHero Enterprise Architecture for Blazor (.NET 6)</Name>
+		<DefaultName>CodeGenHeroBlazor</DefaultName>
+		<Description>CodeGenHero multi-project template for use with Blazor.</Description>
+		<Icon>CGH_90x90.png</Icon>
+		<PreviewImage>CGH_200x200.png</PreviewImage>
+		<ProjectType>CSharp</ProjectType>
+		<ProjectSubType>Web</ProjectSubType>
+        <TemplateGroupID>Web</TemplateGroupID>
+		<ShowByDefault>true</ShowByDefault>
+		<SortOrder>10</SortOrder>		
+        <LanguageTag>C#</LanguageTag>
+		<ProjectTypeTag>cloud</ProjectTypeTag>
+		<ProjectTypeTag>web</ProjectTypeTag>
+        <ProjectTypeTag>CodeGenHero</ProjectTypeTag>
+    </TemplateData>
+    <TemplateContent>
+        <ProjectCollection>
+            <ProjectTemplateLink ProjectName="$safeprojectname$.Api" CopyParameters="true">
+                MSC.BlazorTemplate.Api\BlazorApi.vstemplate
+            </ProjectTemplateLink>
+            <ProjectTemplateLink ProjectName="$safeprojectname$.App" CopyParameters="true">
+                MSC.BlazorTemplate.App\BlazorApp.vstemplate
+            </ProjectTemplateLink>
+            <ProjectTemplateLink ProjectName="$safeprojectname$.CodeGenHero" CopyParameters="true">
+                MSC.BlazorTemplate.CGH\BlazorCGHProject.vstemplate
+            </ProjectTemplateLink>
+            <ProjectTemplateLink ProjectName="$safeprojectname$.Client" CopyParameters="true">
+                MSC.BlazorTemplate.Client\BlazorClient.vstemplate
+            </ProjectTemplateLink>
+            <ProjectTemplateLink ProjectName="$safeprojectname$.Repository" CopyParameters="true">
+                MSC.BlazorTemplate.Repository\BlazorRepository.vstemplate
+            </ProjectTemplateLink>
+            <ProjectTemplateLink ProjectName="$safeprojectname$.Server" CopyParameters="true">
+                MSC.BlazorTemplate.Server\BlazorServer.vstemplate
+            </ProjectTemplateLink>
+            <ProjectTemplateLink ProjectName="$safeprojectname$.Shared" CopyParameters="true">
+                MSC.BlazorTemplate.Shared\BlazorShared.vstemplate
+            </ProjectTemplateLink>
+            <ProjectTemplateLink ProjectName="$safeprojectname$.IDP" CopyParameters="true">
+                MSC.IDP\IDP.vstemplate
+            </ProjectTemplateLink>
+        </ProjectCollection>
+		<ProjectItem ReplaceParameters="true" TargetFileName=".gitignore">.gitignore</ProjectItem>
+    </TemplateContent>
+    <WizardExtension>
+        <Assembly>CodeGenHero.ProjectTemplate.Blazor6.Wizard, Version=1.0.0.0, Culture=neutral, PublicKeyToken=41ac94ffcf1bf326</Assembly>
+        <FullClassName>CodeGenHero.ProjectTemplate.Blazor6.Wizard.RootWizard</FullClassName>
+    </WizardExtension>
+</VSTemplate>

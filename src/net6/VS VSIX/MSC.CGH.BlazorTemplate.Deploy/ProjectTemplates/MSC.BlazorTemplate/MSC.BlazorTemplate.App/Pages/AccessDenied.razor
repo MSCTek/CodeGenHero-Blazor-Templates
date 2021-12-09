@@ -1,0 +1,30 @@
+﻿@page "/Authorization/AccessDenied"
+@inherits AccessDeniedViewModel
+
+<AuthorizeView>
+    <Authorized>
+        <div class="container">
+            <div class="h3">@context.User.Identity.Name, you are not authorized to view this page.</div>
+            <br />
+            @if(CGHAppSettings.IsWebAssembly) {
+                <MudButton Variant="Variant.Text" Class="wa-footer-link" Style="text-transform: none;"
+                        @onclick="BeginSignOut">
+                    <MudText Typo="Typo.body2" Style="display: contents;">Click here to log in as someone else?</MudText>
+                </MudButton>
+            }
+            else
+            {
+                <form action="/logoutidp" method="post">
+                    <div>Would you prefer to </div>
+                    <MudButton Variant="Variant.Text" Class="wa-footer-link" Style="text-transform: none;" ButtonType="MudBlazor.ButtonType.Submit">
+                        <MudText Typo="Typo.body2" Style="display: contents;">Click here to log in as someone else?</MudText>
+                    </MudButton>
+
+                    <input name="__RequestVerificationToken" type="hidden"
+                    value="@TokenProvider.XsrfToken">
+                </form>
+            }
+        </div>
+    </Authorized>
+</AuthorizeView>
+    

@@ -1,0 +1,313 @@
+<VSTemplate Version="3.0.0" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005" Type="Project">
+  <TemplateData>
+	<TemplateID>CGH.Blazor.IDP.Net6</TemplateID>
+    <Name>CodeGenHero Blazor Identity Server (.NET 6)</Name>
+	<Description>Identity Server 4 designed for use with the CodeGenHero Enterprise Architecture project template.</Description>
+	<DefaultName>CodeGenHeroBlazor.IDP</DefaultName>
+    <ProvideDefaultName>true</ProvideDefaultName>
+	<Icon>CGH_90x90.png</Icon>
+	<PreviewImage>CGH_200x200.png</PreviewImage>
+	<ProjectType>CSharp</ProjectType>
+	<ProjectSubType>Web</ProjectSubType>
+	<TemplateGroupID>CodeGenHero</TemplateGroupID>
+	<ShowByDefault>false</ShowByDefault>
+	<LanguageTag>C#</LanguageTag>
+	<ProjectTypeTag>CodeGenHero</ProjectTypeTag>
+    <SortOrder>1000</SortOrder>
+    <CreateNewFolder>true</CreateNewFolder>
+    <LocationField>Disabled</LocationField>
+    <EnableLocationBrowseButton>false</EnableLocationBrowseButton>
+    <CreateInPlace>true</CreateInPlace>
+  </TemplateData>
+  <TemplateContent>
+    <Project TargetFileName="$safeprojectname$.csproj" File="MSC.IDP.csproj" ReplaceParameters="true">
+      <Folder Name="Properties" TargetFolderName="Properties">
+        <Folder Name="ServiceDependencies" TargetFolderName="ServiceDependencies">
+          <Folder Name="MSCIDP - Web Deploy" TargetFolderName="MSCIDP - Web Deploy">
+            <ProjectItem ReplaceParameters="true" TargetFileName="profile.arm.json">profile.arm.json</ProjectItem>
+          </Folder>
+        </Folder>
+        <ProjectItem ReplaceParameters="true" TargetFileName="launchSettings.json">launchSettings.json</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="serviceDependencies.json">serviceDependencies.json</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="serviceDependencies.json">vstg0001.json</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="serviceDependencies.local.json">serviceDependencies.local.json</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="serviceDependencies.local.json">vstg0002.local.json</ProjectItem>
+      </Folder>
+      <Folder Name="wwwroot" TargetFolderName="wwwroot">
+        <Folder Name="css" TargetFolderName="css">
+          <ProjectItem ReplaceParameters="false" TargetFileName="site.scss">site.scss</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="site.css">site.css</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="site.min.css">site.min.css</ProjectItem>
+        </Folder>
+        <Folder Name="js" TargetFolderName="js">
+          <ProjectItem ReplaceParameters="true" TargetFileName="signin-redirect.js">signin-redirect.js</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="signout-redirect.js">signout-redirect.js</ProjectItem>
+        </Folder>
+        <Folder Name="lib" TargetFolderName="lib">
+          <Folder Name="bootstrap" TargetFolderName="bootstrap">
+            <Folder Name="dist" TargetFolderName="dist">
+              <Folder Name="css" TargetFolderName="css">
+                <ProjectItem ReplaceParameters="true" TargetFileName="bootstrap.css">bootstrap.css</ProjectItem>
+                <ProjectItem ReplaceParameters="true" TargetFileName="bootstrap.css.map">bootstrap.css.map</ProjectItem>
+                <ProjectItem ReplaceParameters="true" TargetFileName="bootstrap.min.css">bootstrap.min.css</ProjectItem>
+                <ProjectItem ReplaceParameters="true" TargetFileName="bootstrap.min.css.map">bootstrap.min.css.map</ProjectItem>
+                <ProjectItem ReplaceParameters="true" TargetFileName="bootstrap-grid.css">bootstrap-grid.css</ProjectItem>
+                <ProjectItem ReplaceParameters="true" TargetFileName="bootstrap-grid.css.map">bootstrap-grid.css.map</ProjectItem>
+                <ProjectItem ReplaceParameters="true" TargetFileName="bootstrap-grid.min.css">bootstrap-grid.min.css</ProjectItem>
+                <ProjectItem ReplaceParameters="true" TargetFileName="bootstrap-grid.min.css.map">bootstrap-grid.min.css.map</ProjectItem>
+                <ProjectItem ReplaceParameters="true" TargetFileName="bootstrap-reboot.css">bootstrap-reboot.css</ProjectItem>
+                <ProjectItem ReplaceParameters="true" TargetFileName="bootstrap-reboot.css.map">bootstrap-reboot.css.map</ProjectItem>
+                <ProjectItem ReplaceParameters="true" TargetFileName="bootstrap-reboot.min.css">bootstrap-reboot.min.css</ProjectItem>
+                <ProjectItem ReplaceParameters="true" TargetFileName="bootstrap-reboot.min.css.map">bootstrap-reboot.min.css.map</ProjectItem>
+              </Folder>
+              <Folder Name="js" TargetFolderName="js">
+                <ProjectItem ReplaceParameters="true" TargetFileName="bootstrap.js">bootstrap.js</ProjectItem>
+                <ProjectItem ReplaceParameters="true" TargetFileName="bootstrap.bundle.js">bootstrap.bundle.js</ProjectItem>
+                <ProjectItem ReplaceParameters="true" TargetFileName="bootstrap.bundle.js.map">bootstrap.bundle.js.map</ProjectItem>
+                <ProjectItem ReplaceParameters="true" TargetFileName="bootstrap.bundle.min.js">bootstrap.bundle.min.js</ProjectItem>
+                <ProjectItem ReplaceParameters="true" TargetFileName="bootstrap.bundle.min.js.map">bootstrap.bundle.min.js.map</ProjectItem>
+                <ProjectItem ReplaceParameters="true" TargetFileName="bootstrap.js.map">bootstrap.js.map</ProjectItem>
+                <ProjectItem ReplaceParameters="true" TargetFileName="bootstrap.min.js">bootstrap.min.js</ProjectItem>
+                <ProjectItem ReplaceParameters="true" TargetFileName="bootstrap.min.js.map">bootstrap.min.js.map</ProjectItem>
+              </Folder>
+            </Folder>
+            <Folder Name="scss" TargetFolderName="scss">
+              <Folder Name="mixins" TargetFolderName="mixins">
+                <ProjectItem ReplaceParameters="false" TargetFileName="_alert.scss">_alert.scss</ProjectItem>
+                <ProjectItem ReplaceParameters="false" TargetFileName="_background-variant.scss">_background-variant.scss</ProjectItem>
+                <ProjectItem ReplaceParameters="false" TargetFileName="_badge.scss">_badge.scss</ProjectItem>
+                <ProjectItem ReplaceParameters="false" TargetFileName="_border-radius.scss">_border-radius.scss</ProjectItem>
+                <ProjectItem ReplaceParameters="false" TargetFileName="_box-shadow.scss">_box-shadow.scss</ProjectItem>
+                <ProjectItem ReplaceParameters="false" TargetFileName="_breakpoints.scss">_breakpoints.scss</ProjectItem>
+                <ProjectItem ReplaceParameters="false" TargetFileName="_buttons.scss">_buttons.scss</ProjectItem>
+                <ProjectItem ReplaceParameters="false" TargetFileName="_caret.scss">_caret.scss</ProjectItem>
+                <ProjectItem ReplaceParameters="false" TargetFileName="_clearfix.scss">_clearfix.scss</ProjectItem>
+                <ProjectItem ReplaceParameters="false" TargetFileName="_deprecate.scss">_deprecate.scss</ProjectItem>
+                <ProjectItem ReplaceParameters="false" TargetFileName="_float.scss">_float.scss</ProjectItem>
+                <ProjectItem ReplaceParameters="false" TargetFileName="_forms.scss">_forms.scss</ProjectItem>
+                <ProjectItem ReplaceParameters="false" TargetFileName="_gradients.scss">_gradients.scss</ProjectItem>
+                <ProjectItem ReplaceParameters="false" TargetFileName="_grid.scss">_grid.scss</ProjectItem>
+                <ProjectItem ReplaceParameters="false" TargetFileName="_grid-framework.scss">_grid-framework.scss</ProjectItem>
+                <ProjectItem ReplaceParameters="false" TargetFileName="_hover.scss">_hover.scss</ProjectItem>
+                <ProjectItem ReplaceParameters="false" TargetFileName="_image.scss">_image.scss</ProjectItem>
+                <ProjectItem ReplaceParameters="false" TargetFileName="_list-group.scss">_list-group.scss</ProjectItem>
+                <ProjectItem ReplaceParameters="false" TargetFileName="_lists.scss">_lists.scss</ProjectItem>
+                <ProjectItem ReplaceParameters="false" TargetFileName="_nav-divider.scss">_nav-divider.scss</ProjectItem>
+                <ProjectItem ReplaceParameters="false" TargetFileName="_pagination.scss">_pagination.scss</ProjectItem>
+                <ProjectItem ReplaceParameters="false" TargetFileName="_reset-text.scss">_reset-text.scss</ProjectItem>
+                <ProjectItem ReplaceParameters="false" TargetFileName="_resize.scss">_resize.scss</ProjectItem>
+                <ProjectItem ReplaceParameters="false" TargetFileName="_screen-reader.scss">_screen-reader.scss</ProjectItem>
+                <ProjectItem ReplaceParameters="false" TargetFileName="_size.scss">_size.scss</ProjectItem>
+                <ProjectItem ReplaceParameters="false" TargetFileName="_table-row.scss">_table-row.scss</ProjectItem>
+                <ProjectItem ReplaceParameters="false" TargetFileName="_text-emphasis.scss">_text-emphasis.scss</ProjectItem>
+                <ProjectItem ReplaceParameters="false" TargetFileName="_text-hide.scss">_text-hide.scss</ProjectItem>
+                <ProjectItem ReplaceParameters="false" TargetFileName="_text-truncate.scss">_text-truncate.scss</ProjectItem>
+                <ProjectItem ReplaceParameters="false" TargetFileName="_transition.scss">_transition.scss</ProjectItem>
+                <ProjectItem ReplaceParameters="false" TargetFileName="_visibility.scss">_visibility.scss</ProjectItem>
+              </Folder>
+              <Folder Name="utilities" TargetFolderName="utilities">
+                <ProjectItem ReplaceParameters="false" TargetFileName="_align.scss">_align.scss</ProjectItem>
+                <ProjectItem ReplaceParameters="false" TargetFileName="_background.scss">_background.scss</ProjectItem>
+                <ProjectItem ReplaceParameters="false" TargetFileName="_borders.scss">_borders.scss</ProjectItem>
+                <ProjectItem ReplaceParameters="false" TargetFileName="_clearfix.scss">_clearfix.scss</ProjectItem>
+                <ProjectItem ReplaceParameters="false" TargetFileName="_display.scss">_display.scss</ProjectItem>
+                <ProjectItem ReplaceParameters="false" TargetFileName="_embed.scss">_embed.scss</ProjectItem>
+                <ProjectItem ReplaceParameters="false" TargetFileName="_flex.scss">_flex.scss</ProjectItem>
+                <ProjectItem ReplaceParameters="false" TargetFileName="_float.scss">_float.scss</ProjectItem>
+                <ProjectItem ReplaceParameters="false" TargetFileName="_overflow.scss">_overflow.scss</ProjectItem>
+                <ProjectItem ReplaceParameters="false" TargetFileName="_position.scss">_position.scss</ProjectItem>
+                <ProjectItem ReplaceParameters="false" TargetFileName="_screenreaders.scss">_screenreaders.scss</ProjectItem>
+                <ProjectItem ReplaceParameters="false" TargetFileName="_shadows.scss">_shadows.scss</ProjectItem>
+                <ProjectItem ReplaceParameters="false" TargetFileName="_sizing.scss">_sizing.scss</ProjectItem>
+                <ProjectItem ReplaceParameters="false" TargetFileName="_spacing.scss">_spacing.scss</ProjectItem>
+                <ProjectItem ReplaceParameters="false" TargetFileName="_stretched-link.scss">_stretched-link.scss</ProjectItem>
+                <ProjectItem ReplaceParameters="false" TargetFileName="_text.scss">_text.scss</ProjectItem>
+                <ProjectItem ReplaceParameters="false" TargetFileName="_visibility.scss">_visibility.scss</ProjectItem>
+              </Folder>
+              <Folder Name="vendor" TargetFolderName="vendor">
+                <ProjectItem ReplaceParameters="false" TargetFileName="_rfs.scss">_rfs.scss</ProjectItem>
+              </Folder>
+              <ProjectItem ReplaceParameters="false" TargetFileName="_alert.scss">_alert.scss</ProjectItem>
+              <ProjectItem ReplaceParameters="false" TargetFileName="_badge.scss">_badge.scss</ProjectItem>
+              <ProjectItem ReplaceParameters="false" TargetFileName="_breadcrumb.scss">_breadcrumb.scss</ProjectItem>
+              <ProjectItem ReplaceParameters="false" TargetFileName="_button-group.scss">_button-group.scss</ProjectItem>
+              <ProjectItem ReplaceParameters="false" TargetFileName="_buttons.scss">_buttons.scss</ProjectItem>
+              <ProjectItem ReplaceParameters="false" TargetFileName="_card.scss">_card.scss</ProjectItem>
+              <ProjectItem ReplaceParameters="false" TargetFileName="_carousel.scss">_carousel.scss</ProjectItem>
+              <ProjectItem ReplaceParameters="false" TargetFileName="_close.scss">_close.scss</ProjectItem>
+              <ProjectItem ReplaceParameters="false" TargetFileName="_code.scss">_code.scss</ProjectItem>
+              <ProjectItem ReplaceParameters="false" TargetFileName="_custom-forms.scss">_custom-forms.scss</ProjectItem>
+              <ProjectItem ReplaceParameters="false" TargetFileName="_dropdown.scss">_dropdown.scss</ProjectItem>
+              <ProjectItem ReplaceParameters="false" TargetFileName="_forms.scss">_forms.scss</ProjectItem>
+              <ProjectItem ReplaceParameters="false" TargetFileName="_functions.scss">_functions.scss</ProjectItem>
+              <ProjectItem ReplaceParameters="false" TargetFileName="_grid.scss">_grid.scss</ProjectItem>
+              <ProjectItem ReplaceParameters="false" TargetFileName="_images.scss">_images.scss</ProjectItem>
+              <ProjectItem ReplaceParameters="false" TargetFileName="_input-group.scss">_input-group.scss</ProjectItem>
+              <ProjectItem ReplaceParameters="false" TargetFileName="_jumbotron.scss">_jumbotron.scss</ProjectItem>
+              <ProjectItem ReplaceParameters="false" TargetFileName="_list-group.scss">_list-group.scss</ProjectItem>
+              <ProjectItem ReplaceParameters="false" TargetFileName="_media.scss">_media.scss</ProjectItem>
+              <ProjectItem ReplaceParameters="false" TargetFileName="_mixins.scss">_mixins.scss</ProjectItem>
+              <ProjectItem ReplaceParameters="false" TargetFileName="_modal.scss">_modal.scss</ProjectItem>
+              <ProjectItem ReplaceParameters="false" TargetFileName="_nav.scss">_nav.scss</ProjectItem>
+              <ProjectItem ReplaceParameters="false" TargetFileName="_navbar.scss">_navbar.scss</ProjectItem>
+              <ProjectItem ReplaceParameters="false" TargetFileName="_pagination.scss">_pagination.scss</ProjectItem>
+              <ProjectItem ReplaceParameters="false" TargetFileName="_popover.scss">_popover.scss</ProjectItem>
+              <ProjectItem ReplaceParameters="false" TargetFileName="_print.scss">_print.scss</ProjectItem>
+              <ProjectItem ReplaceParameters="false" TargetFileName="_progress.scss">_progress.scss</ProjectItem>
+              <ProjectItem ReplaceParameters="false" TargetFileName="_reboot.scss">_reboot.scss</ProjectItem>
+              <ProjectItem ReplaceParameters="false" TargetFileName="_root.scss">_root.scss</ProjectItem>
+              <ProjectItem ReplaceParameters="false" TargetFileName="_spinners.scss">_spinners.scss</ProjectItem>
+              <ProjectItem ReplaceParameters="false" TargetFileName="_tables.scss">_tables.scss</ProjectItem>
+              <ProjectItem ReplaceParameters="false" TargetFileName="_toasts.scss">_toasts.scss</ProjectItem>
+              <ProjectItem ReplaceParameters="false" TargetFileName="_tooltip.scss">_tooltip.scss</ProjectItem>
+              <ProjectItem ReplaceParameters="false" TargetFileName="_transitions.scss">_transitions.scss</ProjectItem>
+              <ProjectItem ReplaceParameters="false" TargetFileName="_type.scss">_type.scss</ProjectItem>
+              <ProjectItem ReplaceParameters="false" TargetFileName="_utilities.scss">_utilities.scss</ProjectItem>
+              <ProjectItem ReplaceParameters="false" TargetFileName="_variables.scss">_variables.scss</ProjectItem>
+              <ProjectItem ReplaceParameters="false" TargetFileName="bootstrap.scss">bootstrap.scss</ProjectItem>
+              <ProjectItem ReplaceParameters="false" TargetFileName="bootstrap-grid.scss">bootstrap-grid.scss</ProjectItem>
+              <ProjectItem ReplaceParameters="false" TargetFileName="bootstrap-reboot.scss">bootstrap-reboot.scss</ProjectItem>
+            </Folder>
+            <ProjectItem ReplaceParameters="false" TargetFileName="README.md">README.md</ProjectItem>
+          </Folder>
+          <Folder Name="jquery" TargetFolderName="jquery">
+            <Folder Name="dist" TargetFolderName="dist">
+              <ProjectItem ReplaceParameters="true" TargetFileName="jquery.js">jquery.js</ProjectItem>
+              <ProjectItem ReplaceParameters="true" TargetFileName="jquery.min.js">jquery.min.js</ProjectItem>
+              <ProjectItem ReplaceParameters="true" TargetFileName="jquery.min.map">jquery.min.map</ProjectItem>
+              <ProjectItem ReplaceParameters="true" TargetFileName="jquery.slim.js">jquery.slim.js</ProjectItem>
+              <ProjectItem ReplaceParameters="true" TargetFileName="jquery.slim.min.js">jquery.slim.min.js</ProjectItem>
+              <ProjectItem ReplaceParameters="true" TargetFileName="jquery.slim.min.map">jquery.slim.min.map</ProjectItem>
+            </Folder>
+            <ProjectItem ReplaceParameters="true" TargetFileName="LICENSE.txt">LICENSE.txt</ProjectItem>
+            <ProjectItem ReplaceParameters="false" TargetFileName="README.md">README.md</ProjectItem>
+          </Folder>
+        </Folder>
+        <ProjectItem ReplaceParameters="false" TargetFileName="favicon.ico">favicon.ico</ProjectItem>
+        <ProjectItem ReplaceParameters="false" TargetFileName="icon.jpg">icon.jpg</ProjectItem>
+        <ProjectItem ReplaceParameters="false" TargetFileName="icon.png">icon.png</ProjectItem>
+      </Folder>
+      <Folder Name="Areas" TargetFolderName="Areas">
+        <Folder Name="Identity" TargetFolderName="Identity">
+          <Folder Name="Data" TargetFolderName="Data">
+            <ProjectItem ReplaceParameters="true" TargetFileName="ApplicationUser.cs">ApplicationUser.cs</ProjectItem>
+            <ProjectItem ReplaceParameters="true" TargetFileName="UserDbContext.cs">UserDbContext.cs</ProjectItem>
+          </Folder>
+          <Folder Name="Pages" TargetFolderName="Pages">
+            <Folder Name="Account" TargetFolderName="Account">
+              <ProjectItem ReplaceParameters="true" TargetFileName="_StatusMessage.cshtml">_StatusMessage.cshtml</ProjectItem>
+              <ProjectItem ReplaceParameters="true" TargetFileName="_ViewImports.cshtml">_ViewImports.cshtml</ProjectItem>
+              <ProjectItem ReplaceParameters="true" TargetFileName="ConfirmEmail.cshtml">ConfirmEmail.cshtml</ProjectItem>
+              <ProjectItem ReplaceParameters="true" TargetFileName="ConfirmEmail.cshtml.cs">ConfirmEmail.cshtml.cs</ProjectItem>
+              <ProjectItem ReplaceParameters="true" TargetFileName="Register.cshtml">Register.cshtml</ProjectItem>
+              <ProjectItem ReplaceParameters="true" TargetFileName="Register.cshtml.cs">Register.cshtml.cs</ProjectItem>
+              <ProjectItem ReplaceParameters="true" TargetFileName="RegisterConfirmation.cshtml">RegisterConfirmation.cshtml</ProjectItem>
+              <ProjectItem ReplaceParameters="true" TargetFileName="RegisterConfirmation.cshtml.cs">RegisterConfirmation.cshtml.cs</ProjectItem>
+            </Folder>
+            <ProjectItem ReplaceParameters="true" TargetFileName="_ValidationScriptsPartial.cshtml">_ValidationScriptsPartial.cshtml</ProjectItem>
+            <ProjectItem ReplaceParameters="true" TargetFileName="_ViewImports.cshtml">_ViewImports.cshtml</ProjectItem>
+            <ProjectItem ReplaceParameters="true" TargetFileName="_ViewStart.cshtml">_ViewStart.cshtml</ProjectItem>
+          </Folder>
+          <ProjectItem ReplaceParameters="true" TargetFileName="IdentityHostingStartup.cs">IdentityHostingStartup.cs</ProjectItem>
+        </Folder>
+      </Folder>
+      <Folder Name="Configuration" TargetFolderName="Configuration">
+        <ProjectItem ReplaceParameters="true" TargetFileName="AppSettingPathConstants.cs">AppSettingPathConstants.cs</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="ConfigurationHelper.cs">ConfigurationHelper.cs</ProjectItem>
+      </Folder>
+      <Folder Name="Controllers" TargetFolderName="Controllers">
+        <Folder Name="Account" TargetFolderName="Account">
+          <ProjectItem ReplaceParameters="true" TargetFileName="AccountController.cs">AccountController.cs</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="AccountOptions.cs">AccountOptions.cs</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="ExternalController.cs">ExternalController.cs</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="ExternalProvider.cs">ExternalProvider.cs</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="LoggedOutViewModel.cs">LoggedOutViewModel.cs</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="LoginInputModel.cs">LoginInputModel.cs</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="LoginViewModel.cs">LoginViewModel.cs</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="LogoutInputModel.cs">LogoutInputModel.cs</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="LogoutViewModel.cs">LogoutViewModel.cs</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="RedirectViewModel.cs">RedirectViewModel.cs</ProjectItem>
+        </Folder>
+        <Folder Name="Consent" TargetFolderName="Consent">
+          <ProjectItem ReplaceParameters="true" TargetFileName="ConsentController.cs">ConsentController.cs</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="ConsentInputModel.cs">ConsentInputModel.cs</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="ConsentOptions.cs">ConsentOptions.cs</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="ConsentViewModel.cs">ConsentViewModel.cs</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="ProcessConsentResult.cs">ProcessConsentResult.cs</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="ScopeViewModel.cs">ScopeViewModel.cs</ProjectItem>
+        </Folder>
+        <Folder Name="Device" TargetFolderName="Device">
+          <ProjectItem ReplaceParameters="true" TargetFileName="DeviceAuthorizationInputModel.cs">DeviceAuthorizationInputModel.cs</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="DeviceAuthorizationViewModel.cs">DeviceAuthorizationViewModel.cs</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="DeviceController.cs">DeviceController.cs</ProjectItem>
+        </Folder>
+        <Folder Name="Diagnostics" TargetFolderName="Diagnostics">
+          <ProjectItem ReplaceParameters="true" TargetFileName="DiagnosticsController.cs">DiagnosticsController.cs</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="DiagnosticsViewModel.cs">DiagnosticsViewModel.cs</ProjectItem>
+        </Folder>
+        <Folder Name="Grants" TargetFolderName="Grants">
+          <ProjectItem ReplaceParameters="true" TargetFileName="GrantsController.cs">GrantsController.cs</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="GrantsViewModel.cs">GrantsViewModel.cs</ProjectItem>
+        </Folder>
+        <Folder Name="Home" TargetFolderName="Home">
+          <ProjectItem ReplaceParameters="true" TargetFileName="ErrorViewModel.cs">ErrorViewModel.cs</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="HomeController.cs">HomeController.cs</ProjectItem>
+        </Folder>
+        <ProjectItem ReplaceParameters="true" TargetFileName="Extensions.cs">Extensions.cs</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="SecurityHeadersAttribute.cs">SecurityHeadersAttribute.cs</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="TestUsers.cs">TestUsers.cs</ProjectItem>
+      </Folder>
+      <Folder Name="Migrations" TargetFolderName="Migrations">
+        <ProjectItem ReplaceParameters="true" TargetFileName="20210727023044_CreateIdentitySchema.cs">20210727023044_CreateIdentitySchema.cs</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="20210727023044_CreateIdentitySchema.Designer.cs">20210727023044_CreateIdentitySchema.Designer.cs</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="UserDbContextModelSnapshot.cs">UserDbContextModelSnapshot.cs</ProjectItem>
+      </Folder>
+      <Folder Name="Views" TargetFolderName="Views">
+        <Folder Name="Account" TargetFolderName="Account">
+          <ProjectItem ReplaceParameters="true" TargetFileName="AccessDenied.cshtml">AccessDenied.cshtml</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="LoggedOut.cshtml">LoggedOut.cshtml</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="Login.cshtml">Login.cshtml</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="Logout.cshtml">Logout.cshtml</ProjectItem>
+        </Folder>
+        <Folder Name="Consent" TargetFolderName="Consent">
+          <ProjectItem ReplaceParameters="true" TargetFileName="Index.cshtml">Index.cshtml</ProjectItem>
+        </Folder>
+        <Folder Name="Device" TargetFolderName="Device">
+          <ProjectItem ReplaceParameters="true" TargetFileName="Success.cshtml">Success.cshtml</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="UserCodeCapture.cshtml">UserCodeCapture.cshtml</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="UserCodeConfirmation.cshtml">UserCodeConfirmation.cshtml</ProjectItem>
+        </Folder>
+        <Folder Name="Diagnostics" TargetFolderName="Diagnostics">
+          <ProjectItem ReplaceParameters="true" TargetFileName="Index.cshtml">Index.cshtml</ProjectItem>
+        </Folder>
+        <Folder Name="Grants" TargetFolderName="Grants">
+          <ProjectItem ReplaceParameters="true" TargetFileName="Index.cshtml">Index.cshtml</ProjectItem>
+        </Folder>
+        <Folder Name="Home" TargetFolderName="Home">
+          <ProjectItem ReplaceParameters="true" TargetFileName="Index.cshtml">Index.cshtml</ProjectItem>
+        </Folder>
+        <Folder Name="Shared" TargetFolderName="Shared">
+          <ProjectItem ReplaceParameters="true" TargetFileName="_Layout.cshtml">_Layout.cshtml</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="_LoginPartial.cshtml">_LoginPartial.cshtml</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="_Nav.cshtml">_Nav.cshtml</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="_ScopeListItem.cshtml">_ScopeListItem.cshtml</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="_ValidationSummary.cshtml">_ValidationSummary.cshtml</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="Error.cshtml">Error.cshtml</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="Redirect.cshtml">Redirect.cshtml</ProjectItem>
+        </Folder>
+        <ProjectItem ReplaceParameters="true" TargetFileName="_ViewImports.cshtml">_ViewImports.cshtml</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="_ViewStart.cshtml">_ViewStart.cshtml</ProjectItem>
+      </Folder>
+      <ProjectItem ReplaceParameters="true" TargetFileName="appsettings.json">appsettings.json</ProjectItem>
+      <ProjectItem ReplaceParameters="true" TargetFileName="appsettings.Development.json">appsettings.Development.json</ProjectItem>
+      <ProjectItem ReplaceParameters="true" TargetFileName="Config.cs">Config.cs</ProjectItem>
+      <ProjectItem ReplaceParameters="true" TargetFileName="DummyEmailSender.cs">DummyEmailSender.cs</ProjectItem>
+      <ProjectItem ReplaceParameters="true" TargetFileName="Program.cs">Program.cs</ProjectItem>
+      <ProjectItem ReplaceParameters="true" TargetFileName="Startup.cs">Startup.cs</ProjectItem>
+    </Project>
+  </TemplateContent>
+  <WizardExtension>
+	<Assembly>CodeGenHero.ProjectTemplate.Blazor6.Wizard, Version=1.0.0.0, Culture=neutral, PublicKeyToken=41ac94ffcf1bf326</Assembly>
+	<FullClassName>CodeGenHero.ProjectTemplate.Blazor6.Wizard.BlazorTemplateWizard</FullClassName>
+  </WizardExtension>
+</VSTemplate>

@@ -1,0 +1,14 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <LangVersion>10.0</LangVersion>
+  </PropertyGroup>
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="microsoft.aspnetcore.authorization" Version="6.0.0" />
+    <PackageReference Include="newtonsoft.json" Version="13.0.1" />
+    <PackageReference Include="newtonsoft.json.bson" Version="1.0.2" />
+    <PackageReference Include="system.componentmodel.annotations" Version="5.0.0" />
+  </ItemGroup>
+</Project>

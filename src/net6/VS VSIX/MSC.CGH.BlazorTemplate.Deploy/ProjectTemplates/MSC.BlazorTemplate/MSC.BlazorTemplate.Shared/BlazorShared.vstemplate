@@ -1,0 +1,64 @@
+<VSTemplate Version="3.0.0" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005" Type="Project">
+  <TemplateData>
+	<TemplateID>CGH.Blazor.Shared.Net6</TemplateID>
+    <Name>CodeGenHero Blazor Shared App (.NET 6)</Name>
+	<Description>Blazor shared project designed for use with the CodeGenHero Enterprise Architecture project template.</Description>
+	<DefaultName>CodeGenHeroBlazor.Shared</DefaultName>
+    <ProvideDefaultName>true</ProvideDefaultName>
+	<Icon>CGH_90x90.png</Icon>
+	<PreviewImage>CGH_200x200.png</PreviewImage>
+	<ProjectType>CSharp</ProjectType>
+	<ProjectSubType></ProjectSubType>
+	<TemplateGroupID>CodeGenHero</TemplateGroupID>
+	<ShowByDefault>false</ShowByDefault>
+	<LanguageTag>C#</LanguageTag>
+	<ProjectTypeTag>CodeGenHero</ProjectTypeTag>
+    <SortOrder>1000</SortOrder>
+    <CreateNewFolder>true</CreateNewFolder>
+    <LocationField>Disabled</LocationField>
+    <EnableLocationBrowseButton>false</EnableLocationBrowseButton>
+    <CreateInPlace>true</CreateInPlace>
+  </TemplateData>
+  <TemplateContent>
+    <Project TargetFileName="$safeprojectname$.csproj" File="MSC.WhittierArtists.Shared.csproj" ReplaceParameters="true">
+      <Folder Name="Authorization" TargetFolderName="Authorization">
+        <ProjectItem ReplaceParameters="true" TargetFileName="Policies.cs">Policies.cs</ProjectItem>
+      </Folder>
+      <Folder Name="Constants" TargetFolderName="Constants">
+        <ProjectItem ReplaceParameters="true" TargetFileName="Consts.cs">Consts.cs</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="Enums.cs">Enums.cs</ProjectItem>
+      </Folder>
+      <Folder Name="DataService" TargetFolderName="DataService">
+        <ProjectItem ReplaceParameters="true" TargetFileName="FilterCriterion.cs">FilterCriterion.cs</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="HttpCallResult.cs">HttpCallResult.cs</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="IFilterCriterion.cs">IFilterCriterion.cs</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="IHttpCallResultCGH.cs">IHttpCallResultCGH.cs</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="IHttpCallResultCGHT.cs">IHttpCallResultCGHT.cs</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="IPageData.cs">IPageData.cs</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="IPageDataRequest.cs">IPageDataRequest.cs</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="IPageDataT.cs">IPageDataT.cs</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="ISerializationHelper.cs">ISerializationHelper.cs</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="PageData.cs">PageData.cs</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="PageDataRequest.cs">PageDataRequest.cs</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="QueryableFilter.cs">QueryableFilter.cs</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="SerializationHelper.cs">SerializationHelper.cs</ProjectItem>
+      </Folder>
+      <Folder Name="DTO" TargetFolderName="DTO">
+        <ProjectItem ReplaceParameters="true" TargetFileName="PageContentMatchItem.cs">PageContentMatchItem.cs</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="PageData.cs">PageData.cs</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="CGHAppSettings.cs">CGHAppSettings.cs</ProjectItem>
+      </Folder>
+      <Folder Name="Extensions" TargetFolderName="Extensions">
+        <ProjectItem ReplaceParameters="true" TargetFileName="EnumerableExtensions.cs">EnumerableExtensions.cs</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="FunctorComparer.cs">FunctorComparer.cs</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="IListExtensions.cs">IListExtensions.cs</ProjectItem>
+      </Folder>
+      <ProjectItem ReplaceParameters="true" TargetFileName="AsyncHelper.cs">AsyncHelper.cs</ProjectItem>
+      <ProjectItem ReplaceParameters="true" TargetFileName="Utils.cs">Utils.cs</ProjectItem>
+    </Project>
+  </TemplateContent>
+  <WizardExtension>
+	<Assembly>CodeGenHero.ProjectTemplate.Blazor6.Wizard, Version=1.0.0.0, Culture=neutral, PublicKeyToken=41ac94ffcf1bf326</Assembly>
+	<FullClassName>CodeGenHero.ProjectTemplate.Blazor6.Wizard.BlazorTemplateWizard</FullClassName>
+  </WizardExtension>
+</VSTemplate>

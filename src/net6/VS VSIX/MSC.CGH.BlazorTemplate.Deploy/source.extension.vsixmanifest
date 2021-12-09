@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PackageManifest Version="2.0.0" xmlns="http://schemas.microsoft.com/developer/vsx-schema/2011" xmlns:d="http://schemas.microsoft.com/developer/vsx-schema-design/2011">
+    <Metadata>
+        <Identity Id="d65cfe2b-ced2-4e8a-8c13-ae26e898b2d5" Version="1.0" Language="en-US" Publisher="MSCTek" />
+        <DisplayName>CGH Blazor6</DisplayName>
+        <Description xml:space="preserve">Blazor multi-project template for use with CodeGenHero.</Description>
+        <Icon>Resources\CGHBlazorTemplateVSIXPackage.ico</Icon>
+        <PreviewImage>Resources\CGHBlazorTemplateVSIXPackage.ico</PreviewImage>
+    </Metadata>
+    <Installation>
+        <InstallationTarget Id="Microsoft.VisualStudio.Community" Version="[17.0, 18.0)">
+            <ProductArchitecture>amd64</ProductArchitecture>
+        </InstallationTarget>
+    </Installation>
+    <Dependencies>
+        <Dependency Id="Microsoft.Framework.NDP" DisplayName="Microsoft .NET Framework" d:Source="Manual" Version="[4.5,)" />
+    </Dependencies>
+    <Prerequisites>
+        <Prerequisite Id="Microsoft.VisualStudio.Component.CoreEditor" Version="[17.0,18.0)" DisplayName="Visual Studio core editor" />
+    </Prerequisites>
+    <Assets>
+        <Asset Type="Microsoft.VisualStudio.VsPackage" d:Source="Project" d:ProjectName="%CurrentProject%" Path="|%CurrentProject%;PkgdefProjectOutputGroup|" />
+        <Asset Type="Microsoft.VisualStudio.ProjectTemplate" d:Source="File" Path="ProjectTemplates" d:TargetPath="ProjectTemplates\MSC.BlazorTemplate.zip" />
+        <Asset Type="Microsoft.VisualStudio.Assembly" d:Source="Project" d:ProjectName="CodeGenHero.ProjectTemplate.Blazor6.Wizard" Path="|CodeGenHero.ProjectTemplate.Blazor6.Wizard|" AssemblyName="|CodeGenHero.ProjectTemplate.Blazor6.Wizard;AssemblyName|" />
+    </Assets>
+</PackageManifest>

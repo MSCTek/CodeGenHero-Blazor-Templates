@@ -1,0 +1,37 @@
+<VSTemplate Version="3.0.0" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005" Type="Project">
+  <TemplateData>
+	<TemplateID>CGH.Blazor.CGH.Net6</TemplateID>
+    <Name>CodeGenHero Metadata Project (.NET 6)</Name>
+	<Description>Empty project dedicated to containing CodeGenHero metadata files.</Description>
+	<DefaultName>CodeGenHero</DefaultName>
+    <ProvideDefaultName>true</ProvideDefaultName>
+	<Icon>CGH_90x90.png</Icon>
+	<PreviewImage>CGH_200x200.png</PreviewImage>
+	<ProjectType>CSharp</ProjectType>
+    <ProjectSubType>
+    </ProjectSubType>
+	<TemplateGroupID>CodeGenHero</TemplateGroupID>
+	<ShowByDefault>false</ShowByDefault>
+	<LanguageTag>C#</LanguageTag>
+	<ProjectTypeTag>CodeGenHero</ProjectTypeTag>
+    <SortOrder>1000</SortOrder>
+    <CreateNewFolder>true</CreateNewFolder>
+    <LocationField>Disabled</LocationField>
+    <EnableLocationBrowseButton>false</EnableLocationBrowseButton>
+    <CreateInPlace>true</CreateInPlace>
+  </TemplateData>
+  <TemplateContent>
+    <Project TargetFileName="$safeprojectname$.CGH.csproj" File="MSC.WhittierArtists.CGH.csproj" ReplaceParameters="true">
+      <Folder Name="CodeGenHero" TargetFolderName="CodeGenHero">
+        <Folder Name="Blueprint" TargetFolderName="Blueprint">          
+        </Folder>
+        <Folder Name="Metadata" TargetFolderName="Metadata">          
+        </Folder>
+      </Folder>
+    </Project>
+  </TemplateContent>
+  <WizardExtension>
+	<Assembly>CodeGenHero.ProjectTemplate.Blazor6.Wizard, Version=1.0.0.0, Culture=neutral, PublicKeyToken=41ac94ffcf1bf326</Assembly>
+	<FullClassName>CodeGenHero.ProjectTemplate.Blazor6.Wizard.BlazorTemplateWizard</FullClassName>
+  </WizardExtension>
+</VSTemplate>
