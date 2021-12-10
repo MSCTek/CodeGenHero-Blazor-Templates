@@ -2,7 +2,7 @@
 
 using System;
 
-namespace CodeGenHeroBlazor6.Shared.DTO
+namespace $safeprojectname$.DTO
 {
     public class CGHAppSettings
     {

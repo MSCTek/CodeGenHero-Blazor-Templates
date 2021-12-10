@@ -23,4 +23,10 @@
     <ProjectReference Include="..\$ext_safeprojectname$.Shared\$ext_safeprojectname$.Shared.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Authorization\" />
+    <Folder Include="Models\" />
+    <Folder Include="Services\" />
+  </ItemGroup>
+
 </Project>
