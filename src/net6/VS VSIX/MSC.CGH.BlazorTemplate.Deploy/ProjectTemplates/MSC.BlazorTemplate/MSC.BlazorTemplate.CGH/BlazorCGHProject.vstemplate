@@ -5,8 +5,8 @@
 	<Description>Empty project dedicated to containing CodeGenHero metadata files.</Description>
 	<DefaultName>CodeGenHero</DefaultName>
     <ProvideDefaultName>true</ProvideDefaultName>
-	<Icon>CGH_90x90.png</Icon>
-	<PreviewImage>CGH_200x200.png</PreviewImage>
+	<Icon>CGH_90x90_NoInvert.png</Icon>
+	<PreviewImage>CGH_200x200_NoInvert.png</PreviewImage>
 	<ProjectType>CSharp</ProjectType>
     <ProjectSubType>
     </ProjectSubType>

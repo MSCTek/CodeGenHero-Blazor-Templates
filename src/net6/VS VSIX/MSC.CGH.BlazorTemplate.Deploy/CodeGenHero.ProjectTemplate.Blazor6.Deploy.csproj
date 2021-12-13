@@ -19,8 +19,8 @@
     <ProjectGuid>{6390DF2B-4A4E-499A-B0F5-158AA0110B26}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>CodeGenHero.ProjectTemplate.Blazor6.Deploy</RootNamespace>
-    <AssemblyName>CodeGenHero.ProjectTemplate.Blazor6.Deploy</AssemblyName>
+    <RootNamespace>CodeGenHero.ProjectTemplate.Blazor6</RootNamespace>
+    <AssemblyName>CodeGenHero.ProjectTemplate.Blazor6</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <GeneratePkgDefFile>true</GeneratePkgDefFile>
     <UseCodebase>true</UseCodebase>

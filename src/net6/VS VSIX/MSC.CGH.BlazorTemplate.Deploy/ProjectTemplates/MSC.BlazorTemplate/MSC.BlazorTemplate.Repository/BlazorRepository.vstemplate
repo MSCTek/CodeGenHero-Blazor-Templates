@@ -5,8 +5,8 @@
 	<Description>Repository class library designed for use with CodeGenHero's Enterprise Architecture project template.</Description>
 	<DefaultName>CodeGenHeroBlazor.Repository</DefaultName>
     <ProvideDefaultName>true</ProvideDefaultName>
-	<Icon>CGH_90x90.png</Icon>
-	<PreviewImage>CGH_200x200.png</PreviewImage>
+	<Icon>CGH_90x90_NoInvert.png</Icon>
+	<PreviewImage>CGH_200x200_NoInvert.png</PreviewImage>
 	<ProjectType>CSharp</ProjectType>
 	<ProjectSubType></ProjectSubType>
 	<TemplateGroupID>CodeGenHero</TemplateGroupID>
