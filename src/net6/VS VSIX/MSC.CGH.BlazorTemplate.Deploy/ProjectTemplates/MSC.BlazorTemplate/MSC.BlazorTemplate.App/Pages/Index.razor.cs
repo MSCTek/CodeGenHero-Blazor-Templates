@@ -10,7 +10,7 @@ using enums = $ext_safeprojectname$.Shared.Constants.Enums;
 
 namespace $safeprojectname$.Pages
 {
-    public partial class IndexViewModel : MSCComponentBase
+    public partial class IndexViewModel : CGHComponentBase
     {
 #pragma warning disable CS1998 // Async method lacks 'await' operators and will run synchronously
         protected override async Task OnInitializedAsync()

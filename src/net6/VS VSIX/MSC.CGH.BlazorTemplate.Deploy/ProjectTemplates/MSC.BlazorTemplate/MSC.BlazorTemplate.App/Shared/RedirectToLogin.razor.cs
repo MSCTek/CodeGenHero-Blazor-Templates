@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace $safeprojectname$.Shared
 {
-    public partial class RedirectToLoginViewModel : MSCComponentBase
+    public partial class RedirectToLoginViewModel : CGHComponentBase
     {
         [CascadingParameter]
         public Task<AuthenticationState> AuthState { get; set; }

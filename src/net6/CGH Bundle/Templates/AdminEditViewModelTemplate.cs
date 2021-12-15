@@ -16,6 +16,9 @@ namespace CodeGenHero.Template.Blazor5.Templates
 
         #region TemplateVariables
 
+        [TemplateVariable(defaultValue: Consts.PTG_WebApiDataServiceInterfaceName_DEFAULT, description: Consts.PTG_WebApiDataServiceInterfaceName_DESC)]
+        public string WebApiDataServiceInterfaceClassName { get; set; }
+
         [TemplateVariable(defaultValue: Consts.PTG_WebApiDataServiceClassName_DEFAULT, description: Consts.PTG_WebApiDataServiceClassName_DESC)]
         public string WebApiDataServiceClassName { get; set; }
 
@@ -69,7 +72,7 @@ namespace CodeGenHero.Template.Blazor5.Templates
                     string className = TokenReplacements(AdminEditViewModelClassName, entity);
 
                     var generator = new AdminEditViewModelGenerator(inflector: Inflector);
-                    var generatedCode = generator.Generate(usings, AppPageViewModelsNamespace, NamespacePostfix, entity, className, WebApiDataServiceClassName);
+                    var generatedCode = generator.Generate(usings, AppPageViewModelsNamespace, NamespacePostfix, entity, className, WebApiDataServiceInterfaceClassName, WebApiDataServiceClassName);
 
                     retVal.Files.Add(new OutputFile()
                     {
