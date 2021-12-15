@@ -40,14 +40,14 @@ namespace CodeGenHero.Template.Blazor5
             return signatureSB.ToString();
         }
 
-        protected string GetMethodParametersWithoutTypes(IEntityType entity, string seperator = ", ")
+        protected string GetMethodParametersWithoutTypes(IEntityType entity, string seperator = ", ", bool camelize = true)
         {
             var primaryKeys = GetPrimaryKeys(entity);
             StringBuilder pksb = new StringBuilder();
             var pkCount = primaryKeys.Count();
             foreach (var pk in primaryKeys)
             {
-                var cpk = Inflector.Camelize(pk);
+                var cpk = camelize ? Inflector.Camelize(pk) : pk;
                 pksb.Append(cpk);
                 pkCount--;
                 if (pkCount > 0)

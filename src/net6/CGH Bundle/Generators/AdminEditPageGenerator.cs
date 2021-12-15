@@ -117,7 +117,7 @@ namespace CodeGenHero.Template.Blazor5.Generators
 
             sb.AppendLine($"\t<section class=\"{entityName.ToLower()}\">");
             sb.AppendLine($"\t<MudText Typo=\"Typo.h6\" GutterBottom=\"true\">@{entityName}?.{primaryKeys[0]}</MudText> @* Replace with an appropriate identifying string property *@"); // \"\"
-            sb.AppendLine($"\t<EditForm Model=>\"@{entityName}\" OnValidSubmit=\"OnValidSubmit\">");
+            sb.AppendLine($"\t<EditForm Model=\"@{entityName}\" OnValidSubmit=\"OnValidSubmit\">");
 
             sb.AppendLine("\t\t<DataAnnotationsValidator />");
             sb.AppendLine("\t\t<MudCard>");

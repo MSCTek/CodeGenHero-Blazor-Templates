@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace $safeprojectname$.Components
 {
-    public partial class GDPRViewModel : MSCComponentBase
+    public partial class GDPRViewModel : CGHComponentBase
     {
         protected GdprBanner _gdprBanner;
 

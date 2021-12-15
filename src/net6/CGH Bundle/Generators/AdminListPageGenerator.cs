@@ -98,7 +98,6 @@ namespace CodeGenHero.Template.Blazor5.Generators
             {
                 sb.AppendLine($"\t\t\t<MudTd DataLabel=\"{pk}\">@context.{pk}</MudTd>");
             }
-            sb.AppendLine("\t\t\t<MudTd DataLabel=\"Is Active\">@context.IsActive</MudTd>");
             sb.AppendLine("\t\t\t<MudTd DataLabel=\"Actions\">");
             sb.AppendLine("\t\t\t\t<MudButton @onclick=\"@(()=>ConfirmDeleteAsync(context))\" Variant=\"Variant.Filled\" Color=\"Color.Error\" Style=\"height: 38px; min-width: 44px;\">");
             sb.AppendLine("\t\t\t\t\t<i class=\"fas fa-trash-alt\"></i>");

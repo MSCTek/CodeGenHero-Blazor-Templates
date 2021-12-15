@@ -20,6 +20,9 @@ namespace CodeGenHero.Template.Blazor5.Templates
         [TemplateVariable(defaultValue: Consts.PTG_AdminListPageViewModelClassName_DEFAULT, description: Consts.PTG_AdminListPageViewModelClassName_DESC)]
         public string AdminListPageViewModelClassName { get; set; }
 
+        [TemplateVariable(defaultValue: Consts.PTG_WebApiDataServiceInterfaceName_DEFAULT, description: Consts.PTG_WebApiDataServiceInterfaceName_DESC)]
+        public string WebApiDataServiceInterfaceClassName { get; set; }
+
         [TemplateVariable(defaultValue: Consts.PTG_WebApiDataServiceClassName_DEFAULT, description: Consts.PTG_WebApiDataServiceClassName_DESC)]
         public string WebApiDataServiceClassName { get; set; }
 
@@ -70,7 +73,7 @@ namespace CodeGenHero.Template.Blazor5.Templates
                     string className = TokenReplacements(AdminListPageViewModelClassName, entity);
 
                     var generator = new AdminListPageViewModelGenerator(inflector: Inflector);
-                    var generatedCode = generator.Generate(usings, AppPageViewModelsNamespace, NamespacePostfix, entity, className, WebApiDataServiceClassName);
+                    var generatedCode = generator.Generate(usings, AppPageViewModelsNamespace, NamespacePostfix, entity, className, WebApiDataServiceInterfaceClassName, WebApiDataServiceClassName);
 
                     retVal.Files.Add(new OutputFile()
                     {

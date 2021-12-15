@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace $safeprojectname$.Components
 {
-    public partial class FooterViewModel : MSCComponentBase
+    public partial class FooterViewModel : CGHComponentBase
     {
         [Inject]
         protected IConfiguration Config { get; set; }

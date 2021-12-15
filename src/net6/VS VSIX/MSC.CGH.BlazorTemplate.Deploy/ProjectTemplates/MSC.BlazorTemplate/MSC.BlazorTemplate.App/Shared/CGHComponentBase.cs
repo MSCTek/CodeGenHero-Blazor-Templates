@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 
 namespace $safeprojectname$.Shared
 {
-    public class MSCComponentBase : ComponentBase
+    public class CGHComponentBase : ComponentBase
     {
         [Inject]
         public IConfiguration Configuration { get; set; }

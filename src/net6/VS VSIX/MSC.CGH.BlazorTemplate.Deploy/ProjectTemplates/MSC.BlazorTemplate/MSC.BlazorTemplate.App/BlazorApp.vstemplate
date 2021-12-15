@@ -68,7 +68,7 @@
         <ProjectItem ReplaceParameters="false" TargetFileName="MainLayout.razor">MainLayout.razor</ProjectItem>
         <ProjectItem ReplaceParameters="false" TargetFileName="RedirectToLogin.razor">RedirectToLogin.razor</ProjectItem>
         <ProjectItem ReplaceParameters="true" TargetFileName="RedirectToLogin.razor.cs">RedirectToLogin.razor.cs</ProjectItem>
-        <ProjectItem ReplaceParameters="true" TargetFileName="MSCComponentBase.cs">MSCComponentBase.cs</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="CGHComponentBase.cs">CGHComponentBase.cs</ProjectItem>
       </Folder>
       <Folder Name="ViewModels" TargetFolderName="ViewModels">
         <ProjectItem ReplaceParameters="true" TargetFileName="BaseViewModel.cs">BaseViewModel.cs</ProjectItem>

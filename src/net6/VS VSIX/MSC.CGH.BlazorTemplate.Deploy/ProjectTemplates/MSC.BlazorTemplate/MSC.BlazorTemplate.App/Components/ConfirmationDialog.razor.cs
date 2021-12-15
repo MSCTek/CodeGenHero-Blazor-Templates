@@ -4,7 +4,7 @@ using MudBlazor;
 
 namespace $safeprojectname$.Components
 {
-    public partial class ConfirmationDialogViewModel : MSCComponentBase
+    public partial class ConfirmationDialogViewModel : CGHComponentBase
     {
         [Parameter] public string ButtonText { get; set; }
 

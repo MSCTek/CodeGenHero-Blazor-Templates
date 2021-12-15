@@ -20,6 +20,7 @@ namespace CodeGenHero.Template.Blazor5.Generators
             string namespacePostfix,
             IEntityType entity,
             string className,
+            string webApiDataServiceInterfaceClassName,
             string webApiDataServiceClassName)
         {
             var entityName = $"{entity.ClrType.Name}";
@@ -40,7 +41,7 @@ namespace CodeGenHero.Template.Blazor5.Generators
             sb.AppendLine("\t\t}");
             sb.AppendLine(string.Empty);
 
-            sb.Append(GenerateProperties(entityName, pluralizedEntityName));
+            sb.Append(GenerateProperties(entityName, pluralizedEntityName, webApiDataServiceInterfaceClassName, webApiDataServiceClassName));
             sb.Append(GenerateDeleteMethods(entityName, methodSignature, methodSignatureUntyped, webApiDataServiceClassName, primaryKeys));
             sb.Append(GenerateFilterFunction(entityName, primaryKeys));
             sb.Append(GenerateOnInitializedAsync(pluralizedEntityName));
@@ -51,12 +52,15 @@ namespace CodeGenHero.Template.Blazor5.Generators
             return sb.ToString();
         }
 
-        private string GenerateProperties(string entityName, string pluralizedEntityName)
+        private string GenerateProperties(string entityName, string pluralizedEntityName, string webApiDataServiceInterfaceClassName, string webApiDataServiceClassName)
         {
             IndentingStringBuilder sb = new IndentingStringBuilder(2);
 
             sb.AppendLine($"public IList<{entityName}> {pluralizedEntityName} {{ get; set; }} = new List<{entityName}>();");
             sb.AppendLine(string.Empty);
+
+            sb.AppendLine("[Inject]");
+            sb.AppendLine($"public {webApiDataServiceInterfaceClassName} {webApiDataServiceClassName} {{ get; set; }}");
 
             sb.AppendLine("protected bool Bordered { get; set; } = false;");
             sb.AppendLine("protected bool Dense { get; set; } = false;");
@@ -114,7 +118,7 @@ namespace CodeGenHero.Template.Blazor5.Generators
             sb.AppendLine("{");
 
             sb.AppendLine("\tvar parameters = new DialogParameters();");
-            sb.AppendLine("\tparameters.Add(\"ContentText\", $\"Are you sure you want to delete {item.Name}?\");"); // Hmm, might be a bold assumption that entities have a "Name" column?
+            sb.AppendLine("\tparameters.Add(\"ContentText\", $\"Are you sure you want to delete this?\");");
             sb.AppendLine("\tparameters.Add(\"ButtonText\", \"Yes\");");
             sb.AppendLine("\tparameters.Add(\"Color\", Color.Success);");
             sb.AppendLine(string.Empty);
@@ -189,7 +193,11 @@ namespace CodeGenHero.Template.Blazor5.Generators
             sb.AppendLine("\tsearchString = searchString.Trim();");
             foreach(var pk in primaryKeys)
             {
-                sb.AppendLine($"\tif (!string.IsNullOrWhiteSpace(item.{pk}) && item.{pk}.Contains(searchString, StringComparison.OrdinalIgnoreCase))");
+                var pkStringName = $"{pk}String";
+
+                sb.AppendLine("\t// Replace with the property you intend a search to work against");
+                sb.AppendLine($"\tvar {pkStringName} = item.{pk}.ToString();");
+                sb.AppendLine($"\tif (!string.IsNullOrWhiteSpace({pkStringName}) && {pkStringName}.Contains(searchString, StringComparison.OrdinalIgnoreCase))");
                 sb.AppendLine("\t\treturn true;");
                 sb.AppendLine(string.Empty);
             }

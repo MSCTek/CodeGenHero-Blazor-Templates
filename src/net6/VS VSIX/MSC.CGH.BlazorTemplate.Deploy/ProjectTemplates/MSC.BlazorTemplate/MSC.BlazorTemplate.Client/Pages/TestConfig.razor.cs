@@ -9,7 +9,7 @@ using System.Text;
 
 namespace $safeprojectname$.Pages
 {
-    public class TestConfigViewModel : MSCComponentBase
+    public class TestConfigViewModel : CGHComponentBase
     {
         public string ConfigurationDebugView
         {

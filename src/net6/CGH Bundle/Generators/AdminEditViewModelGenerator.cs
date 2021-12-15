@@ -20,6 +20,7 @@ namespace CodeGenHero.Template.Blazor5.Generators
             string namespacePostfix,
             IEntityType entity,
             string className,
+            string webApiDataServiceInterfaceClassName,
             string webApiDataServiceClassName)
         {
             StringBuilder sb = new StringBuilder();
@@ -30,7 +31,7 @@ namespace CodeGenHero.Template.Blazor5.Generators
             sb.AppendLine($"\tpublic partial class {className} : AdminPageBase");
             sb.AppendLine("\t{");
 
-            sb.Append(GenerateProperties(entity));
+            sb.Append(GenerateProperties(entity, webApiDataServiceInterfaceClassName, webApiDataServiceClassName));
             sb.Append(GenerateOnInitialized(entity));
             sb.Append(GenerateOnParametersSet(entity, webApiDataServiceClassName));
             sb.Append(GenerateOnValidSubmit(entity, webApiDataServiceClassName));
@@ -40,7 +41,7 @@ namespace CodeGenHero.Template.Blazor5.Generators
             return sb.ToString();
         }
 
-        private string GenerateProperties(IEntityType entity)
+        private string GenerateProperties(IEntityType entity, string webApiDataServiceInterfaceClassName, string webApiDataServiceClassName)
         {
             var entityName = entity.ClrType.Name;
             var primaryKeys = GetPrimaryKeys(entity);
@@ -50,6 +51,9 @@ namespace CodeGenHero.Template.Blazor5.Generators
 
             sb.AppendLine($"public {entityName} {entityName} {{ get; set; }} = new {entityName}();");
             sb.AppendLine(string.Empty);
+
+            sb.AppendLine("[Inject]");
+            sb.AppendLine($"public {webApiDataServiceInterfaceClassName} {webApiDataServiceClassName} {{ get; set; }}");
 
             foreach (var property in properties)
             {
@@ -62,7 +66,7 @@ namespace CodeGenHero.Template.Blazor5.Generators
                     var simpleType = ConvertToSimpleType(cType);
 
                     sb.AppendLine("[Parameter]");
-                    sb.AppendLine($"\t\tpublic {simpleType} {Inflector.Pascalize(propertyName)} {{ get; set; }}");
+                    sb.AppendLine($"public {simpleType} {Inflector.Pascalize(propertyName)} {{ get; set; }}");
                     sb.AppendLine(string.Empty);
                 }
             }
@@ -120,7 +124,7 @@ namespace CodeGenHero.Template.Blazor5.Generators
         {
             var entityName = entity.ClrType.Name;
             var entityNameLower = Inflector.ToLowerFirstCharacter(entityName);
-            var entityParameterSignatureUntyped = GetMethodParametersWithoutTypes(entity);
+            var entityParameterSignatureUntyped = GetMethodParametersWithoutTypes(entity, camelize: false);
             var primaryKeys = GetPrimaryKeys(entity);
 
             StringBuilder pkMismatchSB = new StringBuilder();
@@ -274,10 +278,17 @@ namespace CodeGenHero.Template.Blazor5.Generators
         }
 ";
 
+            var clearNullValuesLiteral = @"
+        private void ClearNoneValues()
+        {
+            // Add handling for null values here
+        }";
+
             StringBuilder sb = new StringBuilder();
 
             sb.Append(GenerateReturnToList(entity));
             sb.Append(setSavedLiteral);
+            sb.Append(clearNullValuesLiteral);
 
             return sb.ToString();
         }

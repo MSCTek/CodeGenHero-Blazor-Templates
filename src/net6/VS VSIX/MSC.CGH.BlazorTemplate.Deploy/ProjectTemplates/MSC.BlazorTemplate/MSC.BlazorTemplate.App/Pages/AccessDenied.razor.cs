@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace $safeprojectname$.Pages
 {
-    public partial class AccessDeniedViewModel : MSCComponentBase
+    public partial class AccessDeniedViewModel : CGHComponentBase
     {
         [Inject]
         protected ITokenManager TokenManager { get; set; }

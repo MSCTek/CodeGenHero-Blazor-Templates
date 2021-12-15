@@ -32,6 +32,7 @@ namespace CodeGenHero.Template.Blazor5.Generators
             sb.Append(GenerateConstructor(className, dbContextName));
 
             sb.AppendLine($"\t\tpublic {dbContextName} {dbContextName} {{ get {{ return _ctx; }} }}");
+            sb.AppendLine(string.Empty);
 
             sb.Append(GenerateGenericOperations());
 

@@ -2,7 +2,7 @@
 
 namespace $safeprojectname$.Shared
 {
-    public class AdminPageBase : MSCComponentBase
+    public class AdminPageBase : CGHComponentBase
     {
         // used to store state of screen
         protected string Message = string.Empty;
