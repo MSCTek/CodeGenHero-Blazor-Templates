@@ -44,7 +44,7 @@ namespace CodeGenHero.Template.Blazor5.Generators
             sb.Append(GenerateProperties(entityName, pluralizedEntityName, webApiDataServiceInterfaceClassName, webApiDataServiceClassName));
             sb.Append(GenerateDeleteMethods(entityName, methodSignature, methodSignatureUntyped, webApiDataServiceClassName, primaryKeys));
             sb.Append(GenerateFilterFunction(entityName, primaryKeys));
-            sb.Append(GenerateOnInitializedAsync(pluralizedEntityName));
+            sb.Append(GenerateOnInitializedAsync(pluralizedEntityName, webApiDataServiceClassName));
             sb.Append(GenerateCommonMethods(pluralizedEntityName));
 
             sb.Append(GenerateFooter());
@@ -61,6 +61,7 @@ namespace CodeGenHero.Template.Blazor5.Generators
 
             sb.AppendLine("[Inject]");
             sb.AppendLine($"public {webApiDataServiceInterfaceClassName} {webApiDataServiceClassName} {{ get; set; }}");
+            sb.AppendLine(string.Empty);
 
             sb.AppendLine("protected bool Bordered { get; set; } = false;");
             sb.AppendLine("protected bool Dense { get; set; } = false;");
@@ -156,15 +157,17 @@ namespace CodeGenHero.Template.Blazor5.Generators
 
             sb.AppendLine($"\tvar result = await {webApiDataServiceClassName}.Delete{entityName}Async({methodSignatureUntyped});");
             sb.AppendLine($"\tif (result.IsSuccessStatusCode)");    // Remember to include a Commented Out reference to the WebApiDataService in the MPT's Component-Base for the end-dev to hand-populate.
-            sb.Append("\t{");
+            sb.AppendLine("\t{");
 
-            sb.AppendLine(successCodeLiteral);
+            sb.Append(successCodeLiteral);
+            sb.AppendLine(string.Empty);
 
             sb.AppendLine("\t}");
             sb.AppendLine("\telse");
-            sb.Append("\t{");
+            sb.AppendLine("\t{");
 
-            sb.AppendLine(failCodeLiteral);
+            sb.Append(failCodeLiteral);
+            sb.AppendLine(string.Empty);
 
             sb.AppendLine("\t}");
 
@@ -210,7 +213,7 @@ namespace CodeGenHero.Template.Blazor5.Generators
             return sb.ToString();
         }
 
-        private string GenerateOnInitializedAsync(string pluralizedEntityName)
+        private string GenerateOnInitializedAsync(string pluralizedEntityName, string webApiDataServiceClassName)
         {
             string lowerEntityPlural = Inflector.ToLowerFirstCharacter(pluralizedEntityName);
 
@@ -237,6 +240,21 @@ namespace CodeGenHero.Template.Blazor5.Generators
             sb.AppendLine(string.Empty);
 
             sb.AppendLine("\t\tNavigationService.SetBreadcrumbs(breadcrumbs);");
+
+            sb.AppendLine($"\t\tif ({pluralizedEntityName} == null || !{pluralizedEntityName}.Any())");
+            sb.AppendLine("\t\t{");
+
+            sb.AppendLine("\t\t\tif (User != null && User.Identity.IsAuthenticated)");
+            sb.AppendLine("\t\t\t{");
+
+            sb.AppendLine("\t\t\t\t// Add your filtering logic in here, by adding FilterCriterion to the filterCriteria list");
+            sb.AppendLine("\t\t\t\tvar filterCriteria = new List<IFilterCriterion>();");
+
+            sb.AppendLine($"\t\t\t\t{pluralizedEntityName} = await {webApiDataServiceClassName}.GetAllPages{pluralizedEntityName}Async();");
+
+            sb.AppendLine("\t\t\t}");
+
+            sb.AppendLine("\t\t}");
 
             sb.AppendLine("\t}");
             sb.AppendLine("\tfinally");
