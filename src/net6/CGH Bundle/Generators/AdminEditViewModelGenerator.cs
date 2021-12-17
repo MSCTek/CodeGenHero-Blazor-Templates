@@ -54,6 +54,7 @@ namespace CodeGenHero.Template.Blazor5.Generators
 
             sb.AppendLine("[Inject]");
             sb.AppendLine($"public {webApiDataServiceInterfaceClassName} {webApiDataServiceClassName} {{ get; set; }}");
+            sb.AppendLine(string.Empty);
 
             foreach (var property in properties)
             {
@@ -289,6 +290,7 @@ namespace CodeGenHero.Template.Blazor5.Generators
             sb.Append(GenerateReturnToList(entity));
             sb.Append(setSavedLiteral);
             sb.Append(clearNullValuesLiteral);
+            sb.AppendLine(string.Empty);
 
             return sb.ToString();
         }

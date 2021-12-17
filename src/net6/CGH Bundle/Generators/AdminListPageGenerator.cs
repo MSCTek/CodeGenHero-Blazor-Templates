@@ -40,7 +40,7 @@ namespace CodeGenHero.Template.Blazor5.Generators
 
             sb.AppendLine($"@page \"/admin/{entityNamePlural.ToLower()}\"");
             sb.AppendLine($"@inherits {adminListPageViewModelClassName}");
-            sb.AppendLine("<div class=\"mud-palette-override\"> @* This outer div is necessary CSS Isolation to function *@\n");
+            sb.AppendLine("<div class=\"mud-palette-override\"> @* This outer div is necessary for CSS Isolation to function *@\n");
 
             return sb.ToString();
         }
@@ -89,7 +89,6 @@ namespace CodeGenHero.Template.Blazor5.Generators
             {
                 sb.AppendLine($"\t\t\t<MudTh>{pk}</MudTh>");
             }
-            sb.AppendLine("\t\t\t<MudTh>Is Active</MudTh>");
             sb.AppendLine("\t\t\t<MudTh>&nbsp;</MudTh>");
             sb.AppendLine("\t\t</HeaderContent>");
 
@@ -110,7 +109,7 @@ namespace CodeGenHero.Template.Blazor5.Generators
             sb.AppendLine("\t\t</PagerContent>");
             sb.AppendLine("\t</MudTable>");
 
-            sb.Append("}");
+            sb.AppendLine("}");
 
             return sb.ToString();
         }

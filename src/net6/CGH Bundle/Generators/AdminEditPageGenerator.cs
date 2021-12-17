@@ -66,7 +66,7 @@ namespace CodeGenHero.Template.Blazor5.Generators
 
             sb.AppendLine($"@page \"/admin/{entityName.ToLower()}edit/{routeParameters}\"");
             sb.AppendLine($"@inherits {adminEditViewModelClassName}");
-            sb.AppendLine("<div class=\"mud-palette-override\"> @* This outer div is necessary CSS Isolation to function *@\n");
+            sb.AppendLine("<div class=\"mud-palette-override\"> @* This outer div is necessary for CSS Isolation to function *@\n");
 
             return sb.ToString();
         }
@@ -95,20 +95,21 @@ namespace CodeGenHero.Template.Blazor5.Generators
             var primaryKeys = GetPrimaryKeys(entity);
 
             string expansionPanelLiteral = @"
-            <MudExpansionPanels>
-                <MudExpansionPanel Text=""Show Validation Summary"">
-                    @if (Saved)
-                    {
-                        <MudText Color=""Color.Success"">Success</MudText>
-                    }
-                    else
-                    {
-                        <MudText Color=""@Color.Error"">
-                            <ValidationSummary />
-                        </MudText>
-                    }
-                </MudExpansionPanel>
-            </MudExpansionPanels>";
+                <MudExpansionPanels>
+                    <MudExpansionPanel Text=""Show Validation Summary"">
+                        @if (Saved)
+                        {
+                            <MudText Color=""Color.Success"">Success</MudText>
+                        }
+                        else
+                        {
+                            <MudText Color=""@Color.Error"">
+                                <ValidationSummary />
+                            </MudText>
+                        }
+                    </MudExpansionPanel>
+                </MudExpansionPanels>
+";
 
             IndentingStringBuilder sb = new IndentingStringBuilder(1);
 
