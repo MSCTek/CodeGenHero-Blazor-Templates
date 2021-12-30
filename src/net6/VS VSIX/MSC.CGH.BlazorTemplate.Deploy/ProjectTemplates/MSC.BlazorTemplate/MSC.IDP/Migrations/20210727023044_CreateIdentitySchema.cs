@@ -1,7 +1,7 @@
 ﻿using System;
 using Microsoft.EntityFrameworkCore.Migrations;
 
-namespace MSC.IDP.Migrations
+namespace CGH.IDP.Migrations
 {
     public partial class CreateIdentitySchema : Migration
     {
