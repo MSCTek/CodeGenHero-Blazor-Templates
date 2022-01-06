@@ -109,7 +109,7 @@ namespace $safeprojectname$
                             EmailConfirmed = true
                         };
 
-                        var result = userManager.CreateAsync(adminUser, "P@ssword1").Result;
+                        var result = userManager.CreateAsync(adminUser, "Bl@zor1").Result;
                         if (!result.Succeeded)
                         {
                             throw new Exception(result.Errors.First().Description);
@@ -139,7 +139,7 @@ namespace $safeprojectname$
                             EmailConfirmed = true
                         };
 
-                        var result = userManager.CreateAsync(basicUser, "P@ssword2").Result;
+                        var result = userManager.CreateAsync(basicUser, "Bl@zor2").Result;
                         if (!result.Succeeded)
                         {
                             throw new Exception(result.Errors.First().Description);
