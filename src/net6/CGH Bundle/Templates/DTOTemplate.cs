@@ -40,6 +40,7 @@ namespace CodeGenHero.Template.Blazor5.Templates
 
                 var usings = new List<NamespaceItem>
                 {
+                    new NamespaceItem("System"),
                     new NamespaceItem("System.Collections.Generic")
                 };
                 var generator = new DTOGenerator(inflector: Inflector);
