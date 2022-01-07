@@ -79,7 +79,7 @@ namespace $safeprojectname$
                 .Build();
 
             services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
-            services.AddSingleton(Log.Logger);
+            services.AddSingleton(Serilog.Log.Logger);
 
             /// SETUP - Add your Data Context here after generating it from your Metadata
             //services.AddDbContext<YourDataContext>(options =>
