@@ -3,9 +3,9 @@ using Microsoft.AspNetCore.Components.WebAssembly.Authentication;
 
 namespace $safeprojectname$.MessageHandlers
 {
-    public class MSCApiAuthorizationMessageHandler : AuthorizationMessageHandler
+    public class CGHApiAuthorizationMessageHandler : AuthorizationMessageHandler
     {
-        public MSCApiAuthorizationMessageHandler(
+        public CGHApiAuthorizationMessageHandler(
             IAccessTokenProvider provider, NavigationManager navigation)
             : base(provider, navigation)
         {

@@ -23,7 +23,7 @@ namespace $safeprojectname$
             builder.RootComponents.Add<HeadOutlet>("head::after");
 
             builder.Services
-                .AddTransient<MSCApiAuthorizationMessageHandler>();
+                .AddTransient<CGHApiAuthorizationMessageHandler>();
 
             builder.Services.AddOidcAuthentication(options =>
             {
@@ -57,7 +57,7 @@ namespace $safeprojectname$
 
             //builder.Services.AddHttpClient<IEmployeeDataService, EmployeeDataService>(
             //    client => client.BaseAddress = new Uri("https://localhost:44323/"))
-            //    .AddHttpMessageHandler<MSCApiAuthorizationMessageHandler>();
+            //    .AddHttpMessageHandler<CGHApiAuthorizationMessageHandler>();
 
             builder.Services.AddSingleton<ISerializationHelper, SerializationHelper>();
 

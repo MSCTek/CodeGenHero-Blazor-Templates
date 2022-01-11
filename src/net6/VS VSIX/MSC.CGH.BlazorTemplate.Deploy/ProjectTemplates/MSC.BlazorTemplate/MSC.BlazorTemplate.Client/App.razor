@@ -27,7 +27,7 @@
 	}
 }
 <CascadingAuthenticationState>
-	<Router AppAssembly="@typeof(LayoutComponentBase).Assembly" PreferExactMatches="@true" 
+	<Router AppAssembly="@typeof(MainLayoutViewModel).Assembly" PreferExactMatches="@true" 
 		AdditionalAssemblies="new[] { typeof($safeprojectname$.Program).Assembly }">
 		<Found Context="routeData">
 			<AuthorizeRouteView RouteData="@routeData" DefaultLayout="@typeof(MainLayout)">

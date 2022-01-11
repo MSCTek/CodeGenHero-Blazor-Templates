@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
-namespace MSC.IDP.Migrations
+namespace CGH.IDP.Migrations
 {
     [DbContext(typeof(UserDbContext))]
     partial class UserDbContextModelSnapshot : ModelSnapshot
@@ -19,7 +19,7 @@ namespace MSC.IDP.Migrations
                 .HasAnnotation("ProductVersion", "5.0.8")
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-            modelBuilder.Entity("MSC.IDP.Areas.Identity.Data.ApplicationUser", b =>
+            modelBuilder.Entity("CGH.IDP.Areas.Identity.Data.ApplicationUser", b =>
                 {
                     b.Property<string>("Id")
                         .HasColumnType("nvarchar(450)");
@@ -226,7 +226,7 @@ namespace MSC.IDP.Migrations
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserClaim<string>", b =>
                 {
-                    b.HasOne("MSC.IDP.Areas.Identity.Data.ApplicationUser", null)
+                    b.HasOne("CGH.IDP.Areas.Identity.Data.ApplicationUser", null)
                         .WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -235,7 +235,7 @@ namespace MSC.IDP.Migrations
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserLogin<string>", b =>
                 {
-                    b.HasOne("MSC.IDP.Areas.Identity.Data.ApplicationUser", null)
+                    b.HasOne("CGH.IDP.Areas.Identity.Data.ApplicationUser", null)
                         .WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -250,7 +250,7 @@ namespace MSC.IDP.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("MSC.IDP.Areas.Identity.Data.ApplicationUser", null)
+                    b.HasOne("CGH.IDP.Areas.Identity.Data.ApplicationUser", null)
                         .WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -259,7 +259,7 @@ namespace MSC.IDP.Migrations
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserToken<string>", b =>
                 {
-                    b.HasOne("MSC.IDP.Areas.Identity.Data.ApplicationUser", null)
+                    b.HasOne("CGH.IDP.Areas.Identity.Data.ApplicationUser", null)
                         .WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
