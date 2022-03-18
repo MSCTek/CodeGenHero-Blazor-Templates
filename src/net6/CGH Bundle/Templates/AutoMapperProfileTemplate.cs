@@ -1,10 +1,10 @@
 ﻿using CodeGenHero.Core;
-using CodeGenHero.Template.Blazor5.Generators;
+using CodeGenHero.Template.Blazor6.Generators;
 using CodeGenHero.Template.Models;
 using System;
 using System.Collections.Generic;
 
-namespace CodeGenHero.Template.Blazor5.Templates
+namespace CodeGenHero.Template.Blazor6.Templates
 {
     [Template(name: "AutoMapperProfile", version: "2021.9.14", uniqueTemplateIdGuid: "7B0AA8DE-D2FB-4EFA-98E1-75FEB116A153",
         description: "Generates an Automapper Profile based off provided Metadata. Requires AutoMapper.Extensions.Microsoft.DependencyInjection NuGet package.")]

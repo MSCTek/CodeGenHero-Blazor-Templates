@@ -1,10 +1,10 @@
 ﻿using CodeGenHero.Core;
-using CodeGenHero.Template.Blazor5.Generators;
+using CodeGenHero.Template.Blazor6.Generators;
 using CodeGenHero.Template.Models;
 using System;
 using System.Collections.Generic;
 
-namespace CodeGenHero.Template.Blazor5.Templates
+namespace CodeGenHero.Template.Blazor6.Templates
 {
     [Template(name: "WebApiDataServiceInterface", version: "2021.11.9", uniqueTemplateIdGuid: "FB79D688-1931-4893-82F6-B7AD98BC5754",
         description: "Generates the Interface for the WebApiDataService to implement.")]

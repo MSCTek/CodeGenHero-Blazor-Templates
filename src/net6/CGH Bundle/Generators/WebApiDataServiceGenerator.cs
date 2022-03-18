@@ -7,7 +7,7 @@ using System.Collections.Generic;
 using System.Text;
 using System.Linq;
 
-namespace CodeGenHero.Template.Blazor5.Generators
+namespace CodeGenHero.Template.Blazor6.Generators
 {
     public class WebApiDataServiceGenerator : BaseBlazorGenerator
     {

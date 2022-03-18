@@ -1,10 +1,10 @@
-﻿using CodeGenHero.Template.Blazor5.Generators;
+﻿using CodeGenHero.Template.Blazor6.Generators;
 using System;
 using System.Collections.Generic;
 using CodeGenHero.Template.Models;
 using CodeGenHero.Core;
 
-namespace CodeGenHero.Template.Blazor5.Templates
+namespace CodeGenHero.Template.Blazor6.Templates
 {
     [Template(name: "DTO", version: "2021.11.12", uniqueTemplateIdGuid: "C97FAB8D-DB03-4F94-9C85-14D1F9B41AA7",
         description: "Generates Data Transfer Objects based off provided Metadata Entities.")]

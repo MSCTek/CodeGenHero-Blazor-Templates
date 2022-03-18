@@ -1,4 +1,4 @@
-﻿namespace CodeGenHero.Template.Blazor5
+﻿namespace CodeGenHero.Template.Blazor6
 {
     public static class Consts
     {
@@ -116,6 +116,8 @@
         /// Output Filepath Defaults
         public const string APIControllerFilePath_DEFAULTVALUE = "Blazor\\Controllers\\[tablename]Controller.cs";
 
+        public const string APIControllerCustomFilepath_DEFAULTVALUE = "Blazor\\Controllers\\Custom\\[tablename]Controller.cs";
+
         public const string AutoMapperProfileOutputFilepath_DEFAULT = "Blazor\\Repository\\{NamespacePostfix}AutoMapperProfile.cs";
 
         public const string BaseAPIControllerOutputFilepath_DEFAULT = "Blazor\\API\\{NamespacePostfix}BaseApiController.cs";
@@ -151,6 +153,8 @@
         #region Output Variable Names
         /// Output Filepath Variable Names
         public const string OUT_APIControllerFilePath_DEFAULTVALUE = "APIControllerOutputFilepath";
+
+        public const string OUT_APIControllerCustomFilePath_DEFAULTVALUE = "APIControllerCustomOutputFilepath";
 
         public const string OUT_AutoMapperProfileOutputFilepath_DEFAULT = "AutoMapperProfileOutputFilepath";
 

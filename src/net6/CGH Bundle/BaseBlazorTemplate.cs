@@ -1,7 +1,7 @@
 ﻿using CodeGenHero.Core.Metadata.Interfaces;
 using CodeGenHero.Template.Models;
 
-namespace CodeGenHero.Template.Blazor5
+namespace CodeGenHero.Template.Blazor6
 {
     public abstract class BaseBlazorTemplate : BaseTemplate
     {

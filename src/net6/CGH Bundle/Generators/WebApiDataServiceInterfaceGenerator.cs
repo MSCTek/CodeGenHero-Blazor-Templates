@@ -5,7 +5,7 @@ using CodeGenHero.Template.Models;
 using System.Collections.Generic;
 using System.Text;
 
-namespace CodeGenHero.Template.Blazor5.Generators
+namespace CodeGenHero.Template.Blazor6.Generators
 {
     public class WebApiDataServiceInterfaceGenerator : BaseBlazorGenerator
     {

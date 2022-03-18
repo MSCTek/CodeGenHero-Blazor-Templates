@@ -1,10 +1,10 @@
 ﻿using CodeGenHero.Core;
-using CodeGenHero.Template.Blazor5.Generators;
+using CodeGenHero.Template.Blazor6.Generators;
 using CodeGenHero.Template.Models;
 using System;
 using System.Collections.Generic;
 
-namespace CodeGenHero.Template.Blazor5.Templates
+namespace CodeGenHero.Template.Blazor6.Templates
 {
     [Template(name: "GenericFactoryInterface", version: "2021.9.14", uniqueTemplateIdGuid: "2BED5905-CED6-4CE8-93EE-EB63365B87EC",
         description: "Generates an interface for a Factory class that maps Entities to DTOs. Implies use of AutoMapper template and associated prerequisites.")]

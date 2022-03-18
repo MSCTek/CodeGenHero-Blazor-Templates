@@ -1,10 +1,10 @@
 ﻿using CodeGenHero.Core;
-using CodeGenHero.Template.Blazor5.Generators;
+using CodeGenHero.Template.Blazor6.Generators;
 using CodeGenHero.Template.Models;
 using System;
 using System.Collections.Generic;
 
-namespace CodeGenHero.Template.Blazor5.Templates
+namespace CodeGenHero.Template.Blazor6.Templates
 {
     [Template(name: "AdminEditViewModel", version: "2021.11.12", uniqueTemplateIdGuid: "17AE856A-A589-40C0-A5BE-1579B0714385",
         description: "Generates a View Model for code-backing of a Razor page that allows an Admin to edit an Entity.")]
