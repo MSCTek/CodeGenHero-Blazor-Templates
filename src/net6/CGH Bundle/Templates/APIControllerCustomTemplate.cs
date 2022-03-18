@@ -16,6 +16,9 @@ namespace CodeGenHero.Template.Blazor6.Templates
 
         #region TemplateVariables
 
+        [TemplateVariable(Consts.APIControllerCustomFilepath_DEFAULTVALUE, hiddenIndicator: true)]
+        public string APIControllerCustomOutputFilepath { get; set; }
+
         [TemplateVariable(defaultValue: Consts.PTG_APIControllerName_DEFAULT, description: Consts.PTG_APIControllerName_DESC)]
         public string APIControllerClassName { get; set; }
 
