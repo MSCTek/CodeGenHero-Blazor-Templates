@@ -4,7 +4,7 @@ using CodeGenHero.Core.Metadata.Interfaces;
 using System.Text;
 using System.Linq;
 
-namespace CodeGenHero.Template.Blazor5
+namespace CodeGenHero.Template.Blazor6
 {
     public abstract class BaseBlazorGenerator : BaseGenerator
     {

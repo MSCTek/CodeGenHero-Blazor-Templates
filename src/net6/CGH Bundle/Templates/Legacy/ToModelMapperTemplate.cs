@@ -1,10 +1,10 @@
 ﻿using CodeGenHero.Core;
-using CodeGenHero.Template.Blazor5.Generators;
+using CodeGenHero.Template.Blazor6.Generators;
 using CodeGenHero.Template.Models;
 using System;
 using System.Collections.Generic;
 
-namespace CodeGenHero.Template.Blazor5.Templates
+namespace CodeGenHero.Template.Blazor6.Templates
 {
     [Template(name: Consts.TEMPLATE_ToModelMapper, version: "1.0", uniqueTemplateIdGuid: "{033F1F44-35D8-4828-AAAD-95B88602F8DF}",
         description: "Creates code to map from entities to models.")]

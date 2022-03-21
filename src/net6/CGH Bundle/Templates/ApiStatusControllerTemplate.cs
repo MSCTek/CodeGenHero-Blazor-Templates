@@ -1,10 +1,10 @@
 ﻿using CodeGenHero.Core;
-using CodeGenHero.Template.Blazor5.Generators;
+using CodeGenHero.Template.Blazor6.Generators;
 using CodeGenHero.Template.Models;
 using System;
 using System.Collections.Generic;
 
-namespace CodeGenHero.Template.Blazor5.Templates
+namespace CodeGenHero.Template.Blazor6.Templates
 {
     [Template(name: "APIStatusController", version: "2021.11.12", uniqueTemplateIdGuid: "021B5127-262B-45FB-A3A7-7388B2EDFCA9",
         description: "Creates the API Status Controller class")]

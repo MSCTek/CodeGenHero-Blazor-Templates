@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace CodeGenHero.Template.Blazor5.Generators
+namespace CodeGenHero.Template.Blazor6.Generators
 {
     public class ToDataMapperGenerator : BaseBlazorGenerator
     {

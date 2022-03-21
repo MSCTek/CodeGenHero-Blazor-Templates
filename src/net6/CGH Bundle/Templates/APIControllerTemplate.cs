@@ -1,10 +1,10 @@
 ﻿using CodeGenHero.Core;
-using CodeGenHero.Template.Blazor5.Generators;
+using CodeGenHero.Template.Blazor6.Generators;
 using CodeGenHero.Template.Models;
 using System;
 using System.Collections.Generic;
 
-namespace CodeGenHero.Template.Blazor5.Templates
+namespace CodeGenHero.Template.Blazor6.Templates
 {
     [Template(name: "APIController", version: "2021.9.14", uniqueTemplateIdGuid: "70A21A48-7EE1-42F5-B1EB-4891E290A17D",
         description: "Creates standard API Controllers to perform CRUD operations on Metadata-provided Entities.")]
