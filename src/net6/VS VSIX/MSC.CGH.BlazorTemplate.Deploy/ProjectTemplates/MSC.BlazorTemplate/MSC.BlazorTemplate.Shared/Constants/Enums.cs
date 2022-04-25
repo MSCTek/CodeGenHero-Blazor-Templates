@@ -8,6 +8,8 @@ namespace $safeprojectname$.Constants
         {
             Contains,
             DoesNotContain,
+            IsContainedIn,
+            IsNotContainedIn,
             IsGreaterThan,
             IsGreaterThanOrEqual,
             IsLessThan,

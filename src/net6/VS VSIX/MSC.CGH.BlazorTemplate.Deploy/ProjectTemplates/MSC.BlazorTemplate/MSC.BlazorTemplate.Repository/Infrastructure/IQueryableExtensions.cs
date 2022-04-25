@@ -1,4 +1,5 @@
 ﻿using $ext_safeprojectname$.Shared.DataService;
+using $ext_safeprojectname$.Shared.Extensions;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -51,6 +52,24 @@ namespace $safeprojectname$.Infrastructure
 
             switch (filter.Condition)
             {
+                case enums.CriterionCondition.IsContainedIn:
+                    {
+                        var type = propertyInfoMatch.PropertyType;
+                        var filterArray = ConvertFilterValueToArray(filter.Value, type);
+
+                        source = source.Where(String.Format("x => @0.Contains(x.{0})", filter.Member), filterArray);
+                        break;
+                    }
+
+                case enums.CriterionCondition.IsNotContainedIn:
+                    {
+                        var type = propertyInfoMatch.PropertyType;
+                        var filterArray = ConvertFilterValueToArray(filter.Value, type);
+
+                        source = source.Where(String.Format("x => !@0.Contains(x.{0})", filter.Member), filterArray);
+                        break;
+                    }
+
                 case enums.CriterionCondition.IsGreaterThanOrEqual:
                     source = source.Where(condition("{0} >= (@0)", filter.Member), typedFilterValue);
                     break;
@@ -178,6 +197,20 @@ namespace $safeprojectname$.Infrastructure
             }
 
             return source;
+        }
+
+        private static Array ConvertFilterValueToArray(string filterValue, Type type)
+        {
+            var filterStrings = filterValue.Split("|");
+            var convertMethod = typeof(ObjectExtensions).GetMethod(nameof(ObjectExtensions.ConvertTo)).MakeGenericMethod(type);
+            var filterArray = Array.CreateInstance(type, filterStrings.Length);
+            for (var i = 0; i < filterStrings.Length; i++)
+            {
+                var parameters = new object[] { filterStrings[i] };
+                filterArray.SetValue(convertMethod.Invoke(null, parameters: parameters), i);
+            }
+
+            return filterArray;
         }
     }
 }
