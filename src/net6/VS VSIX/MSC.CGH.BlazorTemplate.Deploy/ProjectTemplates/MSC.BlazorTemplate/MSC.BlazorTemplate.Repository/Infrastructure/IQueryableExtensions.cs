@@ -34,19 +34,33 @@ namespace $safeprojectname$.Infrastructure
                 condition = (format, member) => string.Format(format, member); // System.Linq.Dynamic Object:  {PropertyName}{condition}
 
             object typedFilterValue = filter.Value;
+            
             if (isDateTime)
-                typedFilterValue = DateTime.Parse(filter.Value);
+            {
+                if (DateTime.TryParse(filter.Value, result: out var parseOutput))
+                    typedFilterValue = parseOutput;
+            }
             else if (isGuid)
-                typedFilterValue = Guid.Parse(filter.Value);
+            {
+                if (Guid.TryParse(filter.Value, result: out var parseOutput))
+                    typedFilterValue = parseOutput;
+            }
             else if (isBoolean)
-                typedFilterValue = Boolean.Parse(filter.Value);
+            {
+                if (bool.TryParse(filter.Value, result: out var parseOutput))
+                    typedFilterValue = parseOutput;
+            }
             else if (isShort)
-                typedFilterValue = Int16.Parse(filter.Value);
+            {
+                if (Int16.TryParse(filter.Value, result: out var parseOutput))
+                    typedFilterValue = parseOutput;
+            }
             else if (isInt)
             {
                 if (!isFilterAnArray)
                 {
-                    typedFilterValue = Int32.Parse(filter.Value);
+                    if (Int32.TryParse(filter.Value, result: out var parseOutput))
+                        typedFilterValue = parseOutput;
                 }
             }
 
