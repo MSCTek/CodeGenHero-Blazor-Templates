@@ -34,34 +34,48 @@ namespace $safeprojectname$.Infrastructure
                 condition = (format, member) => string.Format(format, member); // System.Linq.Dynamic Object:  {PropertyName}{condition}
 
             object typedFilterValue = filter.Value;
-            
-            if (isDateTime)
+            bool isParseSuccess = isFilterAnArray; // Don't parse Arrays here, let ConvertFilterValueToArray handle it in the appropriate Criterion Conditions.
+
+            if (!isFilterAnArray)
             {
-                if (DateTime.TryParse(filter.Value, result: out var parseOutput))
-                    typedFilterValue = parseOutput;
-            }
-            else if (isGuid)
-            {
-                if (Guid.TryParse(filter.Value, result: out var parseOutput))
-                    typedFilterValue = parseOutput;
-            }
-            else if (isBoolean)
-            {
-                if (bool.TryParse(filter.Value, result: out var parseOutput))
-                    typedFilterValue = parseOutput;
-            }
-            else if (isShort)
-            {
-                if (Int16.TryParse(filter.Value, result: out var parseOutput))
-                    typedFilterValue = parseOutput;
-            }
-            else if (isInt)
-            {
-                if (!isFilterAnArray)
+                if (isDateTime)
                 {
-                    if (Int32.TryParse(filter.Value, result: out var parseOutput))
+                    if (isParseSuccess = DateTime.TryParse(filter.Value, result: out var parseOutput))
                         typedFilterValue = parseOutput;
                 }
+                else if (isGuid)
+                {
+                    if (isParseSuccess = Guid.TryParse(filter.Value, result: out var parseOutput))
+                        typedFilterValue = parseOutput;
+                }
+                else if (isBoolean)
+                {
+                    if (isParseSuccess = bool.TryParse(filter.Value, result: out var parseOutput))
+                        typedFilterValue = parseOutput;
+                }
+                else if (isShort)
+                {
+                    if (isParseSuccess = Int16.TryParse(filter.Value, result: out var parseOutput))
+                        typedFilterValue = parseOutput;
+                }
+                else if (isInt)
+                {
+                    if (!isFilterAnArray)
+                    {
+                        if (isParseSuccess = Int32.TryParse(filter.Value, result: out var parseOutput))
+                            typedFilterValue = parseOutput;
+                    }
+                }
+                else    // Filtered member is likely a String, therefore, no need to Parse.
+                {
+                    isParseSuccess = true;
+                }
+            }
+
+            if (!isParseSuccess)
+            {
+                var message = $"Argument Exception: Could not parse filter value {filter.Value ?? string.Empty} as a {propertyInfoMatch.PropertyType.FullName} from filter: Member {filter.Member} / Condition {filter.Condition} / Value {filter.Value ?? string.Empty}";
+                throw new ArgumentException(message);
             }
 
             switch (filter.Condition)
@@ -69,7 +83,7 @@ namespace $safeprojectname$.Infrastructure
                 case enums.CriterionCondition.IsContainedIn:
                     {
                         var type = propertyInfoMatch.PropertyType;
-                        var filterArray = ConvertFilterValueToArray(filter.Value, type);
+                        var filterArray = ConvertFilterValueToArray(filter.Value, type, filter);
 
                         source = source.Where(String.Format("x => @0.Contains(x.{0})", filter.Member), filterArray);
                         break;
@@ -78,7 +92,7 @@ namespace $safeprojectname$.Infrastructure
                 case enums.CriterionCondition.IsNotContainedIn:
                     {
                         var type = propertyInfoMatch.PropertyType;
-                        var filterArray = ConvertFilterValueToArray(filter.Value, type);
+                        var filterArray = ConvertFilterValueToArray(filter.Value, type, filter);
 
                         source = source.Where(String.Format("x => !@0.Contains(x.{0})", filter.Member), filterArray);
                         break;
@@ -213,15 +227,23 @@ namespace $safeprojectname$.Infrastructure
             return source;
         }
 
-        private static Array ConvertFilterValueToArray(string filterValue, Type type)
+        private static Array ConvertFilterValueToArray(string filterValue, Type type, QueryableFilter filter)
         {
             var filterStrings = filterValue.Split("|");
             var convertMethod = typeof(ObjectExtensions).GetMethod(nameof(ObjectExtensions.ConvertTo)).MakeGenericMethod(type);
             var filterArray = Array.CreateInstance(type, filterStrings.Length);
             for (var i = 0; i < filterStrings.Length; i++)
             {
-                var parameters = new object[] { filterStrings[i] };
-                filterArray.SetValue(convertMethod.Invoke(null, parameters: parameters), i);
+                try
+                {
+                    var parameters = new object[] { filterStrings[i] };
+                    filterArray.SetValue(convertMethod.Invoke(null, parameters: parameters), i);
+                }
+                catch(Exception ex)
+                {
+                    var message = $"Argument Exception: Could not parse filter value {filterStrings[i] ?? string.Empty} as a {type.FullName} from filter: Member {filter.Member} / Condition {filter.Condition} / Value {filter.Value ?? string.Empty} - Exception: {ex.Message}";
+                    throw new ArgumentException(message);
+                }
             }
 
             return filterArray;

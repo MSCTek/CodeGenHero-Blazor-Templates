@@ -20,9 +20,9 @@ namespace $safeprojectname$.Extensions
 
                 return (T)Convert.ChangeType(value, typeof(T));
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                return default(T);
+                throw ex; // "Does this mask an error when it shouldn't? Would it be best to let this fail?"
             }
         }
     }
