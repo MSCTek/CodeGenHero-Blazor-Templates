@@ -9,7 +9,7 @@
   <ItemGroup>
     <PackageReference Include="CodeGenHero.Core" Version="1.3.2" />
     <PackageReference Include="CodeGenHero.Inflector" Version="1.0.7" />
-    <PackageReference Include="CodeGenHero.Template" Version="1.3.9" />
+    <PackageReference Include="CodeGenHero.Template" Version="1.4.1" />
   </ItemGroup>
 
   <Target Name="PostBuild" AfterTargets="PostBuildEvent">
