@@ -52,6 +52,7 @@
         <ProjectItem ReplaceParameters="true" TargetFileName="EnumerableExtensions.cs">EnumerableExtensions.cs</ProjectItem>
         <ProjectItem ReplaceParameters="true" TargetFileName="FunctorComparer.cs">FunctorComparer.cs</ProjectItem>
         <ProjectItem ReplaceParameters="true" TargetFileName="IListExtensions.cs">IListExtensions.cs</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="ObjectExtensions.cs">ObjectExtensions.cs</ProjectItem>
       </Folder>
       <ProjectItem ReplaceParameters="true" TargetFileName="AsyncHelper.cs">AsyncHelper.cs</ProjectItem>
       <ProjectItem ReplaceParameters="true" TargetFileName="Utils.cs">Utils.cs</ProjectItem>
