@@ -122,6 +122,26 @@ namespace CodeGenHero.ProjectTemplate.Blazor6.Wizard
                 {
                     _dte2.Solution.SolutionBuild.StartupProjects = startupProjects.ToArray();
                 }
+
+                var clientProject = GetProject(".Client", solutionProjects);
+
+                if (clientProject != null)
+                {
+                    // Would have preferred to LINQ this, but it seems that these classes don't seem to be LINQable.
+                    foreach (SolutionConfiguration solutionConfiguration in _dte2.Solution.SolutionBuild.SolutionConfigurations)
+                    {
+                        foreach (SolutionContext solutionContext in solutionConfiguration.SolutionContexts)
+                        {
+                            if (solutionContext.ProjectName.IndexOf(clientProject.Name) > -1)
+                            {
+                                // Default the Client Project to "Development" configuration so IdentityServer will cooperate with it.
+                                // https://stackoverflow.com/questions/17029011/fixing-configuration-platform-in-envdte-for-added-project
+                                // https://stackoverflow.com/questions/9792278/visualstudio-multi-project-templates
+                                solutionContext.ConfigurationName = "Development|Any CPU";
+                            }
+                        }
+                    }
+                }
             }
         }
 
