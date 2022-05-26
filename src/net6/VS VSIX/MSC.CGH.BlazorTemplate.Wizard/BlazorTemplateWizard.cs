@@ -11,13 +11,15 @@ namespace CodeGenHero.ProjectTemplate.Blazor6.Wizard
         private static string _templateName; // Hmm, in the VSTNT code example the IDE warning for this got disabled, for a reason I'm not entirely read in
                                              // - Does this get used by the VS Templating system somewhere this library will not be aware of?
 
-        public static void GetConnectionStringUserInput(string templateName)
+        public static bool? GetConnectionStringUserInput(string templateName)
         {
             _templateName = templateName;
 
             _mainWindow = new MainWindow();
             _mainWindow.TemplateParametersSet += TemplateParametersSet;
-            _mainWindow.ShowDialog();
+            var retVal = _mainWindow.ShowDialog();
+
+            return retVal;
         }
 
         public void BeforeOpeningFile(ProjectItem projectItem)

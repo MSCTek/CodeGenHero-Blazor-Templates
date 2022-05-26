@@ -54,6 +54,11 @@ namespace CodeGenHero.ProjectTemplate.Blazor6.Wizard
             handler?.Invoke(this, templateParameters);
         }
 
+        private void btnCancel_Click(object sender, RoutedEventArgs e)
+        {
+            DialogResult = false;
+            Close();
+        }
 
         private void btnOK_Click(object sender, RoutedEventArgs e)
         {
@@ -84,6 +89,7 @@ namespace CodeGenHero.ProjectTemplate.Blazor6.Wizard
             }
             else
             {
+                DialogResult = true;
                 OnTemplateParametersSet(
                     connectionString: textAppConnectionString.Text, 
                     idpConnectionString: textIDPConnectionString.Text, 
