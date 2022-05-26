@@ -199,7 +199,35 @@ namespace CodeGenHero.ProjectTemplate.Blazor6.Wizard
             RootDictionary[Consts.DictionaryEntries.GlobalGuid5] = Guid.NewGuid().ToString();
 
             // Invoke child wizard to store connection string in RootDictionary.
-            BlazorTemplateWizard.GetConnectionStringUserInput(_templateName);
+            bool? isDialogResultOk = BlazorTemplateWizard.GetConnectionStringUserInput(_templateName);
+
+            if (isDialogResultOk.HasValue && isDialogResultOk.Value != true)
+                CleanupCancelledProject(replacementsDictionary);
+        }
+
+        /// <summary>
+        /// Removes created solution folders and files if the user exits out of or cancels the Wizard dialog.
+        /// </summary>
+        /// <param name="replacementsDictionary"></param>
+        /// <exception cref="WizardBackoutException"></exception>
+        public void CleanupCancelledProject(Dictionary<string, string> replacementsDictionary)
+        {
+            String destinationDirectory = replacementsDictionary["$destinationdirectory$"];
+            String solutionDirectory = replacementsDictionary["$solutiondirectory$"];
+
+            if (Directory.Exists(destinationDirectory))
+            {
+                Directory.Delete(destinationDirectory, true);
+            }
+
+            if (destinationDirectory != solutionDirectory
+                    && Directory.Exists(solutionDirectory)
+                    && !Directory.EnumerateFileSystemEntries(solutionDirectory).Any())
+            {
+                Directory.Delete(solutionDirectory, true);
+            }
+
+            throw new WizardBackoutException(); // Returns Visual Studio to the point before the Wizard was opened.
         }
 
         public bool ShouldAddProjectItem(string filePath)

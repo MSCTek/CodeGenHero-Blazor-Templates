@@ -5,7 +5,7 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d"
-    Height="360" d:DesignWidth="500">
+    Height="370" Width="600" d:DesignHeight="350" d:DesignWidth="600">
     <DockPanel Height="Auto" Width="Auto" LastChildFill="True">
         <TextBlock DockPanel.Dock="Top" Height="23" Margin="10,10,0,0"
                    Text="Enter a connection string to an EXISTING application database:"/>
@@ -23,7 +23,11 @@
                    Text="Enter the email address for the Identity Server administrator:" />
         <TextBox DockPanel.Dock="Top" Height="23" Margin="10,10,10,0" Width="Auto"
                  Name="textAdminEmail" />
-        <Button Content="OK" Height="40" Width="60" Margin="10,10,10,10" VerticalAlignment="Top" HorizontalAlignment="Right" IsDefault="True" 
-                Name="btnOK" Click="btnOK_Click" />
+        <DockPanel Height="Auto" Width="Auto" LastChildFill="True" HorizontalAlignment="Right">
+            <Button Content="Cancel" Height="40" Width="60" Margin="10,10,10,10" VerticalAlignment="Top" HorizontalAlignment="Right"
+                    Name="btnCancel" Click="btnCancel_Click" />
+            <Button Content="OK" Height="40" Width="60" Margin="10,10,10,10" VerticalAlignment="Top" HorizontalAlignment="Right" IsDefault="True" 
+                    Name="btnOK" Click="btnOK_Click" />
+        </DockPanel>
     </DockPanel>
 </Window>
