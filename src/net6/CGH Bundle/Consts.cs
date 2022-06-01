@@ -116,7 +116,7 @@
         /// Output Filepath Defaults
         public const string APIControllerFilePath_DEFAULTVALUE = "Blazor\\Controllers\\[tablename]Controller.cs";
 
-        public const string APIControllerCustomFilepath_DEFAULTVALUE = "Blazor\\Controllers\\Custom\\[tablename]Controller.cs";
+        public const string APIControllerCustomFilepath_DEFAULTVALUE = "Blazor\\Controllers\\Custom\\[tablename]ControllerCustom.cs";
 
         public const string AutoMapperProfileOutputFilepath_DEFAULT = "Blazor\\Repository\\{NamespacePostfix}AutoMapperProfile.cs";
 
