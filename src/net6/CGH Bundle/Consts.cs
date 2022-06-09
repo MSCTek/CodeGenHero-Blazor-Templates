@@ -55,7 +55,7 @@
         public const string PTG_APIControllerNamespace_DESC = "The namespace of the API Controller classes this template will use. Should be promoted to Global.";
         public const string PTG_DtoNamespace_DEFAULT = "{BaseNamespace}.Shared.DTO";
         public const string PTG_DtoNamespace_DESC = "The namespace of the DTO classes this template will use. Should be promoted to Global.";
-        public const string PTG_EntitiesNamespace_DEFAULT = "{BaseNamespace}.Entities";
+        public const string PTG_EntitiesNamespace_DEFAULT = "{BaseNamespace}.Repository.Entities";
         public const string PTG_EntitiesNamespace_DESC = "The namespace of the Db Entities that this Repository will use. Should be promoted to Global.";
 
         public const string PTG_MappersNamespace_DEFAULT = "{BaseNamespace}.Repository.Mappers";
@@ -79,7 +79,7 @@
         public const string PTG_AutoMapperName_DESC = "The name of the AutoMapper Profile class. Should be promoted to Global.";
         public const string PTG_BaseAPIControllerName_DEFAULT = "{namespacePostfix}BaseApiController";
         public const string PTG_BaseAPIControllerName_DESC = "The name of the Base API Controller class. Should be promoted to Global.";
-        public const string PTG_DbContextName_DEFAULT = "{namespacePostfix}DataContext";
+        public const string PTG_DbContextName_DEFAULT = "{baseNamespace}DbContext";
         public const string PTG_DbContextName_DESC = "The name of the DbContext class this Repository is expected to access. Should be promoted to Global.";
 
         public const string PTG_GenericFactoryInterfaceName_DEFAULT = "I{namespacePostfix}GenericFactory";

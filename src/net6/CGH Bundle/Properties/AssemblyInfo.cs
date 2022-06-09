@@ -19,5 +19,5 @@ using System.Runtime.InteropServices;
     uniqueAssemblyIdGuid: "{E0FECEBA-AA48-4FDB-9EB5-2177307BB238}",
     description: "Templates for solutions using the ASP.NET Core Blazor.",
     author: "Micro Support Center, Inc.",
-    version: "2021.12.7",
+    version: "2022.06.09",
     requiredMetadataSource: "EFCore")]

@@ -62,7 +62,7 @@ namespace CodeGenHero.Template.Blazor6.Generators
             sb.AppendLine($"protected override void RunCustomLogicAfterCtor()");
             sb.AppendLine("{");
 
-            sb.AppendLine($"\t{entityName}Repository = ServiceProvider.GetService<{repositoryInterfaceClassName}>();");
+            sb.AppendLine($"{entityName}Repository = ServiceProvider.GetService<{repositoryInterfaceClassName}>();");
 
             sb.AppendLine("}");
             sb.AppendLine(string.Empty);
