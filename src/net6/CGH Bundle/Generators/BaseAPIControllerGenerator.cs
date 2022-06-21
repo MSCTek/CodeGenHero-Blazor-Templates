@@ -18,7 +18,8 @@ namespace CodeGenHero.Template.Blazor6.Generators
             string namespacePostfix,
             bool authorizedController,
             bool autoInvalidateCacheOutput,
-            string className)
+            string className,
+            string apiRelativeURL)
         {
             StringBuilder sb = new StringBuilder();
             sb.Append(GenerateHeader(usings, classNamespace));
@@ -26,7 +27,7 @@ namespace CodeGenHero.Template.Blazor6.Generators
             sb.AppendLine($"\t{(autoInvalidateCacheOutput ? "" : "// ")}[AutoInvalidateCacheOutput]");
             sb.AppendLine($"\t{GenerateAuthorizeParameter(authorizedController)}");
             sb.AppendLine("\t[ApiController]");
-            sb.AppendLine($"\t{GenerateRouteParameter(namespacePostfix)}");
+            sb.AppendLine($"\t[Route(\"{apiRelativeURL}/[controller]\")]");
             sb.AppendLine($"\tpublic abstract partial class {className} : Controller");
             sb.AppendLine("{");
 
@@ -197,18 +198,6 @@ namespace CodeGenHero.Template.Blazor6.Generators
             sb.AppendLine(string.Empty);
 
             return sb.ToString();
-        }
-
-        private string GenerateRouteParameter(string namespacePostfix)
-        {
-            if (string.IsNullOrEmpty(namespacePostfix))
-            {
-                return "[Route(\"api/[controller]\")]";
-            }
-            else
-            {
-                return $"[Route(\"api/{namespacePostfix}/[controller]\")]";
-            }
         }
 
         private string GenerateVariablesAndProperties(string namespacePostfix)

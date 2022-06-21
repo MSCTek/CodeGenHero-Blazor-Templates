@@ -31,7 +31,7 @@ namespace CodeGenHero.Template.Blazor6.Templates
         [TemplateVariable(defaultValue: Consts.WebApiDataServiceOutputFilepath_DEFAULT, hiddenIndicator: true)]
         public string WebApiDataServiceOutputFilepath { get; set; }
 
-        [TemplateVariable(defaultValue: Consts.WebApiDataServiceApiRelativeURL_DEFAULT, description: Consts.WebApiDataServiceApiRelativeURL_DESC)]
+        [TemplateVariable(defaultValue: Consts.PTG_BaseApiControllerRelativeURL_DEFAULT, description: Consts.PTG_BaseApiControllerRelativeURL_DESC)]
         public string ApiRelativeURL { get; set; }
 
         [TemplateVariable(defaultValue: "", description: Consts.WebApiDataServiceCheckForIsActiveRegex)]

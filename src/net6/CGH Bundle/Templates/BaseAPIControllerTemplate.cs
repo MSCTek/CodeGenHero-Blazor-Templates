@@ -34,6 +34,9 @@ namespace CodeGenHero.Template.Blazor6.Templates
         [TemplateVariable(defaultValue: Consts.PTG_RepositoryNamespace_DEFAULT, description: Consts.PTG_RepositoryNamespace_DESC)]
         public string RepositoryNamespace { get; set; }
 
+        [TemplateVariable(defaultValue: Consts.PTG_BaseApiControllerRelativeURL_DEFAULT, description: Consts.PTG_BaseApiControllerRelativeURL_DESC)]
+        public string ApiRelativeURL { get; set; }
+
         #endregion TemplateVariables
 
         public override TemplateOutput Generate()

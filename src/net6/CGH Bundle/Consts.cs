@@ -79,6 +79,8 @@
         public const string PTG_AutoMapperName_DESC = "The name of the AutoMapper Profile class. Should be promoted to Global.";
         public const string PTG_BaseAPIControllerName_DEFAULT = "{namespacePostfix}BaseApiController";
         public const string PTG_BaseAPIControllerName_DESC = "The name of the Base API Controller class. Should be promoted to Global.";
+        public const string PTG_BaseApiControllerRelativeURL_DEFAULT = "api/{namespacePostfix}";
+        public const string PTG_BaseApiControllerRelativeURL_DESC = "Relative URL of the API's route. Should be promoted to Global.";
         public const string PTG_DbContextName_DEFAULT = "{baseNamespace}DbContext";
         public const string PTG_DbContextName_DESC = "The name of the DbContext class this Repository is expected to access. Should be promoted to Global.";
 
@@ -190,8 +192,6 @@
 
         /// Class-specific variables
         // Web API Data Service
-        public const string WebApiDataServiceApiRelativeURL_DEFAULT = "api/{namespacePostfix}";
-        public const string WebApiDataServiceApiRelativeURL_DESC = "Relative URL of the API's route";
         public const string WebApiDataServiceCheckForIsActiveRegex = "Regular Expression to determine which Entities should have an \"IsActive\" check in their Get Methods. Only include entities that have a boolean property of this name.";
     }
 }
