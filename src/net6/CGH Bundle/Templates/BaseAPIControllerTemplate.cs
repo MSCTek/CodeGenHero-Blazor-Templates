@@ -6,7 +6,7 @@ using System.Collections.Generic;
 
 namespace CodeGenHero.Template.Blazor6.Templates
 {
-    [Template(name: "BaseAPIController", version: "2021.9.14", uniqueTemplateIdGuid: "AF56140D-4926-4E6A-ADDB-49F3CFCD4A53",
+    [Template(name: "BaseAPIController", version: "2022.06.21", uniqueTemplateIdGuid: "AF56140D-4926-4E6A-ADDB-49F3CFCD4A53",
         description: "Generates a Base API Controller class for anonymous API Controllers to inherit from.")]
     public class BaseAPIControllerTemplate : BaseBlazorTemplate
     {
@@ -33,6 +33,9 @@ namespace CodeGenHero.Template.Blazor6.Templates
 
         [TemplateVariable(defaultValue: Consts.PTG_RepositoryNamespace_DEFAULT, description: Consts.PTG_RepositoryNamespace_DESC)]
         public string RepositoryNamespace { get; set; }
+
+        [TemplateVariable(defaultValue: Consts.PTG_BaseApiControllerRelativeURL_DEFAULT, description: Consts.PTG_BaseApiControllerRelativeURL_DESC)]
+        public string ApiRelativeURL { get; set; }
 
         #endregion TemplateVariables
 
@@ -68,7 +71,7 @@ namespace CodeGenHero.Template.Blazor6.Templates
                 var entities = ProcessModel.MetadataSourceModel.GetEntityTypesByRegEx(RegexExclude, RegexInclude);
 
                 var generator = new BaseAPIControllerGenerator(inflector: Inflector);
-                var generatedCode = generator.Generate(usings, APIControllerNamespace, NamespacePostfix, AuthorizedController, AutoInvalidateCacheOutput, BaseAPIControllerClassName);
+                var generatedCode = generator.Generate(usings, APIControllerNamespace, NamespacePostfix, AuthorizedController, AutoInvalidateCacheOutput, BaseAPIControllerClassName, ApiRelativeURL);
 
                 retVal.Files.Add(new OutputFile()
                 {

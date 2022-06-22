@@ -67,7 +67,7 @@
         public const string PTG_WebApiDataServiceNamespace_DESC = "The namespace of the Web API Data Service classes this template will use. Should be promoted to Global.";
 
         public const string PTG_AppPageViewModelsNamespace_DEFAULT = "{BaseNamespace}.App.Pages";
-        public const string PTG_AppPageViewModelsNamespace_DESC = "The namespace of Razor Page viewmodels this template will use. Should be promoted to Global";
+        public const string PTG_AppPageViewModelsNamespace_DESC = "The namespace of Razor Page viewmodels this template will use. Should be promoted to Global.";
 
         #endregion Namespaces
 
@@ -79,6 +79,8 @@
         public const string PTG_AutoMapperName_DESC = "The name of the AutoMapper Profile class. Should be promoted to Global.";
         public const string PTG_BaseAPIControllerName_DEFAULT = "{namespacePostfix}BaseApiController";
         public const string PTG_BaseAPIControllerName_DESC = "The name of the Base API Controller class. Should be promoted to Global.";
+        public const string PTG_BaseApiControllerRelativeURL_DEFAULT = "api/{namespacePostfix}";
+        public const string PTG_BaseApiControllerRelativeURL_DESC = "Relative URL of the API's route. Should be promoted to Global.";
         public const string PTG_DbContextName_DEFAULT = "{baseNamespace}DbContext";
         public const string PTG_DbContextName_DESC = "The name of the DbContext class this Repository is expected to access. Should be promoted to Global.";
 
@@ -105,10 +107,10 @@
         public const string PTG_ApiStatusControllerClassName_DESC = "The name of the API Status Controller class. Should be promoted to Global.";
 
         public const string PTG_AdminListPageViewModelClassName_DEFAULT = "{namespacePostfix}[tablepluralname]ListViewModel";
-        public const string PTG_AdminListPageViewModelClassName_DESC = "The name of the Admin List Page Viewmodel class. Should be promoted to Global";
+        public const string PTG_AdminListPageViewModelClassName_DESC = "The name of the Admin List Page Viewmodel class. Should be promoted to Global.";
 
         public const string PTG_AdminEditViewModelClassName_DEFAULT = "{namespacePostfix}[tablename]EditViewModel";
-        public const string PTG_AdminEditViewModelClassName_DESC = "The name of the Admin Edit Page Viewmodel class. Should be promoted to Global";
+        public const string PTG_AdminEditViewModelClassName_DESC = "The name of the Admin Edit Page Viewmodel class. Should be promoted to Global.";
 
         #endregion Class Names
 
@@ -190,8 +192,6 @@
 
         /// Class-specific variables
         // Web API Data Service
-        public const string WebApiDataServiceApiRelativeURL_DEFAULT = "api/{namespacePostfix}";
-        public const string WebApiDataServiceApiRelativeURL_DESC = "Relative URL of the API's route";
         public const string WebApiDataServiceCheckForIsActiveRegex = "Regular Expression to determine which Entities should have an \"IsActive\" check in their Get Methods. Only include entities that have a boolean property of this name.";
     }
 }
