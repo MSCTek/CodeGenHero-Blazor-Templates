@@ -36,6 +36,7 @@
       </Folder>
       <Folder Name="Pages" TargetFolderName="Pages">
         <ProjectItem ReplaceParameters="true" TargetFileName="Authentication.razor">Authentication.razor</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="Authentication.razor.cs">Authentication.razor.cs</ProjectItem>
         <ProjectItem ReplaceParameters="true" TargetFileName="TestConfig.razor">TestConfig.razor</ProjectItem>
         <ProjectItem ReplaceParameters="true" TargetFileName="TestConfig.razor.cs">TestConfig.razor.cs</ProjectItem>
       </Folder>
