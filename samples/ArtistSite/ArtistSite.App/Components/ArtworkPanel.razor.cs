@@ -13,7 +13,7 @@ namespace ArtistSite.App.Components
         {
             get
             {
-                return $"Images/{Artwork.IconUri}";
+                return $"artwork/{Artwork.IconUri}";
             }
         }
 

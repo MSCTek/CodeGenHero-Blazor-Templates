@@ -1,0 +1,6 @@
+﻿@inherits ImageViewModel
+
+@if (!String.IsNullOrWhiteSpace(Source))
+{
+    <img src="@Source" class="@Class" style="@Style" />
+}

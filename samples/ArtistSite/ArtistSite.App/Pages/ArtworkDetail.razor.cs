@@ -17,7 +17,7 @@ namespace ArtistSite.App.Pages
         {
             get
             {
-                return $"Images/{Artwork.ImageUri}";
+                return $"artwork/{Artwork.ImageUri}";
             }
         }
 
