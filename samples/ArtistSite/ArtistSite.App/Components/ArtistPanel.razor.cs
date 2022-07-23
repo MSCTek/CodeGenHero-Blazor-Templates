@@ -21,7 +21,7 @@ namespace ArtistSite.App.Components
         {
             get
             {
-                return $"Images/Profile/{Artist.ArtistId}.jpg";
+                return $"artist-profile/{Artist.ArtistId}.png";
             }
         }
     }

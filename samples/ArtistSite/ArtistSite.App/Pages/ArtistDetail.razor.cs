@@ -10,7 +10,7 @@ namespace ArtistSite.App.Pages
         {
             get
             {
-                return $"Images/Profile/{Artist.ArtistId}.jpg";
+                return $"artist-profile/{Artist.ArtistId}.png";
             }
         }
 
