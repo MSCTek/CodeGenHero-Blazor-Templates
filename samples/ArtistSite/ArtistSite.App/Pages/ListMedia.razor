@@ -1,0 +1,14 @@
+﻿@inherits ListMediaViewModel
+@page "/Media"
+
+<MudText Typo="Typo.h3">Browse by Media</MudText>
+
+<LoadingMask WaitFor="Media">
+    <ul>
+        @foreach(var medium in Media)
+        {
+            var mediumHref = $"/Media/{medium.MediumId}";
+            <li><a href="@mediumHref">@medium.Name</a></li>
+        }
+    </ul>
+</LoadingMask>

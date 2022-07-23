@@ -1,0 +1,19 @@
+﻿@inherits MainLayoutViewModel
+
+<MudLayout>
+    <ArtistSiteHeader />
+    <ArtistSiteDrawer />
+    <MudMainContent>
+        <div style="padding-top: 50px; padding-left: 20px;">
+            <LoadingMask WaitFor="Breadcrumbs">
+                <MudBreadcrumbs Items="Breadcrumbs" />
+            </LoadingMask>
+            @Body
+        </div>
+    </MudMainContent>
+</MudLayout>
+
+<GDPR />
+<MudThemeProvider />
+<MudDialogProvider />
+<MudSnackbarProvider />

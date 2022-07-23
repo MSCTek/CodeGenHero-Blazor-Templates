@@ -1,0 +1,25 @@
+﻿@inherits ArtistSiteNavMenuViewModel
+
+<MudNavMenu>
+    <MudNavLink Href="/Index">Index</MudNavLink>
+    <MudNavGroup Title="Browse by Artist">
+        <LoadingMask WaitFor="@Artists">
+            @foreach(var artist in Artists)
+            {
+                var artistHref = $"/Artists/{artist.ArtistId}";
+                <MudNavLink Href="@artistHref">@artist.Name</MudNavLink>
+            }
+        </LoadingMask>
+    </MudNavGroup>
+    <MudNavGroup Title="Browse by Media">
+        <LoadingMask WaitFor="@Media">
+            @foreach(var medium in Media)
+            {
+                var mediumHref = $"/Media/{medium.MediumId}";
+                <MudNavLink Href="@mediumHref">@medium.Name</MudNavLink>
+            }
+        </LoadingMask>
+    </MudNavGroup>
+    @*<MudNavLink Href="/Artists">Browse by Artist</MudNavLink>
+    <MudNavLink Href="/Media">Browse by Media</MudNavLink>*@
+</MudNavMenu>

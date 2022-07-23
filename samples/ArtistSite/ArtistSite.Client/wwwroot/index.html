@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>ArtistSite.Client</title>
+    <base href="/" />
+    <link href="https://fonts.googleapis.com/css2?family=Courgette&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@1,900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" rel="stylesheet" />
+    <link href="_content/MudBlazor/MudBlazor.min.css" rel="stylesheet" />
+    <link href="_content/ArtistSite.App/css/site.css" rel="stylesheet" />
+    <link href="ArtistSite.Client.styles.css" rel="stylesheet" />
+    <script src="_content/ArtistSite.App/js/GlobalFunctions.js"></script>
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-J13DDW7VBY"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-J13DDW7VBY');
+    </script>
+</head>
+
+<body>
+    <div id="app">Loading...</div>
+
+    <div id="blazor-error-ui">
+        An unhandled error has occurred.
+        <a href="" class="reload">Reload</a>
+        <a class="dismiss">🗙</a>
+    </div>
+    <script src="_content/Microsoft.AspNetCore.Components.WebAssembly.Authentication/AuthenticationService.js"></script>
+
+    <!--See: https://github.com/dotnet/aspnetcore/issues/25152 : Blazor WASM not loading appsettings.{environment}.json in Azure App Services
+    -->
+    <script src="BlazorEnvironment.js"></script>
+    <script>
+        const originalFetch = fetch;
+        fetch = async (url, options) => {
+            const response = await originalFetch(url, options);
+            return url.endsWith('/blazor.boot.json')
+                ? new Response(await response.blob(), { headers: { 'blazor-environment': window.BlazorEnvironment } })
+                : response;
+        };
+    </script>
+    <script src="_framework/blazor.webassembly.js"></script>
+    <script src="_content/MudBlazor/MudBlazor.min.js"></script>
+    <script src="_content/ArtistSite.App/js/fontawesome/all.min.js"></script>
+</body>
+</html>

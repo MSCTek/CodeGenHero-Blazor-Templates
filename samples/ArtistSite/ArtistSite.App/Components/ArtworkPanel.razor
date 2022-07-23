@@ -1,0 +1,13 @@
+﻿@inherits ArtworkPanelViewModel
+
+@if (Artwork != null)
+{
+    <div style="text-align: center;">
+        <MudPaper Elevation="1">
+            <a href="@DetailURL">
+                <img src="@IconURL" /><br />
+                <MudText Typo="Typo.h4">@Artwork.Name</MudText>
+            </a>
+        </MudPaper>
+    </div>
+}

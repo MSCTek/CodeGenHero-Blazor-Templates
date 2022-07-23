@@ -1,0 +1,89 @@
+﻿@page "/"
+@namespace ArtistSite.Server.Pages
+@using Microsoft.AspNetCore.Authentication
+@using System.Globalization
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@{
+    Layout = null;
+}
+@inject Microsoft.AspNetCore.Antiforgery.IAntiforgery Xsrf
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ArtistSite.Server</title>
+    <base href="~/" />
+    <link href="https://fonts.googleapis.com/css2?family=Courgette&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@1,900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" rel="stylesheet" />
+    <link href="_content/MudBlazor/MudBlazor.min.css" rel="stylesheet" />
+    <link href="_content/ArtistSite.App/css/site.css" rel="stylesheet" />
+    <link href="ArtistSite.Server.styles.css" rel="stylesheet" />
+    <link href="css/app.css" rel="stylesheet" />
+    <script src="_content/ArtistSite.App/js/GlobalFunctions.js"></script>
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-J13DDW7VBY"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-J13DDW7VBY');
+    </script>
+
+</head>
+<body>
+    @{
+        var initialTokenState = new ArtistSite.App.Services.InitialApplicationState
+        {
+            XsrfToken = Xsrf.GetAndStoreTokens(HttpContext).RequestToken,
+            AccessToken = await HttpContext.GetTokenAsync("access_token"),
+            RefreshToken = await HttpContext.GetTokenAsync("refresh_token")
+        };
+
+        var expiresAt = await HttpContext.GetTokenAsync("expires_at");
+        if (DateTimeOffset.TryParse(expiresAt,
+            CultureInfo.InvariantCulture,
+            DateTimeStyles.None,
+            out var expiration))
+        {
+            initialTokenState.ExpiresAt = expiration;
+        }
+        else
+        {
+            initialTokenState.ExpiresAt = DateTimeOffset.UtcNow;
+        }
+    }
+
+    @*
+	// Avoid NavigationException: Exception of type 'Microsoft.AspNetCore.Components.NavigationException' was thrown.
+	// See https://stackoverflow.com/questions/58076758/navigationerror-on-navigateto
+    *@
+    <environment include="Staging,Production">
+        <component type="typeof(ArtistSite.Server.App)" render-mode="ServerPrerendered" 
+        param-InitialState="initialTokenState"/>
+    </environment>
+    <environment include="Development">
+        <component type="typeof(ArtistSite.Server.App)" render-mode="Server" 
+        param-InitialState="initialTokenState"/>        
+    </environment>
+
+    <div id="blazor-error-ui">
+        <environment include="Staging,Production">
+            An error has occurred. This application may no longer respond until reloaded.
+        </environment>
+        <environment include="Development">
+            An unhandled exception has occurred. See browser dev tools for details.
+        </environment>
+        <a href="" class="reload">Reload</a>
+        <a class="dismiss">🗙</a>
+    </div>
+
+    <script src="_framework/blazor.server.js"></script>
+    <script src="_content/MudBlazor/MudBlazor.min.js"></script>
+    <script src="_content/ArtistSite.App/js/fontawesome/all.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,23 @@
+﻿@inherits ListArtistsViewModel
+@page "/Artists"
+
+<MudText Typo="Typo.h3">Browse by Artist</MudText><br /><br />
+
+<LoadingMask WaitFor="Artists">
+    <MudGrid>
+        <MudHidden Breakpoint="Breakpoint.SmAndDown">
+            <MudItem md="1"></MudItem> @*Dummy item*@
+        </MudHidden>
+
+        @foreach(var artist in Artists)
+        {
+            <MudItem md="2" xs="12">
+                <ArtistPanel Artist="artist" />
+            </MudItem>
+        }
+
+        <MudHidden Breakpoint="Breakpoint.SmAndDown">
+            <MudItem md="1"></MudItem> @*Dummy item*@
+        </MudHidden>
+    </MudGrid>
+</LoadingMask>

@@ -1,0 +1,22 @@
+﻿@inherits MediumDetailViewModel
+@page "/Media/{MediumId:int}"
+
+<LoadingMask WaitFor="Medium">
+
+    <MudText Typo="Typo.h3">@Medium.Name</MudText>
+
+    <LoadingMask WaitFor="Artworks">
+
+        <MudGrid>
+            @foreach(var artwork in Artworks)
+                {
+                    <MudItem xs="4">
+                        <ArtworkPanel Artwork="artwork" />
+                    </MudItem>
+                }
+        </MudGrid>
+        
+
+    </LoadingMask>
+
+</LoadingMask>

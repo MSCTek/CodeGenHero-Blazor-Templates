@@ -1,0 +1,27 @@
+﻿@inherits ArtworkDetailViewModel
+@page "/Media/{MediumId:int}/{ArtworkId:int}"
+@page "/Artists/{ArtistId:int}/{ArtworkId:int}"
+
+<MudContainer MaxWidth="MaxWidth.Medium">
+    <LoadingMask WaitFor="Artwork">
+        @{
+            var artistHref = $"/Artists/{@Artwork.Artist.ArtistId}";
+        }
+
+        <div style="text-align: center;">
+            <MudText Typo="Typo.h4">
+                <p>@Artwork.Name</p>
+            </MudText><br />
+
+            <MudText>
+                <p>By <MudLink Href="@artistHref">@Artwork.Artist.Name</MudLink></p>
+                <br />
+
+                <img src="@ImageURL" />
+                <br /><br />
+            
+                @Artwork.Description
+            </MudText>
+        </div>
+    </LoadingMask>
+</MudContainer>

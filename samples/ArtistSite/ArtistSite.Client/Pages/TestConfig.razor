@@ -1,0 +1,24 @@
+﻿@page "/TestConfig"
+@inherits TestConfigViewModel
+@layout ArtistSite.App.Shared.MainLayout
+
+<div style="margin-left:15px;">
+	@((MarkupString)ConfigurationDebugView)
+</div>
+<br />
+<div style="margin-left:15px;">
+	@((MarkupString)EnvironmentVariablesString)
+</div>
+<br />
+<div style="margin-left:15px;">
+	@((MarkupString)OidcConfigurationString)
+</div>
+<br />
+<div style="margin-left:15px;">
+	@((MarkupString)CGHAppSettingsString)
+</div>
+<br />
+<div style="margin-left:15px;">
+	@((MarkupString)ConfigurationProviders)
+</div>
+
