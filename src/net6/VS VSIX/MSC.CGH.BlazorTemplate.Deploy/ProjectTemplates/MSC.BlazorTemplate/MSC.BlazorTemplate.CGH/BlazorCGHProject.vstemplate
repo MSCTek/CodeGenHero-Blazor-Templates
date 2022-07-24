@@ -21,7 +21,7 @@
     <CreateInPlace>true</CreateInPlace>
   </TemplateData>
   <TemplateContent>
-    <Project TargetFileName="$safeprojectname$.CGH.csproj" File="MSC.WhittierArtists.CGH.csproj" ReplaceParameters="true">
+    <Project TargetFileName="$safeprojectname$.CGH.csproj" File="MSC.WA.CGH.csproj" ReplaceParameters="true">
       <Folder Name="CodeGenHero" TargetFolderName="CodeGenHero">
         <Folder Name="Blueprint" TargetFolderName="Blueprint">          
         </Folder>

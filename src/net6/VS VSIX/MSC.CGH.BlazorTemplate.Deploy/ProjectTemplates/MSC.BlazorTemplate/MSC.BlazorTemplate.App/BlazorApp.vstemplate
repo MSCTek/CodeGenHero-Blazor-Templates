@@ -20,7 +20,7 @@
     <CreateInPlace>true</CreateInPlace>
   </TemplateData>
   <TemplateContent>
-    <Project TargetFileName="$safeprojectname$.csproj" File="MSC.WhittierArtists.App.csproj" ReplaceParameters="true">
+    <Project TargetFileName="$safeprojectname$.csproj" File="MSC.WA.App.csproj" ReplaceParameters="true">
       <Folder Name="Components" TargetFolderName="Components">
         <ProjectItem ReplaceParameters="true" TargetFileName="ConfirmationDialog.razor">ConfirmationDialog.razor</ProjectItem>
         <ProjectItem ReplaceParameters="true" TargetFileName="ConfirmationDialog.razor.cs">ConfirmationDialog.razor.cs</ProjectItem>

@@ -41,6 +41,11 @@ namespace CodeGenHero.ProjectTemplate.Blazor6.Wizard
 
         public void RunStarted(object automationObject, Dictionary<string, string> replacementsDictionary, WizardRunKind runKind, object[] customParams)
         {
+            if (RootWizard.RootDictionary.ContainsKey(Consts.DictionaryEntries.SafeRootProjectName))
+            {
+                replacementsDictionary[Consts.DictionaryEntries.SafeRootProjectName] = RootWizard.RootDictionary[Consts.DictionaryEntries.SafeRootProjectName];
+            }
+
             if (RootWizard.RootDictionary.ContainsKey(Consts.DictionaryEntries.GlobalGuid1))
             {
                 replacementsDictionary[Consts.DictionaryEntries.GlobalGuid1] = RootWizard.RootDictionary[Consts.DictionaryEntries.GlobalGuid1];

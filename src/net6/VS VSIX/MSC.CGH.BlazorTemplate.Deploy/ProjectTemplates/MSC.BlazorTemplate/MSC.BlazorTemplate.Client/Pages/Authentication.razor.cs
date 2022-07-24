@@ -1,7 +1,7 @@
 namespace $safeprojectname$.Pages
 {
     using Microsoft.AspNetCore.Components;
-    using $safeprojectname$.ViewModels;
+    using $saferootprojectname$.App.ViewModels;
 
     public class AuthenticationViewModel : BaseViewModel
     {

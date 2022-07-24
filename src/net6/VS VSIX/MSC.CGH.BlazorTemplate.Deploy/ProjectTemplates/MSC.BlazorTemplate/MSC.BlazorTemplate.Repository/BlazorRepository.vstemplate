@@ -20,7 +20,7 @@
     <CreateInPlace>true</CreateInPlace>
   </TemplateData>
   <TemplateContent>
-    <Project TargetFileName="$safeprojectname$.csproj" File="MSC.WhittierArtists.Repository.csproj" ReplaceParameters="true">
+    <Project TargetFileName="$safeprojectname$.csproj" File="MSC.WA.Repository.csproj" ReplaceParameters="true">
       <Folder Name="Entities" TargetFolderName="Entities">        
       </Folder>
       <Folder Name="Infrastructure" TargetFolderName="Infrastructure">

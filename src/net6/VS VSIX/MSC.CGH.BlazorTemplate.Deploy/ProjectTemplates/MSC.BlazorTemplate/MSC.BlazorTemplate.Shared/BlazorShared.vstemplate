@@ -20,7 +20,7 @@
     <CreateInPlace>true</CreateInPlace>
   </TemplateData>
   <TemplateContent>
-    <Project TargetFileName="$safeprojectname$.csproj" File="MSC.WhittierArtists.Shared.csproj" ReplaceParameters="true">
+    <Project TargetFileName="$safeprojectname$.csproj" File="MSC.WA.Shared.csproj" ReplaceParameters="true">
       <Folder Name="Authorization" TargetFolderName="Authorization">
         <ProjectItem ReplaceParameters="true" TargetFileName="Policies.cs">Policies.cs</ProjectItem>
       </Folder>
