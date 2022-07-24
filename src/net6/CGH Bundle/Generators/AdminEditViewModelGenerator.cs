@@ -2,6 +2,7 @@
 using CodeGenHero.Inflector;
 using CodeGenHero.Template.Helpers;
 using CodeGenHero.Template.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -84,7 +85,7 @@ namespace CodeGenHero.Template.Blazor6.Generators
 
             StringBuilder pageParametersSB = new StringBuilder();
             var pkCount = primaryKeys.Count();
-            foreach(var pk in primaryKeys)
+            foreach (var pk in primaryKeys)
             {
                 pageParametersSB.Append($"{{{pk}}}");
                 pkCount--;
@@ -129,7 +130,7 @@ namespace CodeGenHero.Template.Blazor6.Generators
             var primaryKeys = GetPrimaryKeys(entity);
 
             StringBuilder pkMismatchSB = new StringBuilder();
-            foreach(var pk in primaryKeys)
+            foreach (var pk in primaryKeys)
             {
                 pkMismatchSB.Append($" || {entityName}.{pk} != {pk}");
             }
@@ -147,15 +148,46 @@ namespace CodeGenHero.Template.Blazor6.Generators
             sb.AppendLine("\ttry");
             sb.AppendLine("\t{");
 
-            sb.AppendLine("\t\tif (false) // Populate with what this entity's Default State indicating a new item being created is");
-            sb.AppendLine("\t\t{");
+            var firstPrimaryKeyName = primaryKeys.FirstOrDefault();
+            IProperty firstPrimaryKey = null;
+            if (firstPrimaryKeyName != null)
+            {
+                foreach (KeyValuePair<IList<IProperty>, IKey> key in entity.Keys)
+                {
+                    foreach (IProperty item in key.Key)
+                    {
+                        if (item.Name == firstPrimaryKeyName)
+                        {
+                            firstPrimaryKey = item;
+                        }
+                    }
+                }
+            }
 
-            sb.AppendLine("\t\t\t// Define entity defaults");
-            sb.AppendLine($"\t\t\t{entityName} = new {entityName} {{ }};");
+            if (firstPrimaryKey != null)
+            {
+                if (firstPrimaryKey.ClrType.FullName.Equals("System.Int32"))
+                {
+                    sb.AppendLine($"\t\tif ({firstPrimaryKeyName} == 0) // A new item is being created - opportunity to populate initial/default state");
+                }
+                else if (firstPrimaryKey.ClrType.FullName.Equals("System.Guid"))
+                {
+                    sb.AppendLine($"\t\tif ({firstPrimaryKeyName} == Guid.Empty) // A new item is being created - opportunity to populate initial/default state");
+                }
+                else
+                {
+                    sb.AppendLine($"\t\tif (false) // A new item is being created - opportunity to populate initial/default state");
+                }
 
-            sb.AppendLine("\t\t}");
-            sb.AppendLine("\t\telse");
-            sb.AppendLine("\t\t{");
+                sb.AppendLine("\t\t{");
+
+                sb.AppendLine("\t\t\t// Define entity defaults");
+                sb.AppendLine($"\t\t\t{entityName} = new {entityName} {{ }};");
+
+                sb.AppendLine("\t\t}");
+                sb.AppendLine("\t\telse");
+                sb.AppendLine("\t\t{");
+            }
 
             sb.AppendLine($"\t\t\tif ({entityName} == null{pkMismatch})");
             sb.AppendLine("\t\t\t{");
@@ -183,7 +215,10 @@ namespace CodeGenHero.Template.Blazor6.Generators
 
             sb.AppendLine("\t\t\t}");
 
-            sb.AppendLine("\t\t}");
+            if (firstPrimaryKey != null)
+            {
+                sb.AppendLine("\t\t}");
+            }
 
             sb.AppendLine("\t}");
             sb.AppendLine("\tfinally");
@@ -311,6 +346,6 @@ namespace CodeGenHero.Template.Blazor6.Generators
 
             return sb.ToString();
         }
-        
+
     }
 }

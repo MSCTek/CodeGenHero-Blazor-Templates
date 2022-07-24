@@ -27,7 +27,7 @@ namespace CodeGenHero.Template.Blazor6.Generators
             sb.AppendLine($"\tpublic partial interface {className} : {repositoryCrudInterfaceName}");
             sb.AppendLine("{");
 
-            sb.AppendLine($"\t\t{dbContextName} {dbContextName} {{ get; }}");
+            sb.AppendLine($"\t\tent{namespacePostfix}.{dbContextName} {dbContextName} {{ get; }}");
             sb.AppendLine(string.Empty);
 
             foreach (var entity in entities)
