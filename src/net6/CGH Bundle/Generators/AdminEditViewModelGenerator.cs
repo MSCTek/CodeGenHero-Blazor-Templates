@@ -237,6 +237,7 @@ namespace CodeGenHero.Template.Blazor6.Generators
         private string GenerateOnValidSubmit(IEntityType entity, string webApiDataServiceClassName)
         {
             var entityName = entity.ClrType.Name;
+            var primaryKeys = GetPrimaryKeys(entity);
 
             IndentingStringBuilder sb = new IndentingStringBuilder(2);
 
@@ -249,51 +250,82 @@ namespace CodeGenHero.Template.Blazor6.Generators
             sb.AppendLine("\tClearNoneValues();");
             sb.AppendLine(string.Empty);
 
-            sb.AppendLine("\tif (false) // Populate with what this entity's Default State indicating a new item being created is");
-            sb.AppendLine("\t{");
+            var firstPrimaryKeyName = primaryKeys.FirstOrDefault();
+            IProperty firstPrimaryKey = null;
+            if (firstPrimaryKeyName != null)
+            {
+                foreach (KeyValuePair<IList<IProperty>, IKey> key in entity.Keys)
+                {
+                    foreach (IProperty item in key.Key)
+                    {
+                        if (item.Name == firstPrimaryKeyName)
+                        {
+                            firstPrimaryKey = item;
+                        }
+                    }
+                }
+            }
 
-            sb.AppendLine($"\t\tvar result = await {webApiDataServiceClassName}.Create{entityName}Async({entityName});");
-            sb.AppendLine("\t\tif (result.IsSuccessStatusCode)");
-            sb.AppendLine("\t\t{");
+            if (firstPrimaryKey != null)
+            {
+                if (firstPrimaryKey.ClrType.FullName.Equals("System.Int32"))
+                {
+                    sb.AppendLine($"\tif ({firstPrimaryKeyName} == 0) // A new item is being created - opportunity to populate initial/default state");
+                }
+                else if (firstPrimaryKey.ClrType.FullName.Equals("System.Guid"))
+                {
+                    sb.AppendLine($"\tif ({firstPrimaryKeyName} == Guid.Empty) // A new item is being created - opportunity to populate initial/default state");
+                }
+                else
+                {
+                    sb.AppendLine($"\tif (false) // A new item is being created - opportunity to populate initial/default state");
+                }
 
-            sb.AppendLine($"\t\t\t{entityName} = result.Data;");
-            sb.AppendLine("\t\t\tStatusClass = \"alert-success\";");
-            sb.AppendLine("\t\t\tMessage = \"New item added successfully.\";");
-            sb.AppendLine("\t\t\tawait SetSavedAsync(true);");
+                sb.AppendLine("\t{");
 
-            sb.AppendLine("\t\t}");
-            sb.AppendLine("\t\telse");
-            sb.AppendLine("\t\t{");
+                sb.AppendLine($"\t\tvar result = await {webApiDataServiceClassName}.Create{entityName}Async({entityName});");
+                sb.AppendLine("\t\tif (result.IsSuccessStatusCode)");
+                sb.AppendLine("\t\t{");
 
-            sb.AppendLine("\t\t\tStatusClass = \"alert-danger\";");
-            sb.AppendLine("\t\t\tMessage = \"Something went wrong adding the new item. Please try again.\";");
-            sb.AppendLine("\t\t\tawait SetSavedAsync(false);");
+                sb.AppendLine($"\t\t\t{entityName} = result.Data;");
+                sb.AppendLine("\t\t\tStatusClass = \"alert-success\";");
+                sb.AppendLine("\t\t\tMessage = \"New item added successfully.\";");
+                sb.AppendLine("\t\t\tawait SetSavedAsync(true);");
 
-            sb.AppendLine("\t\t}");
+                sb.AppendLine("\t\t}");
+                sb.AppendLine("\t\telse");
+                sb.AppendLine("\t\t{");
 
-            sb.AppendLine("\t}");
-            sb.AppendLine("\telse");
-            sb.AppendLine("\t{");
+                sb.AppendLine("\t\t\tStatusClass = \"alert-danger\";");
+                sb.AppendLine("\t\t\tMessage = \"Something went wrong adding the new item. Please try again.\";");
+                sb.AppendLine("\t\t\tawait SetSavedAsync(false);");
 
-            sb.AppendLine($"\t\tvar result = await {webApiDataServiceClassName}.Update{entityName}Async({entityName});");
-            sb.AppendLine("\t\tif (result.IsSuccessStatusCode)");
-            sb.AppendLine("\t\t{");
+                sb.AppendLine("\t\t}");
 
-            sb.AppendLine("\t\t\tStatusClass = \"alert-success\";");
-            sb.AppendLine($"\t\t\tMessage = \"{entityName} updated successfully.\";");
-            sb.AppendLine("\t\t\tawait SetSavedAsync(true);");
+                sb.AppendLine("\t}");
+                sb.AppendLine("\telse");
+                sb.AppendLine("\t{");
 
-            sb.AppendLine("\t\t}");
-            sb.AppendLine("\t\telse");
-            sb.AppendLine("\t\t{");
+                sb.AppendLine($"\t\tvar result = await {webApiDataServiceClassName}.Update{entityName}Async({entityName});");
+                sb.AppendLine("\t\tif (result.IsSuccessStatusCode)");
+                sb.AppendLine("\t\t{");
 
-            sb.AppendLine("\t\t\tStatusClass = \"alert-danger\";");
-            sb.AppendLine("\t\t\tMessage = \"Something went wrong updating the new item. Please try again.\";");
-            sb.AppendLine("\t\t\tawait SetSavedAsync(false);");
+                sb.AppendLine("\t\t\tStatusClass = \"alert-success\";");
+                sb.AppendLine($"\t\t\tMessage = \"{entityName} updated successfully.\";");
+                sb.AppendLine("\t\t\tawait SetSavedAsync(true);");
 
-            sb.AppendLine("\t\t}");
+                sb.AppendLine("\t\t}");
+                sb.AppendLine("\t\telse");
+                sb.AppendLine("\t\t{");
 
-            sb.AppendLine("\t}");
+                sb.AppendLine("\t\t\tStatusClass = \"alert-danger\";");
+                sb.AppendLine("\t\t\tMessage = \"Something went wrong updating the new item. Please try again.\";");
+                sb.AppendLine("\t\t\tawait SetSavedAsync(false);");
+
+                sb.AppendLine("\t\t}");
+
+                sb.AppendLine("\t}");
+            }
 
             sb.AppendLine("}");
             sb.AppendLine(string.Empty);
