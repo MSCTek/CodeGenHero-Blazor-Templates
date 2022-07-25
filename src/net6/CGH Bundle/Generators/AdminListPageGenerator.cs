@@ -89,18 +89,22 @@ namespace CodeGenHero.Template.Blazor6.Generators
             {
                 sb.AppendLine($"\t\t\t<MudTh>{pk}</MudTh>");
             }
+            sb.AppendLine("\t\t\t@*// Setup - Add a header for this entity's human-readable identifier.*@");
             sb.AppendLine("\t\t\t<MudTh>&nbsp;</MudTh>");
             sb.AppendLine("\t\t</HeaderContent>");
 
             sb.AppendLine("\t\t<RowTemplate>");
+            sb.AppendLine("\t\t\t@{");
+            sb.AppendLine($"\t\t\t\tvar editHref = $\"/admin/{entityName.ToLower()}edit/{GenerateEditPageRouteParameters(entity)}\";");
+            sb.AppendLine("\t\t\t}");
             foreach (var pk in primaryKeys)
             {
                 sb.AppendLine($"\t\t\t<MudTd DataLabel=\"{pk}\">@context.{pk}</MudTd>");
             }
+            sb.AppendLine("\t\t\t@*// Setup - Add a column for this entity's human-readable identifier.*@");
             sb.AppendLine("\t\t\t<MudTd DataLabel=\"Actions\">");
-            sb.AppendLine("\t\t\t\t<MudButton @onclick=\"@(()=>ConfirmDeleteAsync(context))\" Variant=\"Variant.Filled\" Color=\"Color.Error\" Style=\"height: 38px; min-width: 44px;\">");
-            sb.AppendLine("\t\t\t\t\t<i class=\"fas fa-trash-alt\"></i>");
-            sb.AppendLine("\t\t\t\t</MudButton>");
+            sb.AppendLine("\t\t\t\t<MudIconButton Link=\"@editHref\" Icon=\"@Icons.Filled.Build\" Variant=\"Variant.Filled\" Color=\"Color.Primary\" />");
+            sb.AppendLine("\t\t\t\t<MudIconButton OnClick=\"@(()=>ConfirmDeleteAsync(context))\" Icon=\"@Icons.Filled.DeleteForever\" Variant=\"Variant.Filled\" Color=\"Color.Error\" />");
             sb.AppendLine("\t\t\t</MudTd>");
             sb.AppendLine("\t\t</RowTemplate>");
 
@@ -112,6 +116,40 @@ namespace CodeGenHero.Template.Blazor6.Generators
             sb.AppendLine("}");
 
             return sb.ToString();
+        }
+
+        private string GenerateEditPageRouteParameters(IEntityType entity)
+        {
+            var entityName = entity.ClrType.Name;
+            var primaryKeyNames = GetPrimaryKeys(entity);
+            var properties = entity.GetProperties();
+            var pkCount = primaryKeyNames.Count();
+
+            StringBuilder routeParametersSB = new StringBuilder();
+
+            foreach (var primaryKey in primaryKeyNames)
+            {
+                var property = properties.Where(x => x.Name == primaryKey).FirstOrDefault();
+                if (property == null)
+                {
+                    continue;
+                }
+                var cType = GetCType(property);
+                var simpleType = ConvertToSimpleType(cType);
+                var camelPK = Inflector.Camelize(primaryKey);
+
+                routeParametersSB.Append($"{{context.{primaryKey}}}");
+                pkCount--;
+
+                if (pkCount > 0)
+                {
+                    routeParametersSB.Append("/");
+                }
+            }
+
+            string routeParameters = routeParametersSB.ToString();
+
+            return routeParameters;
         }
 
         private string GenerateIfSaved()

@@ -129,10 +129,10 @@ namespace CodeGenHero.Template.Blazor6.Generators
             sb.AppendLine("\t\t\t</MudCardContent>");
 
             sb.AppendLine("\t\t\t<MudCardActions>");
-            sb.AppendLine("\t\t\t\t<MudButton ButtonType=\"ButtonType.Submit\" Variant=\"Variant.Filled\" Color=\"Color.Primary\" Class=\"ml-auto\">Save</MudButton>");
-            sb.AppendLine("\t\t\t\t<a class=\"btn btn-secondary m-2\" @onclick=\"@ReturnToList\">");
-            sb.AppendLine("\t\t\t\t\tCancel");
-            sb.AppendLine("\t\t\t\t</a>");
+            sb.AppendLine("\t\t\t\t<MudButtonGroup Variant=\"Variant.Filled\" OverrideStyles=\"false\">");
+            sb.AppendLine("\t\t\t\t\t<MudButton ButtonType=\"ButtonType.Submit\" Variant=\"Variant.Filled\" Color=\"Color.Primary\" Class=\"ml-auto\">Save</MudButton>");
+            sb.AppendLine("\t\t\t\t\t<MudButton OnClick=\"@ReturnToList\" ButtonType=\"ButtonType.Button\" Variant=\"Variant.Filled\" Color=\"Color.Error\" Class=\"ml-auto\">Cancel</MudButton>");
+            sb.AppendLine("\t\t\t\t</MudButtonGroup>");
             sb.AppendLine("\t\t\t</MudCardActions>");
 
             sb.AppendLine("\t\t</MudCard>");
