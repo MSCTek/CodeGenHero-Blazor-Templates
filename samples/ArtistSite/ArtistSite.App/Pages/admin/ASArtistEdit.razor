@@ -19,14 +19,24 @@
 				<DataAnnotationsValidator />
 				<MudCard>
 					<MudCardContent>
-						<label for="">Your Primary Key Here</label>
-						@* Add your editor controls for editing the object here, within the MudCardContent *@
+						<MudText Typo="Typo.h6">Artist ID: @Artist.ArtistId</MudText>
+						<MudTextField @bind-Value="Artist.Name" Label="Name" Variant="Variant.Outlined" />
+                        <MudTextField @bind-Value="Artist.Code" Label="Code" Variant="Variant.Outlined" />
+                        <MudTextField @bind-Value="Artist.Email" Label="Email Address" InputMode="InputMode.email" Variant="Variant.Outlined" />
+                        <MudTextField Lines="5" @bind-Value="Artist.AboutBlurb" Variant="Variant.Outlined" />
+                        <MudTextField @bind-Value="Artist.AppBarImgSrcLarge" Label="Small App Bar Image URL" />
+                        <MudTextField @bind-Value="Artist.AppBarImgSrcLarge" Label="Large App Bar Image URL" />
+                        <MudTextField @bind-Value="Artist.HeaderCssClass" Label="Header CSS Class" />
+                        <MudTextField @bind-Value="Artist.MainContentCssClass" Label="Content CSS Class" />
+                        <MudTextField @bind-Value="Artist.FooterCssClass" Label="Footer CSS Class" />
+                        <MudCheckBox @bind-Checked="Artist.IsActive" Label="Active" />
+                        <MudNumericField @bind-Value="Artist.DisplayOrder" Label="Listing Priority" />
 					</MudCardContent>
 					<MudCardActions>
-						<MudButton ButtonType="ButtonType.Submit" Variant="Variant.Filled" Color="Color.Primary" Class="ml-auto">Save</MudButton>
-						<a class="btn btn-secondary m-2" @onclick="@ReturnToList">
-							Cancel
-						</a>
+						<MudButtonGroup Variant="Variant.Filled" OverrideStyles="false">
+							<MudButton ButtonType="ButtonType.Submit" Variant="Variant.Filled" Color="Color.Primary" Class="ml-auto">Save</MudButton>
+							<MudButton OnClick="@ReturnToList" ButtonType="ButtonType.Button" Variant="Variant.Filled" Color="Color.Error" Class="ml-auto">Cancel</MudButton>
+						</MudButtonGroup>
 					</MudCardActions>
 				</MudCard>
 				<MudText Typo="Typo.body2" Align="Align.Center" Class="my-4">

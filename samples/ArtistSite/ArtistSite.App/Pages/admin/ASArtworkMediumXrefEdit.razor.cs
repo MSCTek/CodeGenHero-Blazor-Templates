@@ -52,7 +52,7 @@ namespace ArtistSite.App.Pages
 
 				try
 				{
-						if (false) // Populate with what this entity's Default State indicating a new item being created is
+						if (ArtworkId == 0) // A new item is being created - opportunity to populate initial/default state
 						{
 								// Define entity defaults
 								ArtworkMediumXref = new ArtworkMediumXref { };
@@ -90,7 +90,7 @@ namespace ArtistSite.App.Pages
 
 				ClearNoneValues();
 
-				if (false) // Populate with what this entity's Default State indicating a new item being created is
+					if (ArtworkId == 0) // A new item is being created - opportunity to populate initial/default state
 				{
 						var result = await WebApiDataServiceAS.CreateArtworkMediumXrefAsync(ArtworkMediumXref);
 						if (result.IsSuccessStatusCode)

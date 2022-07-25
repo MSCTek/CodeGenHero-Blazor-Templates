@@ -23,10 +23,10 @@
 						@* Add your editor controls for editing the object here, within the MudCardContent *@
 					</MudCardContent>
 					<MudCardActions>
-						<MudButton ButtonType="ButtonType.Submit" Variant="Variant.Filled" Color="Color.Primary" Class="ml-auto">Save</MudButton>
-						<a class="btn btn-secondary m-2" @onclick="@ReturnToList">
-							Cancel
-						</a>
+						<MudButtonGroup Variant="Variant.Filled" OverrideStyles="false">
+							<MudButton ButtonType="ButtonType.Submit" Variant="Variant.Filled" Color="Color.Primary" Class="ml-auto">Save</MudButton>
+							<MudButton OnClick="@ReturnToList" ButtonType="ButtonType.Button" Variant="Variant.Filled" Color="Color.Error" Class="ml-auto">Cancel</MudButton>
+						</MudButtonGroup>
 					</MudCardActions>
 				</MudCard>
 				<MudText Typo="Typo.body2" Align="Align.Center" Class="my-4">

@@ -11,7 +11,7 @@ namespace ArtistSite.Repository.Repositories
 {
 	public partial interface IASRepository : IASRepositoryCrud
 {
-		ArtistSiteDbContext ArtistSiteDbContext { get; }
+		entAS.ArtistSiteDbContext ArtistSiteDbContext { get; }
 
 // Artist
 		Task<IRepositoryActionResult<entAS.Artist>> Delete_ArtistAsync(int artistId);

@@ -49,7 +49,7 @@ namespace ArtistSite.App.Pages
 
 				try
 				{
-						if (false) // Populate with what this entity's Default State indicating a new item being created is
+						if (CategoryId == 0) // A new item is being created - opportunity to populate initial/default state
 						{
 								// Define entity defaults
 								Category = new Category { };
@@ -87,7 +87,7 @@ namespace ArtistSite.App.Pages
 
 				ClearNoneValues();
 
-				if (false) // Populate with what this entity's Default State indicating a new item being created is
+					if (CategoryId == 0) // A new item is being created - opportunity to populate initial/default state
 				{
 						var result = await WebApiDataServiceAS.CreateCategoryAsync(Category);
 						if (result.IsSuccessStatusCode)

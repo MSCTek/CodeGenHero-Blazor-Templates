@@ -19,14 +19,23 @@
 				<DataAnnotationsValidator />
 				<MudCard>
 					<MudCardContent>
-						<label for="">Your Primary Key Here</label>
+						<MudText Typo="Typo.h6">Artwork ID: @Artwork.ArtworkId</MudText>
 						@* Add your editor controls for editing the object here, within the MudCardContent *@
+                        <MudNumericField @bind-Value="Artwork.ArtistId" Label="Artist ID" />
+                        <MudTextField @bind-Value="Artwork.Name" Label="Name" />
+                        <MudTextField @bind-Value="Artwork.Description" Label="Description" Lines="5" />
+                        <MudTextField @bind-Value="Artwork.LayoutPageName" Label="Layout Page Name" />
+                        <MudTextField @bind-Value="Artwork.CssClass" Label="Page CSS Class" />
+                        <MudTextField @bind-Value="Artwork.IconUri" Label="Icon URI" />
+                        <MudTextField @bind-Value="Artwork.ImageUri" Label="Image URI" />
+                        <MudCheckBox @bind-Checked="Artwork.IsActive" Label="Active" />
+                        <MudNumericField @bind-Value="Artwork.DisplayOrder" Label="Listing Priority" />
 					</MudCardContent>
 					<MudCardActions>
-						<MudButton ButtonType="ButtonType.Submit" Variant="Variant.Filled" Color="Color.Primary" Class="ml-auto">Save</MudButton>
-						<a class="btn btn-secondary m-2" @onclick="@ReturnToList">
-							Cancel
-						</a>
+						<MudButtonGroup Variant="Variant.Filled" OverrideStyles="false">
+							<MudButton ButtonType="ButtonType.Submit" Variant="Variant.Filled" Color="Color.Primary" Class="ml-auto">Save</MudButton>
+							<MudButton OnClick="@ReturnToList" ButtonType="ButtonType.Button" Variant="Variant.Filled" Color="Color.Error" Class="ml-auto">Cancel</MudButton>
+						</MudButtonGroup>
 					</MudCardActions>
 				</MudCard>
 				<MudText Typo="Typo.body2" Align="Align.Center" Class="my-4">

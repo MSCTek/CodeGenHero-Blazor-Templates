@@ -101,7 +101,7 @@ Global
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {7DF363FC-DBAB-4CE8-B979-B362F8AF6A78}
 		CodeGenHero_Project_Name = ArtistSite.CodeGenHero\ArtistSite.CodeGenHero.csproj
+		SolutionGuid = {7DF363FC-DBAB-4CE8-B979-B362F8AF6A78}
 	EndGlobalSection
 EndGlobal
