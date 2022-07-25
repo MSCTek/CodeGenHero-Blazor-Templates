@@ -23,14 +23,18 @@
 				</ToolBarContent>
 				<HeaderContent>
 					<MudTh>MediumId</MudTh>
+					@*// Setup - Add a header for this entity's human-readable identifier.*@
 					<MudTh>&nbsp;</MudTh>
 				</HeaderContent>
 				<RowTemplate>
+					@{
+							var editHref = $"/admin/mediumedit/{context.MediumId}";
+					}
 					<MudTd DataLabel="MediumId">@context.MediumId</MudTd>
+					@*// Setup - Add a column for this entity's human-readable identifier.*@
 					<MudTd DataLabel="Actions">
-						<MudButton @onclick="@(()=>ConfirmDeleteAsync(context))" Variant="Variant.Filled" Color="Color.Error" Style="height: 38px; min-width: 44px;">
-							<i class="fas fa-trash-alt"></i>
-						</MudButton>
+						<MudIconButton Link="@editHref" Icon="@Icons.Filled.Build" Variant="Variant.Filled" Color="Color.Primary" />
+						<MudIconButton OnClick="@(()=>ConfirmDeleteAsync(context))" Icon="@Icons.Filled.DeleteForever" Variant="Variant.Filled" Color="Color.Error" />
 					</MudTd>
 				</RowTemplate>
 				<PagerContent>

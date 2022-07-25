@@ -20,6 +20,12 @@
             }
         </LoadingMask>
     </MudNavGroup>
-    @*<MudNavLink Href="/Artists">Browse by Artist</MudNavLink>
-    <MudNavLink Href="/Media">Browse by Media</MudNavLink>*@
+    <AuthorizeView>
+        <Authorized>
+            <MudNavGroup Title="Admin">
+                <MudNavLink Href="/Admin/artists">Artists</MudNavLink>
+                <MudNavLink Href="/Admin/artworks">Artwork</MudNavLink>
+            </MudNavGroup>
+        </Authorized>
+    </AuthorizeView>
 </MudNavMenu>
