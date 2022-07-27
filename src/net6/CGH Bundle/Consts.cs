@@ -22,7 +22,7 @@
         public const string BlazorRepositoryDbContextClassName_DEFAULTVALUE = "{BaseNamespace}DbContext";
         public const string BlazorRepositoryEntitiesNamespace_DEFAULTDESCRIPTION = "The namespace of the DBContext and Entity Model classes.";
         public const string BlazorRepositoryEntitiesNamespace_DEFAULTVALUE = "{BaseNamespace}.Repository.Entities";
-        public const string Entities_Namespace_DEFAULTVALUE = "{baseNamespace}.DataAccess.Entities.{namespacePostfix}";
+//        public const string Entities_Namespace_DEFAULTVALUE = "{baseNamespace}.DataAccess.Entities.{namespacePostfix}";
         public const string Model_Namespace_DEFAULTVALUE = "{baseNamespace}.Model";
 
         // Output Paths/Filenames
