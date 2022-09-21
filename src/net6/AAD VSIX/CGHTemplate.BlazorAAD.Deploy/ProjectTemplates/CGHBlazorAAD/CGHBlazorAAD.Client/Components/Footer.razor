@@ -1,0 +1,60 @@
+﻿@inherits FooterViewModel
+
+<br />
+<MudContainer Class="d-flex justify-center align-center">
+    <MudPaper Elevation="1" Class="pa-2 wa-footer">
+        <MudContainer Class="d-flex flex-row justify-center flex-wrap wa-footerbox">
+            <MudLink Href="/" Typo="Typo.body2">Home</MudLink>
+            <AuthorizeView>
+                <Authorized>
+                    @if(CGHAppSettings.IsWebAssembly) {
+                        <MudButton Variant="Variant.Text" Style="text-transform: none;"
+                                @onclick="BeginSignOut">
+                            <MudText Typo="Typo.body2" Style="display: contents;">&nbsp;|&nbsp;Log out (@context.User.Identity.Name)</MudText>
+                        </MudButton>
+                    }
+                    else
+                    {
+                        <form action="/logoutidp" method="post">
+                            <MudButton Variant="Variant.Text" Style="text-transform: none;" ButtonType="MudBlazor.ButtonType.Submit">
+                                <MudText Typo="Typo.body2" Style="display: contents;">&nbsp;|&nbsp;Log out (@context.User.Identity.Name)</MudText>                                                                
+                            </MudButton>
+
+                            <input name="__RequestVerificationToken" type="hidden"
+                            value="@TokenProvider.XsrfToken">
+                        </form>
+                    }
+                    @if (context.User.IsInRole(Consts.ROLE_ADMIN) || context.User.IsInRole(Consts.ROLE_USER))
+                    {
+                        <MudButton Variant="Variant.Text" Style="text-transform: none;"
+                                @onclick="WriteToken">
+                            <MudText Typo="Typo.body2" Style="display: contents;">&nbsp;|&nbsp;Write token</MudText>                                                                
+                        </MudButton>
+                    }
+                </Authorized>
+                <NotAuthorized>
+                    @if(CGHAppSettings.IsWebAssembly) {
+                        <MudLink Typo="Typo.body2"
+                                    href="authentication/login">
+                            <MudText Typo="Typo.body2" Style="display: contents;">&nbsp;|&nbsp;Log in</MudText>
+                        </MudLink>
+                    }
+                    else
+                    {
+                        <MudLink Typo="Typo.body2"
+                                    href="/loginIDP">
+                            <MudText Typo="Typo.body2" Style="display: contents;">&nbsp;|&nbsp;Log in</MudText>
+                        </MudLink>
+                    }
+
+                    <MudLink Typo="Typo.body2"
+                                href="@RegisterUrl">
+                        <MudText Typo="Typo.body2" Style="display: contents;">&nbsp;|&nbsp;Register</MudText>
+                    </MudLink>
+                </NotAuthorized>
+            </AuthorizeView>
+            
+        </MudContainer>
+    </MudPaper>
+</MudContainer>
+<br />

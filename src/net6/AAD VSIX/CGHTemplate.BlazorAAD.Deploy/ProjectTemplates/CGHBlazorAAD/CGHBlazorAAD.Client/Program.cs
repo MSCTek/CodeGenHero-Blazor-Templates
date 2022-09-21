@@ -67,6 +67,7 @@ builder.Services.AddAuthorizationCore(configure => {
 builder.Services.AddMudServices();
 
 builder.Services.AddScoped<ISerializationHelper, SerializationHelper>();
+builder.Services.AddScoped<INavigationService, NavigationService>();
 
 /// Setup - Add dependency injection for your generated WebApiDataService
 //builder.Services.AddScoped<IWebApiDataService, WebApiDataService>();

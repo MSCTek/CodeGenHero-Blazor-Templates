@@ -1,0 +1,8 @@
+div .mud-palette-override {
+    /* Label text on the page */
+    --mud-palette-text-primary: black;
+    --mud-palette-text-secondary: crimson;
+    /* Button text and background */
+    --mud-palette-primary-text: "#337ab7";
+    --mud-palette-primary: rgb(40,96,144);
+}
