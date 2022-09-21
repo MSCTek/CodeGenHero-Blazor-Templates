@@ -1,0 +1,116 @@
+<VSTemplate Version="3.0.0" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005" Type="Project">
+  <TemplateData>
+    <TemplateID>CodeGenHero.Blazor.AAD.Client</TemplateID>
+    <Name>CodeGenHero Blazor WebAssembly App (.NET 6), With AAD</Name>
+    <Description>Blazor WebAssembly head designed for use with the CodeGenHero Enterprise Architecture project template with Azure Active Directory authentication</Description>
+    <DefaultName>CodeGenHero.Blazor.AAD.Client</DefaultName>
+    <ProvideDefaultName>true</ProvideDefaultName>
+    <Icon>CGH_90x90_NoInvert.png</Icon>
+	  <PreviewImage>CGH_200x200_NoInvert.png</PreviewImage>
+    <ProjectType>CSharp</ProjectType>
+    <ProjectSubType>Web</ProjectSubType>
+    <TemplateGroupID>CodeGenHero</TemplateGroupID>
+  	<ShowByDefault>false</ShowByDefault>
+    <LanguageTag>C#</LanguageTag>
+	  <ProjectTypeTag>CodeGenHero</ProjectTypeTag>
+    <SortOrder>1000</SortOrder>
+    <CreateNewFolder>true</CreateNewFolder>
+    <LocationField>Enabled</LocationField>
+    <EnableLocationBrowseButton>true</EnableLocationBrowseButton>
+    <CreateInPlace>true</CreateInPlace>
+  </TemplateData>
+  <TemplateContent>
+    <Project TargetFileName="$ext_safeprojectname$.Client.csproj" File="BlazorClient.csproj" ReplaceParameters="true">
+      <Folder Name="Properties" TargetFolderName="Properties">
+        <ProjectItem ReplaceParameters="true" TargetFileName="launchSettings.json">launchSettings.json</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="serviceDependencies.json">serviceDependencies.json</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="serviceDependencies.local.json">serviceDependencies.local.json</ProjectItem>
+      </Folder>
+      <Folder Name="wwwroot" TargetFolderName="wwwroot">
+        <Folder Name="css" TargetFolderName="css">
+          <Folder Name="bootstrap" TargetFolderName="bootstrap">
+            <ProjectItem ReplaceParameters="true" TargetFileName="bootstrap.min.css">bootstrap.min.css</ProjectItem>
+            <ProjectItem ReplaceParameters="true" TargetFileName="bootstrap.min.css.map">bootstrap.min.css.map</ProjectItem>
+          </Folder>
+          <Folder Name="open-iconic" TargetFolderName="open-iconic">
+            <Folder Name="font" TargetFolderName="font">
+              <Folder Name="css" TargetFolderName="css">
+                <ProjectItem ReplaceParameters="true" TargetFileName="open-iconic-bootstrap.min.css">open-iconic-bootstrap.min.css</ProjectItem>
+              </Folder>
+              <Folder Name="fonts" TargetFolderName="fonts">
+                <ProjectItem ReplaceParameters="true" TargetFileName="open-iconic.eot">open-iconic.eot</ProjectItem>
+                <ProjectItem ReplaceParameters="true" TargetFileName="open-iconic.otf">open-iconic.otf</ProjectItem>
+                <ProjectItem ReplaceParameters="true" TargetFileName="open-iconic.svg">open-iconic.svg</ProjectItem>
+                <ProjectItem ReplaceParameters="true" TargetFileName="open-iconic.ttf">open-iconic.ttf</ProjectItem>
+                <ProjectItem ReplaceParameters="true" TargetFileName="open-iconic.woff">open-iconic.woff</ProjectItem>
+              </Folder>
+            </Folder>
+            <ProjectItem ReplaceParameters="true" TargetFileName="FONT-LICENSE">FONT-LICENSE</ProjectItem>
+            <ProjectItem ReplaceParameters="true" TargetFileName="ICON-LICENSE">ICON-LICENSE</ProjectItem>
+            <ProjectItem ReplaceParameters="true" TargetFileName="README.md">README.md</ProjectItem>
+          </Folder>
+          <ProjectItem ReplaceParameters="true" TargetFileName="app.css">app.css</ProjectItem>
+        </Folder>
+        <Folder Name="images" TargetFolderName="images"></Folder>
+        <Folder Name="js" TargetFolderName="js">
+          <ProjectItem ReplaceParameters="true" TargetFileName="FileExport.js">FileExport.js</ProjectItem>
+        </Folder>
+        <ProjectItem ReplaceParameters="true" TargetFileName="appsettings.json">appsettings.json</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="appsettings.Production.json">appsettings.Production.json</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="BlazorEnvironment.js">BlazorEnvironment.js</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="favicon.ico">favicon.ico</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="icon-192.png">icon-192.png</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="index.html">index.html</ProjectItem>
+      </Folder>
+      <Folder Name="Components" TargetFolderName="Components">
+        <ProjectItem ReplaceParameters="true" TargetFileName="ApplicationDrawer.razor">ApplicationDrawer.razor</ProjectItem>
+      </Folder>
+      <Folder Name="Pages" TargetFolderName="Pages">
+        <Folder Name="Admin" TargetFolderName="Admin">
+          <ProjectItem ReplaceParameters="true" TargetFileName="AdminPageBase.cs">AdminPageBase.cs</ProjectItem>
+        </Folder>
+        <ProjectItem ReplaceParameters="true" TargetFileName="Authentication.razor">Authentication.razor</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="AuthTest.razor">AuthTest.razor</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="AuthTest.razor.cs">AuthTest.razor.cs</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="Index.razor">Index.razor</ProjectItem>
+      </Folder>
+      <Folder Name="Services" TargetFolderName="Services">
+        <ProjectItem ReplaceParameters="true" TargetFileName="CustomAccountFactory.cs">CustomAccountFactory.cs</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="CustomAuthorizationMessageHandler.cs">CustomAuthorizationMessageHandler.cs</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="IWebApiDataServiceBase.cs">IWebApiDataServiceBase.cs</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="WebApiDataServiceBase.cs">WebApiDataServiceBase.cs</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="BaseDataService.cs">BaseDataService.cs</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="IImageUploadDataService.cs">IImageUploadDataService.cs</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="ILocalHttpClientService.cs">ILocalHttpClientService.cs</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="ImageUploadDataService.cs">ImageUploadDataService.cs</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="INavigationService.cs">INavigationService.cs</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="InitialApplicationState.cs">InitialApplicationState.cs</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="ITestAuthDataService.cs">ITestAuthDataService.cs</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="ITokenManager.cs">ITokenManager.cs</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="ITokenProvider.cs">ITokenProvider.cs</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="LocalHttpClientService.cs">LocalHttpClientService.cs</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="NavigationService.cs">NavigationService.cs</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="TestAuthDataService.cs">TestAuthDataService.cs</ProjectItem>
+      </Folder>
+      <Folder Name="Shared" TargetFolderName="Shared">
+        <ProjectItem ReplaceParameters="true" TargetFileName="BasePageViewModel.cs">BasePageViewModel.cs</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="LoginDisplay.razor">LoginDisplay.razor</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="MainLayout.razor">MainLayout.razor</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="MainLayout.razor.css">MainLayout.razor.css</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="NavMenu.razor">NavMenu.razor</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="NavMenu.razor.css">NavMenu.razor.css</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="ApplicationLayout.razor">ApplicationLayout.razor</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="ApplicationLayout.razor.cs">ApplicationLayout.razor.cs</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="RedirectToLogin.razor">RedirectToLogin.razor</ProjectItem>
+      </Folder>
+      <ProjectItem ReplaceParameters="true" TargetFileName="_Imports.razor">_Imports.razor</ProjectItem>
+      <ProjectItem ReplaceParameters="true" TargetFileName="App.razor">App.razor</ProjectItem>
+      <ProjectItem ReplaceParameters="true" TargetFileName="CGHAppSettings.cs">CGHAppSettings.cs</ProjectItem>
+      <ProjectItem ReplaceParameters="true" TargetFileName="Program.cs">Program.cs</ProjectItem>
+    </Project>
+  </TemplateContent>
+  <WizardExtension>
+    <Assembly>CGHTemplate.BlazorAAD.Wizard, Version=2022.9.15.0, Culture=neutral, PublicKeyToken=f08fed17fd4a15cf</Assembly>
+    <FullClassName>CGHTemplate.BlazorAAD.Wizard.BlazorAADTemplateWizard</FullClassName>
+  </WizardExtension>
+</VSTemplate>

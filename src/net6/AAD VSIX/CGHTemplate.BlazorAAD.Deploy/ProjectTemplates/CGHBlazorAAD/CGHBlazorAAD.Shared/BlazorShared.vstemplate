@@ -1,0 +1,61 @@
+<VSTemplate Version="3.0.0" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005" Type="Project">
+  <TemplateData>
+    <Name>CodeGenHero.AAD.Shared</Name>
+    <Description>Shared class library for Blazor application and API with AAD authentication</Description>
+    <ProjectType>CSharp</ProjectType>
+    <ProjectSubType>
+    </ProjectSubType>
+    <SortOrder>1000</SortOrder>
+    <CreateNewFolder>true</CreateNewFolder>
+    <DefaultName>CodeGenHero.AAD.Shared</DefaultName>
+    <ProvideDefaultName>true</ProvideDefaultName>
+    <LocationField>Enabled</LocationField>
+    <EnableLocationBrowseButton>true</EnableLocationBrowseButton>
+    <CreateInPlace>true</CreateInPlace>
+    <Icon>__TemplateIcon.ico</Icon>
+  </TemplateData>
+  <TemplateContent>
+    <Project TargetFileName="$ext_safeprojectname$.Shared.csproj" File="BlazorShared.csproj" ReplaceParameters="true">
+      <Folder Name="Authentication" TargetFolderName="Authentication">
+        <ProjectItem ReplaceParameters="true" TargetFileName="ICurrentUserService.cs">ICurrentUserService.cs</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="IUserSession.cs">IUserSession.cs</ProjectItem>
+      </Folder>
+      <Folder Name="Constants" TargetFolderName="Constants">
+        <ProjectItem ReplaceParameters="true" TargetFileName="Consts.cs">Consts.cs</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="Enums.cs">Enums.cs</ProjectItem>
+      </Folder>
+      <Folder Name="DataService" TargetFolderName="DataService">
+        <ProjectItem ReplaceParameters="true" TargetFileName="FilterCriterion.cs">FilterCriterion.cs</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="HttpCallResult.cs">HttpCallResult.cs</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="IFilterCriterion.cs">IFilterCriterion.cs</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="IHttpCallResultCGH.cs">IHttpCallResultCGH.cs</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="IHttpCallResultCGHT.cs">IHttpCallResultCGHT.cs</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="IPageData.cs">IPageData.cs</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="IPageDataRequest.cs">IPageDataRequest.cs</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="IPageDataT.cs">IPageDataT.cs</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="ISerializationHelper.cs">ISerializationHelper.cs</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="PageData.cs">PageData.cs</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="PageDataRequest.cs">PageDataRequest.cs</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="QueryableFilter.cs">QueryableFilter.cs</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="SerializationHelper.cs">SerializationHelper.cs</ProjectItem>
+      </Folder>
+      <Folder Name="DTO" TargetFolderName="DTO">
+        <ProjectItem ReplaceParameters="true" TargetFileName="AADGroupConfiguration.cs">AADGroupConfiguration.cs</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="PageData.cs">PageData.cs</ProjectItem>
+      </Folder>
+      <Folder Name="Extensions" TargetFolderName="Extensions">
+        <ProjectItem ReplaceParameters="true" TargetFileName="EnumerableExtensions.cs">EnumerableExtensions.cs</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="EnumExtensions.cs">EnumExtensions.cs</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="FunctorComparer.cs">FunctorComparer.cs</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="IListExtensions.cs">IListExtensions.cs</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="ObjectExtensions.cs">ObjectExtensions.cs</ProjectItem>
+      </Folder>
+      <Folder Name="Services" TargetFolderName="Services"></Folder>
+      <ProjectItem ReplaceParameters="true" TargetFileName="AsyncHelper.cs">AsyncHelper.cs</ProjectItem>
+    </Project>
+  </TemplateContent>
+  <WizardExtension>
+    <Assembly>CGHTemplate.BlazorAAD.Wizard, Version=2022.9.15.0, Culture=neutral, PublicKeyToken=f08fed17fd4a15cf</Assembly>
+    <FullClassName>CGHTemplate.BlazorAAD.Wizard.BlazorAADTemplateWizard</FullClassName>
+  </WizardExtension>
+</VSTemplate>

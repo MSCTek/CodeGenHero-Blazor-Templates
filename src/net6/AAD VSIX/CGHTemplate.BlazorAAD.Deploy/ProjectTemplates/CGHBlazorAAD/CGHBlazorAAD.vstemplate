@@ -1,0 +1,46 @@
+<VSTemplate Version="3.0.0" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005" Type="ProjectGroup">
+	<TemplateData>
+        <TemplateID>CGH.Blazor.AAD.Net6</TemplateID>
+		<Name>CodeGenHero Enterprise Architecture for Blazor (.NET 6), with AAD</Name>
+		<DefaultName>CodeGenHeroBlazorAAD</DefaultName>
+		<Description>CodeGenHero multi-project template for use with Blazor, with Azure Active Directory authentication.</Description>
+		<Icon>CGH_90x90_NoInvert.png</Icon>
+		<PreviewImage>CGH_200x200_NoInvert.png</PreviewImage>
+		<ProjectType>CSharp</ProjectType>
+		<ProjectSubType>Web</ProjectSubType>
+        <TemplateGroupID>Web</TemplateGroupID>
+		<ShowByDefault>true</ShowByDefault>
+		<SortOrder>10</SortOrder>		
+        <LanguageTag>C#</LanguageTag>
+		<ProjectTypeTag>cloud</ProjectTypeTag>
+		<ProjectTypeTag>web</ProjectTypeTag>
+        <ProjectTypeTag>CodeGenHero</ProjectTypeTag>
+    </TemplateData>
+    <TemplateContent>
+        <ProjectCollection>
+            <ProjectTemplateLink ProjectName="$safeprojectname$.Api" CopyParameters="true">
+                CGHBlazorAAD.Api\BlazorApi.vstemplate
+            </ProjectTemplateLink>
+            <ProjectTemplateLink ProjectName="$safeprojectname$.CodeGenHero" CopyParameters="true">
+                CGHBlazorAAD.CGH\BlazorCGH.vstemplate
+            </ProjectTemplateLink>
+            <ProjectTemplateLink ProjectName="$safeprojectname$.Client" CopyParameters="true">
+                CGHBlazorAAD.Client\BlazorClient.vstemplate
+            </ProjectTemplateLink>
+            <ProjectTemplateLink ProjectName="$safeprojectname$.Repository" CopyParameters="true">
+                CGHBlazorAAD.Repository\BlazorRepository.vstemplate
+            </ProjectTemplateLink>
+            <ProjectTemplateLink ProjectName="$safeprojectname$.Server" CopyParameters="true">
+                CGHBlazorAAD.Server\BlazorServer.vstemplate
+            </ProjectTemplateLink>
+            <ProjectTemplateLink ProjectName="$safeprojectname$.Shared" CopyParameters="true">
+                CGHBlazorAAD.Shared\BlazorShared.vstemplate
+            </ProjectTemplateLink>
+        </ProjectCollection>
+		<ProjectItem ReplaceParameters="true" TargetFileName=".gitignore">.gitignore</ProjectItem>
+    </TemplateContent>
+    <WizardExtension>
+        <Assembly>CGHTemplate.BlazorAAD.Wizard, Version=2022.9.15.0, Culture=neutral, PublicKeyToken=f08fed17fd4a15cf</Assembly>
+        <FullClassName>CGHTemplate.BlazorAAD.Wizard.RootWizard</FullClassName>
+    </WizardExtension>
+</VSTemplate>
