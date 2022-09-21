@@ -1,0 +1,13 @@
+﻿@page "/"
+@page "/Index"
+
+<PageTitle>CodeGenHero Blazor with Azure Active Directory</PageTitle>
+
+<AuthorizeView>
+    <NotAuthorized>
+        <MudText>To continue, please <LoginDisplay /></MudText>
+    </NotAuthorized>
+    <Authorized>
+        Welcome to your application, @context?.User?.Identity?.Name
+    </Authorized>
+</AuthorizeView>

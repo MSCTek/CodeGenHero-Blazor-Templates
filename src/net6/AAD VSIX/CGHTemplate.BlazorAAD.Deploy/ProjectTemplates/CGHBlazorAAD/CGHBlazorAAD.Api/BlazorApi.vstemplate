@@ -1,0 +1,58 @@
+<VSTemplate Version="3.0.0" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005" Type="Project">
+  <TemplateData>
+    <TemplateID>MSC.CGH.Blazor.AAD.Api</TemplateID>
+    <Name>CodeGenHero Blazor Api (.NET 6), With AAD</Name>
+    <Description>Web API project designed for use with CodeGenHero's Enterprise Architecture with Azure Active Directory authentication</Description>
+    <DefaultName>CodeGenHero.Blazor.AAD.Api</DefaultName>
+    <ProvideDefaultName>true</ProvideDefaultName>
+    <Icon>CGH_90x90_NoInvert.png</Icon>
+    <PreviewImage>CGH_200x200_NoInvert.png</PreviewImage>
+    <ProjectType>CSharp</ProjectType>
+    <ProjectSubType>Web</ProjectSubType>
+    <TemplateGroupID>CodeGenHero</TemplateGroupID>
+    <ShowByDefault>false</ShowByDefault>
+	  <LanguageTag>C#</LanguageTag>
+    <ProjectTypeTag>CodeGenHero</ProjectTypeTag>
+    <SortOrder>1000</SortOrder>
+    <CreateNewFolder>true</CreateNewFolder>
+    <LocationField>Disabled</LocationField>
+    <EnableLocationBrowseButton>False</EnableLocationBrowseButton>
+    <CreateInPlace>true</CreateInPlace>
+  </TemplateData>
+  <TemplateContent>
+    <Project TargetFileName="$ext_safeprojectname$.Api.csproj" File="BlazorApi.csproj" ReplaceParameters="true">
+      <Folder Name="Properties" TargetFolderName="Properties">
+        <ProjectItem ReplaceParameters="true" TargetFileName="launchSettings.json">launchSettings.json</ProjectItem>
+      </Folder>
+      <Folder Name="Authentication" TargetFolderName="Authentication">
+        <ProjectItem ReplaceParameters="true" TargetFileName="CurrentUserService.cs">CurrentUserService.cs</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="UserSession.cs">UserSession.cs</ProjectItem>
+      </Folder>
+      <Folder Name="Controllers" TargetFolderName="Controllers">
+        <Folder Name="Custom" TargetFolderName="Custom"></Folder>
+        <ProjectItem ReplaceParameters="true" TargetFileName="ErrorController.cs">ErrorController.cs</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="IndexController.cs">IndexController.cs</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="TestAuthController.cs">TestAuthController.cs</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="TestConfigController.cs">TestConfigController.cs</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="UploadController.cs">UploadController.cs</ProjectItem>
+      </Folder>
+      <Folder Name="Infrastructure" TargetFolderName="Infrastructure">
+        <ProjectItem ReplaceParameters="true" TargetFileName="AddApiVersionToHeader.cs">AddApiVersionToHeader.cs</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="IsMemberOfGroupHandler.cs">IsMemberOfGroupHandler.cs</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="IsMemberOfGroupRequirement.cs">IsMemberOfGroupRequirement.cs</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="RelatedEntitiesTypeRouteConstraint.cs">RelatedEntitiesTypeRouteConstraint.cs</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="VersionedActionConstraintAttribute.cs">VersionedActionConstraintAttribute.cs</ProjectItem>
+      </Folder>
+      <Folder Name="logs" TargetFolderName="logs"></Folder>
+      <ProjectItem ReplaceParameters="true" TargetFileName="appsettings.json">appsettings.json</ProjectItem>
+      <ProjectItem ReplaceParameters="true" TargetFileName="appsettings.Development.json">appsettings.Development.json</ProjectItem>
+      <ProjectItem ReplaceParameters="true" TargetFileName="appsettings.Production.json">appsettings.Production.json</ProjectItem>
+      <ProjectItem ReplaceParameters="true" TargetFileName="Program.cs">Program.cs</ProjectItem>
+      <ProjectItem ReplaceParameters="true" TargetFileName="Startup.cs">Startup.cs</ProjectItem>
+    </Project>
+  </TemplateContent>
+  <WizardExtension>
+    <Assembly>CGHTemplate.BlazorAAD.Wizard, Version=2022.9.15.0, Culture=neutral, PublicKeyToken=f08fed17fd4a15cf</Assembly>
+    <FullClassName>CGHTemplate.BlazorAAD.Wizard.BlazorAADTemplateWizard</FullClassName>
+  </WizardExtension>
+</VSTemplate>

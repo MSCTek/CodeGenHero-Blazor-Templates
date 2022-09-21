@@ -1,0 +1,21 @@
+﻿@inherits ApplicationLayoutViewModel
+
+<MudLayout>
+    <MudAppBar Color="Color.Transparent" Class="banner">
+        <LoginDisplay />
+    </MudAppBar>
+
+    <ApplicationDrawerDrawer />
+
+    <MudMainContent Style="Padding-top: 80px;">
+        <MudContainer MaxWidth="MaxWidth.ExtraLarge">
+            <CascadingValue Value="this">
+                @Body
+            </CascadingValue>
+        </MudContainer>
+    </MudMainContent>
+</MudLayout>
+
+<MudThemeProvider Theme="ApplicationCustomTheme" />
+<MudDialogProvider />
+<MudSnackbarProvider />

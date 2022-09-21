@@ -1,0 +1,20 @@
+﻿@inherits BasePageViewModel
+
+<AuthorizeView>
+    <Authorized>
+        <MudDrawer Variant="DrawerVariant.Persistent" Open="true">
+            <MudDrawerHeader Class="drawerheader">
+                <MudText Typo="Typo.h1">Your Application</MudText>
+            </MudDrawerHeader>
+            <MudNavMenu>
+                <MudNavLink Href="/Index">Index</MudNavLink>
+
+                <AuthorizeView Policy=@Consts.ACCESS_USER Context="authorizeViewContext">
+                    <Authorized>
+                        <MudNavLink Href="/AuthExamplePage">Authorized User Page</MudNavLink>
+                    </Authorized>
+                </AuthorizeView>
+            </MudNavMenu>
+        </MudDrawer>
+    </Authorized>
+</AuthorizeView>

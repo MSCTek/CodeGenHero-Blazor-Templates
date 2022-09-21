@@ -1,0 +1,41 @@
+<VSTemplate Version="3.0.0" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005" Type="Project">
+  <TemplateData>
+    <TemplateID>CodeGenHero.Blazor.AAD.Repository</TemplateID>
+    <Name>CodeGenHero.Blazor.AAD.Repository</Name>
+    <Description>Repository Project for Blazor application with AAD authentication</Description>
+    <ProjectType>CSharp</ProjectType>
+    <ProjectSubType>Web</ProjectSubType>
+	  <TemplateGroupID>CodeGenHero</TemplateGroupID>
+    <SortOrder>1000</SortOrder>
+    <CreateNewFolder>true</CreateNewFolder>
+    <DefaultName>CodeGenHero.Blazor.AAD.Repository</DefaultName>
+    <ProvideDefaultName>true</ProvideDefaultName>
+    <LocationField>Enabled</LocationField>
+    <EnableLocationBrowseButton>true</EnableLocationBrowseButton>
+    <CreateInPlace>true</CreateInPlace>
+  </TemplateData>
+  <TemplateContent>
+    <Project TargetFileName="$ext_safeprojectname$.Repository.csproj" File="BlazorRepository.csproj" ReplaceParameters="true">
+      <Folder Name="Audit" TargetFolderName="Audit">
+        <ProjectItem ReplaceParameters="true" TargetFileName="ChangeTrackerExtension.cs">ChangeTrackerExtension.cs</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="IAuditEntity.cs">IAuditEntity.cs</ProjectItem>
+      </Folder>
+      <Folder Name="Entities" TargetFolderName="Entities"></Folder>
+      <Folder Name="Infrastructure" TargetFolderName="Infrastructure">
+        <ProjectItem ReplaceParameters="true" TargetFileName="Enums.cs">Enums.cs</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="ICRUDOperation.cs">ICRUDOperation.cs</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="IQueryableExtensions.cs">IQueryableExtensions.cs</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="IRepositoryActionResult.cs">IRepositoryActionResult.cs</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="RepositoryActionResult.cs">RepositoryActionResult.cs</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="RepositoryPageDataRequest.cs">RepositoryPageDataRequest.cs</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="RepositoryPageDataResponse.cs">RepositoryPageDataResponse.cs</ProjectItem>
+      </Folder>
+      <Folder Name="Mappers" TargetFolderName="Mappers"></Folder>
+      <Folder Name="Repositories" TargetFolderName="Repositories"></Folder>
+    </Project>
+  </TemplateContent>
+  <WizardExtension>
+    <Assembly>CGHTemplate.BlazorAAD.Wizard, Version=2022.9.15.0, Culture=neutral, PublicKeyToken=f08fed17fd4a15cf</Assembly>
+    <FullClassName>CGHTemplate.BlazorAAD.Wizard.BlazorAADTemplateWizard</FullClassName>
+  </WizardExtension>
+</VSTemplate>

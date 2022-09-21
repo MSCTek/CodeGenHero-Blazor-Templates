@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PackageManifest Version="2.0.0" xmlns="http://schemas.microsoft.com/developer/vsx-schema/2011" xmlns:d="http://schemas.microsoft.com/developer/vsx-schema-design/2011">
+    <Metadata>
+        <Identity Id="CodeGenHero.ProjectTemplate.Blazor.AAD.4a672421-694e-461a-ab81-0c973c4bdff5" Version="1.0" Language="en-US" Publisher="MSCTek" />
+        <DisplayName>CodeGenHero.ProjectTemplate.Blazor.AAD</DisplayName>
+        <Description xml:space="preserve">Blazor multi-project template for use with CodeGenHero, with Azure Active Directory</Description>
+        <Icon>Resources\CGHBlazorTemplateVSIXPackage.ico</Icon>
+        <PreviewImage>Resources\CGHBlazorTemplateVSIXPackage.ico</PreviewImage>
+    </Metadata>
+    <Installation>
+        <InstallationTarget Id="Microsoft.VisualStudio.Community" Version="[17.0, 18.0)">
+            <ProductArchitecture>amd64</ProductArchitecture>
+        </InstallationTarget>
+    </Installation>
+    <Dependencies>
+        <Dependency Id="Microsoft.Framework.NDP" DisplayName="Microsoft .NET Framework" d:Source="Manual" Version="[4.5,)" />
+    </Dependencies>
+    <Prerequisites>
+        <Prerequisite Id="Microsoft.VisualStudio.Component.CoreEditor" Version="[17.0,18.0)" DisplayName="Visual Studio core editor" />
+    </Prerequisites>
+    <Assets>
+        <Asset Type="Microsoft.VisualStudio.VsPackage" d:Source="Project" d:ProjectName="%CurrentProject%" Path="|%CurrentProject%;PkgdefProjectOutputGroup|" />
+        <Asset d:Source="File" Path="ProjectTemplates" Type="Microsoft.VisualStudio.ProjectTemplate" d:TargetPath="ProjectTemplates\CodeGenHero.Blazor.AAD.zip" />
+        <Asset Type="Microsoft.VisualStudio.Assembly" d:Source="Project" d:ProjectName="CGHTemplate.BlazorAAD.Wizard" Path="|CGHTemplate.BlazorAAD.Wizard|" AssemblyName="|CGHTemplate.BlazorAAD.Wizard;AssemblyName|" />
+    </Assets>
+</PackageManifest>
