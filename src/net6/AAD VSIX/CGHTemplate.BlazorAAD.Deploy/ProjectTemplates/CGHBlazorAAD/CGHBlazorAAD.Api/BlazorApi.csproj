@@ -6,21 +6,6 @@
     <ImplicitUsings>enable</ImplicitUsings>
   </PropertyGroup>
 
-  <!-- <ItemGroup>
-    <Compile Remove="Authorization\**" />
-    <Compile Remove="Models\**" />
-    <Compile Remove="Services\**" />
-    <Content Remove="Authorization\**" />
-    <Content Remove="Models\**" />
-    <Content Remove="Services\**" />
-    <EmbeddedResource Remove="Authorization\**" />
-    <EmbeddedResource Remove="Models\**" />
-    <EmbeddedResource Remove="Services\**" />
-    <None Remove="Authorization\**" />
-    <None Remove="Models\**" />
-    <None Remove="Services\**" />
-  </ItemGroup> -->
-
   <ItemGroup>
     <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="11.0.0" />
     <PackageReference Include="Azure.Storage.Blobs" Version="12.13.0" />
@@ -44,20 +29,9 @@
     <ProjectReference Include="..\$ext_safeprojectname$.Shared\$ext_safeprojectname$.Shared.csproj" />
   </ItemGroup>
 
-  <!-- <ItemGroup>
-    <Content Update="appsettings.Development.json">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Update="appsettings.json">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Update="appsettings.Production.json">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-  </ItemGroup> -->
-
   <ItemGroup>
     <Folder Include="logs\" />
+    <Folder Include="Controllers\Custom" />
   </ItemGroup>
 
 </Project>
