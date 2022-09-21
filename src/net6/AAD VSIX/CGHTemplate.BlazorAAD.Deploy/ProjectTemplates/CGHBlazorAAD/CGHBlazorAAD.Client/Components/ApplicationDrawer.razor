@@ -1,20 +1,21 @@
-﻿@inherits BasePageViewModel
+﻿@inherits ApplicationDrawerViewModel
 
-<AuthorizeView>
-    <Authorized>
-        <MudDrawer Variant="DrawerVariant.Persistent" Open="true">
-            <MudDrawerHeader>
-                <MudText Typo="Typo.h4">Your Application</MudText>
-            </MudDrawerHeader>
-            <MudNavMenu>
-                <MudNavLink Href="/Index">Index</MudNavLink>
+<MudAppBar Color="Color.Primary">
+    <MudIconButton ButtonType="ButtonType.Button" Icon="@Icons.Filled.Menu" Edge="Edge.Start" OnClick="ToggleDrawer" />
+    <LoginDisplay />
+</MudAppBar>
 
-                <AuthorizeView Policy=@Consts.ACCESS_USER Context="authorizeViewContext">
-                    <Authorized>
-                        <MudNavLink Href="/AuthExamplePage">Authorized User Page</MudNavLink>
-                    </Authorized>
-                </AuthorizeView>
-            </MudNavMenu>
-        </MudDrawer>
-    </Authorized>
-</AuthorizeView>
+<MudDrawer Variant="DrawerVariant.Responsive" @bind-Open="DrawerOpen">
+    <MudDrawerHeader>
+        <MudText Typo="Typo.h4">Your Application</MudText>
+    </MudDrawerHeader>
+    <MudNavMenu>
+        <MudNavLink Href="/Index">Index</MudNavLink>
+
+        <AuthorizeView Policy=@Consts.ACCESS_USER Context="authorizeViewContext">
+            <Authorized>
+                <MudNavLink Href="/AuthExamplePage">Authorized User Page</MudNavLink>
+            </Authorized>
+        </AuthorizeView>
+    </MudNavMenu>
+</MudDrawer>
