@@ -101,10 +101,6 @@
       <Folder Name="Shared" TargetFolderName="Shared">
         <ProjectItem ReplaceParameters="true" TargetFileName="BasePageViewModel.cs">BasePageViewModel.cs</ProjectItem>
         <ProjectItem ReplaceParameters="true" TargetFileName="LoginDisplay.razor">LoginDisplay.razor</ProjectItem>
-        <ProjectItem ReplaceParameters="true" TargetFileName="MainLayout.razor">MainLayout.razor</ProjectItem>
-        <ProjectItem ReplaceParameters="true" TargetFileName="MainLayout.razor.css">MainLayout.razor.css</ProjectItem>
-        <ProjectItem ReplaceParameters="true" TargetFileName="NavMenu.razor">NavMenu.razor</ProjectItem>
-        <ProjectItem ReplaceParameters="true" TargetFileName="NavMenu.razor.css">NavMenu.razor.css</ProjectItem>
         <ProjectItem ReplaceParameters="true" TargetFileName="ApplicationLayout.razor">ApplicationLayout.razor</ProjectItem>
         <ProjectItem ReplaceParameters="true" TargetFileName="ApplicationLayout.razor.cs">ApplicationLayout.razor.cs</ProjectItem>
         <ProjectItem ReplaceParameters="true" TargetFileName="RedirectToLogin.razor">RedirectToLogin.razor</ProjectItem>
