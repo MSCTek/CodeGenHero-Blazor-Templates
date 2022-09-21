@@ -64,6 +64,12 @@
       </Folder>
       <Folder Name="Components" TargetFolderName="Components">
         <ProjectItem ReplaceParameters="true" TargetFileName="ApplicationDrawer.razor">ApplicationDrawer.razor</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="ConfirmationDialog.razor">ConfirmationDialog.razor</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="ConfirmationDialog.razor.cs">ConfirmationDialog.razor.cs</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="ConfirmationDialog.razor.css">ConfirmationDialog.razor.css</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="Footer.razor">Footer.razor</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="Footer.razor.cs">Footer.razor.cs</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="LoadingMask.razor">LoadingMask.razor</ProjectItem>
       </Folder>
       <Folder Name="Pages" TargetFolderName="Pages">
         <Folder Name="Admin" TargetFolderName="Admin">
@@ -102,6 +108,7 @@
         <ProjectItem ReplaceParameters="true" TargetFileName="ApplicationLayout.razor">ApplicationLayout.razor</ProjectItem>
         <ProjectItem ReplaceParameters="true" TargetFileName="ApplicationLayout.razor.cs">ApplicationLayout.razor.cs</ProjectItem>
         <ProjectItem ReplaceParameters="true" TargetFileName="RedirectToLogin.razor">RedirectToLogin.razor</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="CGHComponentBase.cs">CGHComponentBase.cs</ProjectItem>
       </Folder>
       <ProjectItem ReplaceParameters="true" TargetFileName="_Imports.razor">_Imports.razor</ProjectItem>
       <ProjectItem ReplaceParameters="true" TargetFileName="App.razor">App.razor</ProjectItem>
