@@ -91,12 +91,10 @@
         <ProjectItem ReplaceParameters="true" TargetFileName="ImageUploadDataService.cs">ImageUploadDataService.cs</ProjectItem>
         <ProjectItem ReplaceParameters="true" TargetFileName="INavigationService.cs">INavigationService.cs</ProjectItem>
         <ProjectItem ReplaceParameters="true" TargetFileName="InitialApplicationState.cs">InitialApplicationState.cs</ProjectItem>
-        <ProjectItem ReplaceParameters="true" TargetFileName="ITestAuthDataService.cs">ITestAuthDataService.cs</ProjectItem>
         <ProjectItem ReplaceParameters="true" TargetFileName="ITokenManager.cs">ITokenManager.cs</ProjectItem>
         <ProjectItem ReplaceParameters="true" TargetFileName="ITokenProvider.cs">ITokenProvider.cs</ProjectItem>
         <ProjectItem ReplaceParameters="true" TargetFileName="LocalHttpClientService.cs">LocalHttpClientService.cs</ProjectItem>
         <ProjectItem ReplaceParameters="true" TargetFileName="NavigationService.cs">NavigationService.cs</ProjectItem>
-        <ProjectItem ReplaceParameters="true" TargetFileName="TestAuthDataService.cs">TestAuthDataService.cs</ProjectItem>
       </Folder>
       <Folder Name="Shared" TargetFolderName="Shared">
         <ProjectItem ReplaceParameters="true" TargetFileName="BasePageViewModel.cs">BasePageViewModel.cs</ProjectItem>
