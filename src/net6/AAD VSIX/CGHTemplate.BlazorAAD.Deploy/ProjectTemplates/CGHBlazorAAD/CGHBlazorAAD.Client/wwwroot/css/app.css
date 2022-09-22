@@ -74,12 +74,3 @@ a, .btn-link {
         content: "An error has occurred."
     }
 /*#endregion*/
-
-.banner {
-    background-image: url('../images/pond_background_opt.jpg');
-    background-size: contain;
-    /*opacity: 0.75;*/
-}
-
-.drawerheader {
-}

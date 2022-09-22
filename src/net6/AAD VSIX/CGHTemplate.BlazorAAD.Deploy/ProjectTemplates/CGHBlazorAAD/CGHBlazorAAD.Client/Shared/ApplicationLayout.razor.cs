@@ -10,8 +10,7 @@ namespace $safeprojectname$.Shared
             Palette = new Palette()
             {
                 Primary = Colors.Blue.Default,
-                Secondary = Colors.Grey.Lighten5
-                //AppbarBackground = Colors.,
+                Secondary = Colors.Grey.Darken2
             },
             PaletteDark = new Palette()
             {

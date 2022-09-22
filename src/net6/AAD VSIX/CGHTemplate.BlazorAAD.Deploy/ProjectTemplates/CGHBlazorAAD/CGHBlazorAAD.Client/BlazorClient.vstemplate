@@ -67,8 +67,6 @@
         <ProjectItem ReplaceParameters="true" TargetFileName="ConfirmationDialog.razor">ConfirmationDialog.razor</ProjectItem>
         <ProjectItem ReplaceParameters="true" TargetFileName="ConfirmationDialog.razor.cs">ConfirmationDialog.razor.cs</ProjectItem>
         <ProjectItem ReplaceParameters="true" TargetFileName="ConfirmationDialog.razor.css">ConfirmationDialog.razor.css</ProjectItem>
-        <ProjectItem ReplaceParameters="true" TargetFileName="Footer.razor">Footer.razor</ProjectItem>
-        <ProjectItem ReplaceParameters="true" TargetFileName="Footer.razor.cs">Footer.razor.cs</ProjectItem>
         <ProjectItem ReplaceParameters="true" TargetFileName="LoadingMask.razor">LoadingMask.razor</ProjectItem>
       </Folder>
       <Folder Name="Pages" TargetFolderName="Pages">
@@ -91,20 +89,14 @@
         <ProjectItem ReplaceParameters="true" TargetFileName="ImageUploadDataService.cs">ImageUploadDataService.cs</ProjectItem>
         <ProjectItem ReplaceParameters="true" TargetFileName="INavigationService.cs">INavigationService.cs</ProjectItem>
         <ProjectItem ReplaceParameters="true" TargetFileName="InitialApplicationState.cs">InitialApplicationState.cs</ProjectItem>
-        <ProjectItem ReplaceParameters="true" TargetFileName="ITestAuthDataService.cs">ITestAuthDataService.cs</ProjectItem>
         <ProjectItem ReplaceParameters="true" TargetFileName="ITokenManager.cs">ITokenManager.cs</ProjectItem>
         <ProjectItem ReplaceParameters="true" TargetFileName="ITokenProvider.cs">ITokenProvider.cs</ProjectItem>
         <ProjectItem ReplaceParameters="true" TargetFileName="LocalHttpClientService.cs">LocalHttpClientService.cs</ProjectItem>
         <ProjectItem ReplaceParameters="true" TargetFileName="NavigationService.cs">NavigationService.cs</ProjectItem>
-        <ProjectItem ReplaceParameters="true" TargetFileName="TestAuthDataService.cs">TestAuthDataService.cs</ProjectItem>
       </Folder>
       <Folder Name="Shared" TargetFolderName="Shared">
         <ProjectItem ReplaceParameters="true" TargetFileName="BasePageViewModel.cs">BasePageViewModel.cs</ProjectItem>
         <ProjectItem ReplaceParameters="true" TargetFileName="LoginDisplay.razor">LoginDisplay.razor</ProjectItem>
-        <ProjectItem ReplaceParameters="true" TargetFileName="MainLayout.razor">MainLayout.razor</ProjectItem>
-        <ProjectItem ReplaceParameters="true" TargetFileName="MainLayout.razor.css">MainLayout.razor.css</ProjectItem>
-        <ProjectItem ReplaceParameters="true" TargetFileName="NavMenu.razor">NavMenu.razor</ProjectItem>
-        <ProjectItem ReplaceParameters="true" TargetFileName="NavMenu.razor.css">NavMenu.razor.css</ProjectItem>
         <ProjectItem ReplaceParameters="true" TargetFileName="ApplicationLayout.razor">ApplicationLayout.razor</ProjectItem>
         <ProjectItem ReplaceParameters="true" TargetFileName="ApplicationLayout.razor.cs">ApplicationLayout.razor.cs</ProjectItem>
         <ProjectItem ReplaceParameters="true" TargetFileName="RedirectToLogin.razor">RedirectToLogin.razor</ProjectItem>
