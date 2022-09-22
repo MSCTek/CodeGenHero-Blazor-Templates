@@ -6,7 +6,7 @@ using System.Text;
 
 namespace CodeGenHero.Template.Blazor6.Generators
 {
-    public class BaseAPIControllerGenerator : BaseBlazorGenerator
+    public sealed class BaseAPIControllerGenerator : BaseBlazorGenerator
     {
         public BaseAPIControllerGenerator(ICodeGenHeroInflector inflector) : base(inflector)
         {

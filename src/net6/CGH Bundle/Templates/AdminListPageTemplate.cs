@@ -8,13 +8,16 @@ namespace CodeGenHero.Template.Blazor6.Templates
 {
     [Template(name: "AdminListPage", version: "2022.06.09", uniqueTemplateIdGuid: "414C3369-6F09-4341-B755-A133EAB5E775",
         description: "Generates a basic Razor page visible to Admin users that lists all of a certain metadata entity.")]
-    public class AdminListPageTemplate : BaseBlazorTemplate
+    public sealed class AdminListPageTemplate : BaseBlazorTemplate
     {
         public AdminListPageTemplate()
         {
         }
 
         #region TemplateVariables
+
+        [TemplateVariable(defaultValue: Consts.PTG_DtoNamespace_DEFAULT, description: Consts.PTG_DtoNamespace_DESC)]
+        public string DtoNamespace { get; set; }
 
         [TemplateVariable(defaultValue: Consts.PTG_AdminListPageViewModelClassName_DEFAULT, description: Consts.PTG_AdminListPageViewModelClassName_DESC)]
         public string AdminListPageViewModelClassName { get; set; }
@@ -41,7 +44,7 @@ namespace CodeGenHero.Template.Blazor6.Templates
                     var viewModelClassName = TokenReplacements(AdminListPageViewModelClassName, entity);
 
                     var generator = new AdminListPageGenerator(inflector: Inflector);
-                    var generatedCode = generator.Generate(entity, viewModelClassName);
+                    var generatedCode = generator.Generate(entity, viewModelClassName, DtoNamespace);
 
                     retVal.Files.Add(new OutputFile()
                     {

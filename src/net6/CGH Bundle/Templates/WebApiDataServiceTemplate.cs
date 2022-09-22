@@ -7,8 +7,8 @@ using System.Collections.Generic;
 namespace CodeGenHero.Template.Blazor6.Templates
 {
     [Template(name: "WebApiDataService", version: "2022.06.21", uniqueTemplateIdGuid: "DA87D00B-525F-487A-934A-0925A3F99DB9",
-        description: "Generates the WebApiDataService implementation.")]
-    public class WebApiDataServiceTemplate : BaseBlazorTemplate
+        description: "Generates the WebApiDataService implementation, which is used by the Blazor Client to communicate with a web API layer.")]
+    public sealed class WebApiDataServiceTemplate : BaseBlazorTemplate
     {
         public WebApiDataServiceTemplate()
         {

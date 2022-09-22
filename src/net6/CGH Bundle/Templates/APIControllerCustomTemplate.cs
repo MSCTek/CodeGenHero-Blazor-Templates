@@ -8,7 +8,7 @@ namespace CodeGenHero.Template.Blazor6.Templates
 {
     [Template(name: "APIControllerCustom", version: "2022.06.09", uniqueTemplateIdGuid: "44D5B085-471A-4F79-9440-4254C967F282",
         description: "Creates partial API Controllers to perform custom Controller Logic separate from generated logic.")]
-    public class ApiControllerCustomTemplate : BaseBlazorTemplate
+    public sealed class ApiControllerCustomTemplate : BaseBlazorTemplate
     {
         public ApiControllerCustomTemplate()
         {

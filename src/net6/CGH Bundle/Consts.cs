@@ -63,11 +63,17 @@
         public const string PTG_RepositoryNamespace_DEFAULT = "{BaseNamespace}.Repository.Repositories";
         public const string PTG_RepositoryNamespace_DESC = "The namespace of the Repository classes this template will use. Should be promoted to Global.";
 
-        public const string PTG_WebApiDataServiceNamespace_DEFAULT = "{BaseNamespace}.App.Services";
+        public const string PTG_WebApiDataServiceNamespace_DEFAULT = "{BaseNamespace}.{ApplicationProjectName}.Services";
         public const string PTG_WebApiDataServiceNamespace_DESC = "The namespace of the Web API Data Service classes this template will use. Should be promoted to Global.";
 
-        public const string PTG_AppPageViewModelsNamespace_DEFAULT = "{BaseNamespace}.App.Pages";
+        public const string PTG_AppPageViewModelsNamespace_DEFAULT = "{BaseNamespace}.{ApplicationProjectName}.Pages";
         public const string PTG_AppPageViewModelsNamespace_DESC = "The namespace of Razor Page viewmodels this template will use. Should be promoted to Global.";
+
+        public const string PTG_AdminPageNamespace_DEFAULT = "{AppPageViewModelsNamespace}.Admin";
+        public const string PTG_AdminPageNamespace_DESC = "The namespace used for Admin pages and viewmodels. Should match folder that generated Admin pages are mapped to. Should be promoted to Global.";
+
+        public const string PTG_ApplicationProjectName_DEFAULT = "App";
+        public const string PTG_ApplicationProjectName_DESC = "The name of the project that the Blazor Application resides in. Should be promoted to Global.";
 
         #endregion Namespaces
 

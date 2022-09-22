@@ -8,7 +8,7 @@ using System.Text;
 
 namespace CodeGenHero.Template.Blazor6.Generators
 {
-    class AdminListPageViewModelGenerator : BaseBlazorGenerator
+    public sealed class AdminListPageViewModelGenerator : BaseBlazorGenerator
     {
         public AdminListPageViewModelGenerator(ICodeGenHeroInflector inflector) : base(inflector)
         {

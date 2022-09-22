@@ -8,7 +8,7 @@ namespace CodeGenHero.Template.Blazor6.Templates
 {
     [Template(name: "RepositoryInterface", version: "2021.9.14", uniqueTemplateIdGuid: "FF160397-8584-4518-8EC7-A9549B37515A",
         description: "Generates the Interface for a Repository Class to implement.")]
-    public class RepositoryInterfaceTemplate : BaseBlazorTemplate
+    public sealed class RepositoryInterfaceTemplate : BaseBlazorTemplate
     {
         public RepositoryInterfaceTemplate()
         {

@@ -8,7 +8,7 @@ using System.Text;
 
 namespace CodeGenHero.Template.Blazor6.Generators
 {
-    class AdminListPageGenerator : BaseBlazorGenerator
+    public sealed class AdminListPageGenerator : BaseBlazorGenerator
     {
         public AdminListPageGenerator(ICodeGenHeroInflector inflector) : base(inflector)
         {
@@ -16,11 +16,12 @@ namespace CodeGenHero.Template.Blazor6.Generators
 
         public string Generate(
             IEntityType entity,
-            string adminListPageViewModelClassName)
+            string adminListPageViewModelClassName,
+            string dtoNamespace)
         {
             StringBuilder sb = new StringBuilder();
 
-            sb.Append(GeneratePageStart(entity, adminListPageViewModelClassName));
+            sb.Append(GeneratePageStart(entity, adminListPageViewModelClassName, dtoNamespace));
             sb.Append(GenerateIfIsReady());
             sb.Append(GenerateIfNotSaved(entity));
             sb.Append(GenerateIfSaved());
@@ -31,13 +32,14 @@ namespace CodeGenHero.Template.Blazor6.Generators
             return sb.ToString();
         }
 
-        private string GeneratePageStart(IEntityType entity, string adminListPageViewModelClassName)
+        private string GeneratePageStart(IEntityType entity, string adminListPageViewModelClassName, string dtoNamespace)
         {
             var entityName = entity.ClrType.Name;
             var entityNamePlural = Inflector.Pluralize(entityName);
 
             StringBuilder sb = new StringBuilder();
 
+            sb.AppendLine($"@using {dtoNamespace}");
             sb.AppendLine($"@page \"/admin/{entityNamePlural.ToLower()}\"");
             sb.AppendLine($"@inherits {adminListPageViewModelClassName}");
             sb.AppendLine("<div class=\"mud-palette-override\"> @* This outer div is necessary for CSS Isolation to function *@\n");

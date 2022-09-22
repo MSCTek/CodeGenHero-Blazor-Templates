@@ -7,8 +7,8 @@ using System.Collections.Generic;
 namespace CodeGenHero.Template.Blazor6.Templates
 {
     [Template(name: "GenericFactory", version: "2021.9.14", uniqueTemplateIdGuid: "6696EDA9-AD96-46B4-AA58-1842BC9C2BBD",
-        description: "Generates a Factory class that maps Entities to DTOs. Implies use of AutoMapper template and associated prerequisites.")]
-    public class GenericFactoryTemplate : BaseBlazorTemplate
+        description: "Generates a Factory class that maps Entities to DTOs. Implies use of AutoMapper template and associated prerequisites, and should be placed alongside an Automapper.")]
+    public sealed class GenericFactoryTemplate : BaseBlazorTemplate
     {
         public GenericFactoryTemplate()
         {

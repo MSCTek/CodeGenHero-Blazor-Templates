@@ -7,7 +7,7 @@ using System.Text;
 
 namespace CodeGenHero.Template.Blazor6.Generators
 {
-    public class WebApiDataServiceInterfaceGenerator : BaseBlazorGenerator
+    public sealed class WebApiDataServiceInterfaceGenerator : BaseBlazorGenerator
     {
         public WebApiDataServiceInterfaceGenerator(ICodeGenHeroInflector inflector) : base(inflector)
         {

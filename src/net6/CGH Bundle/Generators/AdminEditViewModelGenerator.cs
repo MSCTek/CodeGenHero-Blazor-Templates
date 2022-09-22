@@ -9,7 +9,7 @@ using System.Text;
 
 namespace CodeGenHero.Template.Blazor6.Generators
 {
-    public class AdminEditViewModelGenerator : BaseBlazorGenerator
+    public sealed class AdminEditViewModelGenerator : BaseBlazorGenerator
     {
         public AdminEditViewModelGenerator(ICodeGenHeroInflector inflector) : base(inflector)
         {

@@ -7,8 +7,8 @@ using System.Collections.Generic;
 namespace CodeGenHero.Template.Blazor6.Templates
 {
     [Template(name: "AutoMapperProfile", version: "2021.9.14", uniqueTemplateIdGuid: "7B0AA8DE-D2FB-4EFA-98E1-75FEB116A153",
-        description: "Generates an Automapper Profile based off provided Metadata. Requires AutoMapper.Extensions.Microsoft.DependencyInjection NuGet package.")]
-    public class AutoMapperProfileTemplate : BaseBlazorTemplate
+        description: "Generates an Automapper Profile based off provided Metadata, which converts Repository EF Entities to untracked DTOs. Requires AutoMapper.Extensions.Microsoft.DependencyInjection NuGet package.")]
+    public sealed class AutoMapperProfileTemplate : BaseBlazorTemplate
     {
         public AutoMapperProfileTemplate()
         {

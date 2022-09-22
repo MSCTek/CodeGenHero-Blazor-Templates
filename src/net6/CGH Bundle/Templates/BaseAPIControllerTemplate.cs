@@ -8,7 +8,7 @@ namespace CodeGenHero.Template.Blazor6.Templates
 {
     [Template(name: "BaseAPIController", version: "2022.06.21", uniqueTemplateIdGuid: "AF56140D-4926-4E6A-ADDB-49F3CFCD4A53",
         description: "Generates a Base API Controller class for anonymous API Controllers to inherit from.")]
-    public class BaseAPIControllerTemplate : BaseBlazorTemplate
+    public sealed class BaseAPIControllerTemplate : BaseBlazorTemplate
     {
         public BaseAPIControllerTemplate()
         {

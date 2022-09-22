@@ -8,7 +8,7 @@ namespace CodeGenHero.Template.Blazor6.Templates
 {
     [Template(name: "AdminEditViewModel", version: "2021.11.12", uniqueTemplateIdGuid: "17AE856A-A589-40C0-A5BE-1579B0714385",
         description: "Generates a View Model for code-backing of a Razor page that allows an Admin to edit an Entity.")]
-    public class AdminEditViewModelTemplate : BaseBlazorTemplate
+    public sealed class AdminEditViewModelTemplate : BaseBlazorTemplate
     {
         public AdminEditViewModelTemplate()
         {
@@ -28,8 +28,14 @@ namespace CodeGenHero.Template.Blazor6.Templates
         [TemplateVariable(defaultValue: Consts.PTG_AppPageViewModelsNamespace_DEFAULT, description: Consts.PTG_AppPageViewModelsNamespace_DESC)]
         public string AppPageViewModelsNamespace { get; set; }
 
+        [TemplateVariable(defaultValue: Consts.PTG_AdminPageNamespace_DEFAULT, description: Consts.PTG_AdminPageNamespace_DESC)]
+        public string AdminPageNamespace { get; set; }
+
         [TemplateVariable(defaultValue: Consts.PTG_DtoNamespace_DEFAULT, description: Consts.PTG_DtoNamespace_DESC)]
         public string DtoNamespace { get; set; }
+
+        [TemplateVariable(defaultValue: Consts.PTG_ApplicationProjectName_DEFAULT, description: Consts.PTG_ApplicationProjectName_DESC)]
+        public string ApplicationProjectName { get; set; }
 
         [TemplateVariable(defaultValue: Consts.AdminEditViewModelOutputFilepath_DEFAULT, hiddenIndicator: true)]
         public string AdminEditViewModelOutputFilepath { get; set; }
@@ -48,8 +54,8 @@ namespace CodeGenHero.Template.Blazor6.Templates
                     new NamespaceItem("Microsoft.AspNetCore.Components"),
                     new NamespaceItem("Microsoft.AspNetCore.Components.Forms"),
                     new NamespaceItem("Microsoft.JSInterop"),
-                    new NamespaceItem($"{BaseNamespace}.App.Services"),
-                    new NamespaceItem($"{BaseNamespace}.App.Shared"),
+                    new NamespaceItem($"{BaseNamespace}.{ApplicationProjectName}.Services"),
+                    new NamespaceItem($"{BaseNamespace}.{ApplicationProjectName}.Shared"),
                     new NamespaceItem($"{BaseNamespace}.Shared.Constants"),
                     new NamespaceItem($"{DtoNamespace}"),
                     new NamespaceItem("MudBlazor"),
@@ -72,7 +78,7 @@ namespace CodeGenHero.Template.Blazor6.Templates
                     string className = TokenReplacements(AdminEditViewModelClassName, entity);
 
                     var generator = new AdminEditViewModelGenerator(inflector: Inflector);
-                    var generatedCode = generator.Generate(usings, AppPageViewModelsNamespace, NamespacePostfix, entity, className, WebApiDataServiceInterfaceClassName, WebApiDataServiceClassName);
+                    var generatedCode = generator.Generate(usings, AdminPageNamespace, NamespacePostfix, entity, className, WebApiDataServiceInterfaceClassName, WebApiDataServiceClassName);
 
                     retVal.Files.Add(new OutputFile()
                     {

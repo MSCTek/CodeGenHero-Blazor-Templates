@@ -8,7 +8,7 @@ namespace CodeGenHero.Template.Blazor6.Templates
 {
     [Template(name: "APIStatusController", version: "2021.11.12", uniqueTemplateIdGuid: "021B5127-262B-45FB-A3A7-7388B2EDFCA9",
         description: "Creates the API Status Controller class")]
-    public class ApiStatusControllerTemplate : BaseBlazorTemplate
+    public sealed class ApiStatusControllerTemplate : BaseBlazorTemplate
     {
         public ApiStatusControllerTemplate()
         {
