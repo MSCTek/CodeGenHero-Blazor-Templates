@@ -35,7 +35,7 @@ namespace CodeGenHero.Template.Blazor6.Templates
         [TemplateVariable(defaultValue: Consts.PTG_AdminPageNamespace_DEFAULT, description: Consts.PTG_AdminPageNamespace_DESC)]
         public string AdminPageNamespace { get; set; }
 
-        [TemplateVariable(defaultValue: Consts.PTG_AppPageViewModelsNamespace_DEFAULT, description: Consts.PTG_AppPageViewModelsNamespace_DESC)]
+        [TemplateVariable(defaultValue: Consts.PTG_ApplicationProjectName_DEFAULT, description: Consts.PTG_ApplicationProjectName_DESC)]
         public string ApplicationProjectName { get; set; }
 
         [TemplateVariable(defaultValue: Consts.AdminListPageViewModelOutputFilepath_DEFAULT, hiddenIndicator: true)]
