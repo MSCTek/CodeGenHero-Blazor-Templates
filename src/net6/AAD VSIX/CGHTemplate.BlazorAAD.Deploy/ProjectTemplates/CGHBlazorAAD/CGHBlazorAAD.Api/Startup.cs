@@ -11,10 +11,12 @@ namespace $safeprojectname$
     using Microsoft.AspNetCore.Mvc.Authorization;
     using Microsoft.EntityFrameworkCore;
     using Microsoft.Identity.Web;
+    using Microsoft.IdentityModel.Logging;
     using Microsoft.OpenApi.Models;
     using Newtonsoft.Json;
     using Polly;
     using Polly.Extensions.Http;
+    using Serilog;
 
     public static class ServiceCollectionExtensions
     {
