@@ -67,8 +67,6 @@
         <ProjectItem ReplaceParameters="true" TargetFileName="ConfirmationDialog.razor">ConfirmationDialog.razor</ProjectItem>
         <ProjectItem ReplaceParameters="true" TargetFileName="ConfirmationDialog.razor.cs">ConfirmationDialog.razor.cs</ProjectItem>
         <ProjectItem ReplaceParameters="true" TargetFileName="ConfirmationDialog.razor.css">ConfirmationDialog.razor.css</ProjectItem>
-        <ProjectItem ReplaceParameters="true" TargetFileName="Footer.razor">Footer.razor</ProjectItem>
-        <ProjectItem ReplaceParameters="true" TargetFileName="Footer.razor.cs">Footer.razor.cs</ProjectItem>
         <ProjectItem ReplaceParameters="true" TargetFileName="LoadingMask.razor">LoadingMask.razor</ProjectItem>
       </Folder>
       <Folder Name="Pages" TargetFolderName="Pages">
