@@ -32,6 +32,12 @@ namespace CodeGenHero.Template.Blazor6.Templates
         [TemplateVariable(defaultValue: Consts.PTG_DtoNamespace_DEFAULT, description: Consts.PTG_DtoNamespace_DESC)]
         public string DtoNamespace { get; set; }
 
+        [TemplateVariable(defaultValue: Consts.PTG_AdminPageNamespace_DEFAULT, description: Consts.PTG_AdminPageNamespace_DESC)]
+        public string AdminPageNamespace { get; set; }
+
+        [TemplateVariable(defaultValue: Consts.PTG_AppPageViewModelsNamespace_DEFAULT, description: Consts.PTG_AppPageViewModelsNamespace_DESC)]
+        public string ApplicationProjectName { get; set; }
+
         [TemplateVariable(defaultValue: Consts.AdminListPageViewModelOutputFilepath_DEFAULT, hiddenIndicator: true)]
         public string AdminListPageViewModelOutputFilepath { get; set; }
 
@@ -48,9 +54,9 @@ namespace CodeGenHero.Template.Blazor6.Templates
                     new NamespaceItem("Microsoft.AspNetCore.Authorization"),
                     new NamespaceItem("Microsoft.AspNetCore.Components"),
                     new NamespaceItem("Microsoft.JSInterop"),
-                    new NamespaceItem($"{BaseNamespace}.App.Components"),
-                    new NamespaceItem($"{BaseNamespace}.App.Services"),
-                    new NamespaceItem($"{BaseNamespace}.App.Shared"),
+                    new NamespaceItem($"{BaseNamespace}.{ApplicationProjectName}.Components"),
+                    new NamespaceItem($"{BaseNamespace}.{ApplicationProjectName}.Services"),
+                    new NamespaceItem($"{BaseNamespace}.{ApplicationProjectName}.Shared"),
                     new NamespaceItem($"{BaseNamespace}.Shared.Constants"),
                     new NamespaceItem($"{BaseNamespace}.Shared.DataService"),
                     new NamespaceItem($"{DtoNamespace}"),
@@ -73,7 +79,7 @@ namespace CodeGenHero.Template.Blazor6.Templates
                     string className = TokenReplacements(AdminListPageViewModelClassName, entity);
 
                     var generator = new AdminListPageViewModelGenerator(inflector: Inflector);
-                    var generatedCode = generator.Generate(usings, AppPageViewModelsNamespace, NamespacePostfix, entity, className, WebApiDataServiceInterfaceClassName, WebApiDataServiceClassName);
+                    var generatedCode = generator.Generate(usings, AdminPageNamespace, NamespacePostfix, entity, className, WebApiDataServiceInterfaceClassName, WebApiDataServiceClassName);
 
                     retVal.Files.Add(new OutputFile()
                     {
