@@ -8,7 +8,7 @@ using System.Linq;
 
 namespace CodeGenHero.Template.Blazor6.Generators
 {
-    public class DTOGenerator : BaseBlazorGenerator
+    public sealed class DTOGenerator : BaseBlazorGenerator
     {
         public DTOGenerator(ICodeGenHeroInflector inflector) : base(inflector)
         {

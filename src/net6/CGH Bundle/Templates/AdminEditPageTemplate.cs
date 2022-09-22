@@ -8,7 +8,7 @@ namespace CodeGenHero.Template.Blazor6.Templates
 {
     [Template(name: "AdminEditPage", version: "2021.12.3", uniqueTemplateIdGuid: "BF6A5C3B-7D19-4F08-83E6-C341BC350F81",
         description: "Generates a basic Razor page visible to Admin users that allows them to edit metadata entity.")]
-    public class AdminEditPageTemplate : BaseBlazorTemplate
+    public sealed class AdminEditPageTemplate : BaseBlazorTemplate
     {
         public AdminEditPageTemplate()
         {

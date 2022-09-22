@@ -8,7 +8,7 @@ namespace CodeGenHero.Template.Blazor6.Templates
 {
     [Template(name: "GenericFactoryInterface", version: "2021.9.14", uniqueTemplateIdGuid: "2BED5905-CED6-4CE8-93EE-EB63365B87EC",
         description: "Generates an interface for a Factory class that maps Entities to DTOs. Implies use of AutoMapper template and associated prerequisites.")]
-    public class GenericFactoryInterfaceTemplate : BaseBlazorTemplate
+    public sealed class GenericFactoryInterfaceTemplate : BaseBlazorTemplate
     {
         public GenericFactoryInterfaceTemplate()
         {

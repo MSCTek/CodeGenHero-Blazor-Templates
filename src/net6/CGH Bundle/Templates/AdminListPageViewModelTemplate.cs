@@ -8,7 +8,7 @@ namespace CodeGenHero.Template.Blazor6.Templates
 {
     [Template(name: "AdminListPageViewModel", version: "2021.11.12", uniqueTemplateIdGuid: "B76E62EC-FE5B-47C6-BB58-FB58ED7399E5",
         description: "Generates a View Model for code-backing of a Razor page that lists all of a certain Metadata entity.")]
-    public class AdminListPageViewModelTemplate : BaseBlazorTemplate
+    public sealed class AdminListPageViewModelTemplate : BaseBlazorTemplate
     {
         public AdminListPageViewModelTemplate()
         {
