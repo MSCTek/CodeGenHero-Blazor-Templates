@@ -64,6 +64,7 @@
       </Folder>
       <Folder Name="Components" TargetFolderName="Components">
         <ProjectItem ReplaceParameters="true" TargetFileName="ApplicationDrawer.razor">ApplicationDrawer.razor</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="ApplicationDrawer.razor.cs">ApplicationDrawer.razor.cs</ProjectItem>
         <ProjectItem ReplaceParameters="true" TargetFileName="ConfirmationDialog.razor">ConfirmationDialog.razor</ProjectItem>
         <ProjectItem ReplaceParameters="true" TargetFileName="ConfirmationDialog.razor.cs">ConfirmationDialog.razor.cs</ProjectItem>
         <ProjectItem ReplaceParameters="true" TargetFileName="ConfirmationDialog.razor.css">ConfirmationDialog.razor.css</ProjectItem>
