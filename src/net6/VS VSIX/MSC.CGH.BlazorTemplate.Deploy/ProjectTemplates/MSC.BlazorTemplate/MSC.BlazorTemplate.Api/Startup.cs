@@ -1,17 +1,20 @@
-using AutoMapper;
-using IdentityServer4.AccessTokenValidation;
-using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Mvc.Authorization;
-using Microsoft.EntityFrameworkCore;
-using Microsoft.OpenApi.Models;
-using Newtonsoft.Json;
-using Polly;
-using Polly.Extensions.Http;
-using Serilog;
-using $safeprojectname$.Infrastructure;
-
 namespace $safeprojectname$
 {
+    using AutoMapper;
+    using IdentityServer4.AccessTokenValidation;
+    using Microsoft.AspNetCore.Authentication.JwtBearer;
+    using Microsoft.AspNetCore.Authorization;
+    using Microsoft.AspNetCore.Mvc.Authorization;
+    using Microsoft.EntityFrameworkCore;
+    using Microsoft.Identity.Web;
+    using Microsoft.IdentityModel.Logging;
+    using Microsoft.OpenApi.Models;
+    using Newtonsoft.Json;
+    using Polly;
+    using Polly.Extensions.Http;
+    using Serilog;
+    using $safeprojectname$.Infrastructure;
+
     public static class ServiceCollectionExtensions
     {
         public static IServiceCollection AddHttpServices(this IServiceCollection services, string baseAddress)
@@ -37,39 +40,6 @@ namespace $safeprojectname$
         }
 
         public IConfiguration Configuration { get; }
-
-        // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IWebHostEnvironment env, IMapper mapper)
-        {
-            if (env.IsDevelopment())
-            {
-                app.UseDeveloperExceptionPage();
-            }
-
-            mapper.ConfigurationProvider.AssertConfigurationIsValid(); // See: https://stackoverflow.com/questions/51547124/where-to-validate-automapper-configuration-in-asp-net-core-application
-
-            app.UseSwagger();
-            app.UseSwaggerUI(c =>
-            {
-                c.SwaggerEndpoint("/swagger/v1/swagger.json", "$safeprojectname$ v1");
-                // c.RoutePrefix = string.Empty;
-            });
-
-            app.UseHttpsRedirection();
-
-            app.UseRouting();
-
-            app.UseCors("Open");
-
-            app.UseAuthentication();
-
-            app.UseAuthorization();
-
-            app.UseEndpoints(endpoints =>
-            {
-                endpoints.MapControllers();
-            });
-        }
 
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
