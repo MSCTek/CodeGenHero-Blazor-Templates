@@ -51,9 +51,11 @@ namespace CodeGenHero.Template.Blazor6.Generators
 
             sb.AppendLine($"public {className}(ILogger<{className}> logger,");
             sb.AppendLine("\tIHttpClientFactory httpClientFactory,");
-            sb.AppendLine("\tISerializationHelper serializationHelper)");
+            sb.AppendLine("\tISerializationHelper serializationHelper,");
+            sb.AppendLine("\tAuthenticationStateProvider authenticationStateProvider)")
             sb.AppendLine("\t: base(logger, serializationHelper, httpClientFactory,");
-            sb.AppendLine($"\t\tisServiceOnlineRelativeUrl: \"{apiUrl}/{namespacePostfix}ApiStatus\")");
+            sb.AppendLine($"\t\tisServiceOnlineRelativeUrl: \"{apiUrl}/{namespacePostfix}ApiStatus\",");
+            sb.AppendLine("\t\tauthenticationStateProvider: authenticationStateProvider)")
             sb.AppendLine("{");
             sb.AppendLine("}");
 
