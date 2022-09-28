@@ -1,6 +1,7 @@
 ﻿namespace $safeprojectname$.Services
 {
     using $ext_safeprojectname$.Shared.DataService;
+    using Microsoft.AspNetCore.Components.Authorization;
     using Microsoft.Extensions.Logging;
     using Newtonsoft.Json;
     using System;
@@ -17,6 +18,7 @@
         public WebApiDataServiceBase(ILogger log,
             ISerializationHelper serializationHelper,
             IHttpClientFactory httpClientFactory,
+            AuthenticationStateProvider authenticationStateProvider,
             string httpClientName = "CGHApi",
             string isServiceOnlineRelativeUrl = "APIStatus/")
         {
@@ -34,6 +36,9 @@
         {
             get
             {
+                var authState = AuthenticationStateProvider.GetAuthenticationStateAsync().Result;
+                var clientName = $"{HttpClientName}{(authState.User.Identity.IsAuthenticated ? string.Empty : "Anonymous")}";
+
                 var retVal = HttpClientFactory.CreateClient(HttpClientName);
                 return retVal;
             }
@@ -44,6 +49,7 @@
         public virtual ILogger Log { get; set; }
         public virtual ISerializationHelper SerializationHelper { get; set; }
         protected string HttpClientName { get; set; } = default!;
+        protected AuthenticationStateProvider AuthenticationStateProvider { get; set; }
 
         #endregion Constructor and Context
 

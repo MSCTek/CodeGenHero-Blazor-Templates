@@ -17,6 +17,7 @@ namespace $safeprojectname$.Services
         public WebApiDataServiceBase(ILogger log,
             ISerializationHelper serializationHelper,
             IHttpClientFactory httpClientFactory,
+            AuthenticationStateProvider authenticationStateProvider,
             string httpClientName = "CGHApi",
             string isServiceOnlineRelativeUrl = "APIStatus/")
         {
@@ -44,6 +45,7 @@ namespace $safeprojectname$.Services
         public virtual ILogger Log { get; set; }
         public virtual ISerializationHelper SerializationHelper { get; set; }
         protected string HttpClientName { get; set; }
+        protected AuthenticationStateProvider AuthenticationStateProvider { get; set; }
 
         #endregion Constructor and Context
 

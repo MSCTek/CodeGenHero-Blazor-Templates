@@ -31,6 +31,13 @@ builder.Services.AddHttpClient("CGHApi",
     })
     .AddHttpMessageHandler<CustomAuthorizationMessageHandler>();
 
+builder.Services.AddHttpClient("CGHApiAnonymous",
+    client =>
+    {
+        client.BaseAddress = new Uri(apiBaseAddress);
+        client.DefaultRequestHeaders.Add("api-version", "1");
+    });
+
 // Supply HttpClient instances that include access tokens when making requests to the server project
 builder.Services.AddScoped(sp => sp.GetRequiredService<IHttpClientFactory>().CreateClient("$ext_safeprojectname$.Blazor.ServerAPI"));
 
