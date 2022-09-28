@@ -35,7 +35,8 @@
         public const string AAD_GROUP_CONFIGURATION = "AADGroupConfiguration";
         public const string ACCESS_ADMIN = "Admin";
         public const string ACCESS_USER = "HasUserAccess";
-        public const string ACCESS_TRAP_RESULTS_SEARCH = "HasTrapResultsSearchAccess";
-        public const string ACCESS_TRAP_INFORMATION = "HasTrapInformationAccess";
+
+        public const string HTTPCLIENTNAME_AUTHORIZED = "CGHApi";
+        public const string HTTPCLIENTNAME_ANONYMOUS = "CGHApiAnonymous";
     }
 }

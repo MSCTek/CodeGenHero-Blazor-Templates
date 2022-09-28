@@ -31,5 +31,8 @@
         public const string OPERATOR_STARTSWITH = "StartsWith";
 
         #endregion CGH
+
+        public const string HTTPCLIENTNAME_AUTHORIZED = "CGHApi";
+        public const string HTTPCLIENTNAME_ANONYMOUS = "CGHApiAnonymous";
     }
 }

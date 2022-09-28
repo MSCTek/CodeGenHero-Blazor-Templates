@@ -85,7 +85,7 @@ namespace $safeprojectname$
             var apiBaseAddress = cghAppSettingsSection[nameof(CGHAppSettings.ApiBaseAddress)];
             Console.WriteLine($"apiBaseAddress: {apiBaseAddress}");
 
-            services.AddHttpClient("CGHApi", c =>
+            services.AddHttpClient(Consts.HTTPCLIENTNAME_AUTHORIZED, c =>
             {
                 c.BaseAddress = new Uri(apiBaseAddress);
                 c.DefaultRequestHeaders.Add("api-version", "1");
