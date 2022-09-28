@@ -8,7 +8,7 @@
     using System.Collections.Generic;
     using System.Net.Http;
     using System.Threading.Tasks;
-    using constants = $ext_safeprojectname$.Shared.Constants.Consts;
+    using consts = $ext_safeprojectname$.Shared.Constants.Consts;
     using enums = $ext_safeprojectname$.Shared.Constants.Enums;
 
     public abstract class WebApiDataServiceBase : IWebApiDataServiceBase
@@ -19,7 +19,7 @@
             ISerializationHelper serializationHelper,
             IHttpClientFactory httpClientFactory,
             AuthenticationStateProvider authenticationStateProvider,
-            string httpClientName = "CGHApi",
+            string httpClientName = consts.HTTPCLIENTNAME_AUTHORIZED,
             string isServiceOnlineRelativeUrl = "APIStatus/")
         {
             Log = log;
@@ -30,18 +30,6 @@
                 HttpClientName = httpClientName;
             }
             IsServiceOnlineRelativeUrl = isServiceOnlineRelativeUrl;
-        }
-
-        public virtual HttpClient HttpClient
-        {
-            get
-            {
-                var authState = AuthenticationStateProvider.GetAuthenticationStateAsync().Result;
-                var clientName = $"{HttpClientName}{(authState.User.Identity.IsAuthenticated ? string.Empty : "Anonymous")}";
-
-                var retVal = HttpClientFactory.CreateClient(HttpClientName);
-                return retVal;
-            }
         }
 
         public IHttpClientFactory HttpClientFactory { get; set; }
@@ -63,7 +51,7 @@
             {
                 foreach (IFilterCriterion filterCriterion in filterCriteria)
                 {
-                    retVal.Add($"{filterCriterion.FieldName}{constants.API_FILTER_DELIMITER}{filterCriterion.Condition}{constants.API_FILTER_DELIMITER}{filterCriterion.Value}");
+                    retVal.Add($"{filterCriterion.FieldName}{consts.API_FILTER_DELIMITER}{filterCriterion.Condition}{consts.API_FILTER_DELIMITER}{filterCriterion.Value}");
                 }
             }
 
@@ -109,6 +97,16 @@
 
         #endregion Convenience Methods
 
+        public async Task<HttpClient> GetHttpClientAsync()
+        {
+            var authState = await AuthenticationStateProvider.GetAuthenticationStateAsync();
+
+            var clientName = (authState?.User?.Identity?.IsAuthenticated ?? false) ? HttpClientName : consts.HTTPCLIENTNAME_ANONYMOUS;
+
+            var retVal = HttpClientFactory.CreateClient(clientName);
+            return retVal;
+        }
+
         public virtual async Task<bool> IsServiceOnlineAsync()
         {
             bool retVal = false;
@@ -116,7 +114,8 @@
 
             try
             {
-                response = await this.HttpClient.GetAsync(IsServiceOnlineRelativeUrl);
+                var httpClient = await GetHttpClientAsync();
+                response = await httpClient.GetAsync(IsServiceOnlineRelativeUrl);
                 string content = await response.Content.ReadAsStringAsync();
 
                 if (response.IsSuccessStatusCode)

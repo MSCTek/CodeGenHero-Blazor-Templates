@@ -16,6 +16,9 @@ namespace CodeGenHero.Template.Blazor6.Templates
 
         #region TemplateVariables
 
+        [TemplateVariable(defaultValue: Consts.PTG_ApplicationProjectName_DEFAULT, description: Consts.PTG_ApplicationProjectName_DESC)]
+        public string ApplicationProjectName { get; set; }
+
         [TemplateVariable(defaultValue: Consts.PTG_WebApiDataServiceNamespace_DEFAULT, description: Consts.PTG_WebApiDataServiceNamespace_DESC)]
         public string WebApiDataServiceNamespace { get; set; }
 
@@ -56,6 +59,7 @@ namespace CodeGenHero.Template.Blazor6.Templates
                     new NamespaceItem("System.Net.Http"),
                     new NamespaceItem("System.Threading.Tasks"),
                     //new NamespaceItem("System.Text.Json")
+                    new NamespaceItem("Microsoft.AspNetCore.Components.Authorization"),
                     new NamespaceItem("Microsoft.Extensions.Logging"),
                     new NamespaceItem($"{BaseNamespace}.Shared.DataService"),
                     new NamespaceItem($"Enums = {BaseNamespace}.Shared.Constants.Enums"),

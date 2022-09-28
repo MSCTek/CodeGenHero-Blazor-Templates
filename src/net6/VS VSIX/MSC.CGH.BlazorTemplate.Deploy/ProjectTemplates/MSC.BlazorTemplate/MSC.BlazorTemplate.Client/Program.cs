@@ -2,6 +2,7 @@ using $ext_safeprojectname$.App.MessageHandlers;
 using $ext_safeprojectname$.App.Services;
 using $ext_safeprojectname$.Client.Services;
 using $ext_safeprojectname$.Shared.Authorization;
+using $ext_safeprojectname$.Shared.Constants;
 using $ext_safeprojectname$.Shared.DataService;
 using $ext_safeprojectname$.Shared.DTO;
 using Majorsoft.Blazor.Components.GdprConsent;
@@ -64,7 +65,7 @@ namespace $safeprojectname$
             var apiBaseAddress = CGHAppSettingsSection["ApiBaseAddress"];
             Console.WriteLine($"apiBaseAddress: {apiBaseAddress}");
 
-            builder.Services.AddHttpClient("CGHApi", c =>
+            builder.Services.AddHttpClient(Consts.HTTPCLIENTNAME_AUTHORIZED, c =>
             {
                 c.BaseAddress = new Uri(apiBaseAddress);
                 c.DefaultRequestHeaders.Add("api-version", "1");

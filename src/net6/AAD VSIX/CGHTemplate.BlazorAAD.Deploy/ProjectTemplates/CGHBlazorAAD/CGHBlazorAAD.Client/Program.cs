@@ -23,7 +23,7 @@ Console.WriteLine($"apiBaseAddress: {apiBaseAddress}");
 
 builder.Services.AddScoped<CustomAuthorizationMessageHandler>();
 
-builder.Services.AddHttpClient("CGHApi",
+builder.Services.AddHttpClient(Consts.HTTPCLIENTNAME_AUTHORIZED,
     client =>
     {
         client.BaseAddress = new Uri(apiBaseAddress);
@@ -31,7 +31,7 @@ builder.Services.AddHttpClient("CGHApi",
     })
     .AddHttpMessageHandler<CustomAuthorizationMessageHandler>();
 
-builder.Services.AddHttpClient("CGHApiAnonymous",
+builder.Services.AddHttpClient(Consts.HTTPCLIENTNAME_ANONYMOUS,
     client =>
     {
         client.BaseAddress = new Uri(apiBaseAddress);

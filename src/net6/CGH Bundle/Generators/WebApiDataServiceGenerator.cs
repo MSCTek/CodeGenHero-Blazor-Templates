@@ -52,10 +52,10 @@ namespace CodeGenHero.Template.Blazor6.Generators
             sb.AppendLine($"public {className}(ILogger<{className}> logger,");
             sb.AppendLine("\tIHttpClientFactory httpClientFactory,");
             sb.AppendLine("\tISerializationHelper serializationHelper,");
-            sb.AppendLine("\tAuthenticationStateProvider authenticationStateProvider)")
+            sb.AppendLine("\tAuthenticationStateProvider authenticationStateProvider)");
             sb.AppendLine("\t: base(logger, serializationHelper, httpClientFactory,");
             sb.AppendLine($"\t\tisServiceOnlineRelativeUrl: \"{apiUrl}/{namespacePostfix}ApiStatus\",");
-            sb.AppendLine("\t\tauthenticationStateProvider: authenticationStateProvider)")
+            sb.AppendLine("\t\tauthenticationStateProvider: authenticationStateProvider)");
             sb.AppendLine("{");
             sb.AppendLine("}");
 
@@ -188,7 +188,7 @@ namespace CodeGenHero.Template.Blazor6.Generators
 
             sb.AppendLine($"\tstring requestUrl = $\"{apiUrl}/{entityName}/{{(int)pageDataRequest.RelatedEntitiesType}}/\";");
             sb.AppendLine($"\tvar retVal = await SerializationHelper.SerializeCallResultsGet<IList<xDTO.{entityName}>>(");
-            sb.AppendLine("\t\tLog, HttpClient, requestUrl,");
+            sb.AppendLine("\t\tLog, await GetHttpClientAsync(), requestUrl,");
             sb.AppendLine("\t\tfilter: filter,");
             sb.AppendLine("\t\tsort: pageDataRequest.Sort,");
             sb.AppendLine("\t\tpage: pageDataRequest.Page,");
@@ -276,7 +276,7 @@ namespace CodeGenHero.Template.Blazor6.Generators
                 sb.AppendLine($"\t{fieldSignature}, Enums.RelatedEntitiesType relatedEntitiesType)");
                 sb.AppendLine("{");
 
-                sb.AppendLine($"\tvar retVal = await SerializationHelper.SerializeCallResultsGet<xDTO.{entityName}>(Log, HttpClient,");
+                sb.AppendLine($"\tvar retVal = await SerializationHelper.SerializeCallResultsGet<xDTO.{entityName}>(Log, await GetHttpClientAsync(),");
                 sb.AppendLine($"\t\t$\"{apiUrl}/{entityName}/ById/{{{signature}}}/{{(int)relatedEntitiesType}}\");");
                 sb.AppendLine("\treturn retVal;");
 
@@ -305,7 +305,7 @@ namespace CodeGenHero.Template.Blazor6.Generators
                 sb.AppendLine("{");
 
                 sb.AppendLine($"\tvar retVal = await SerializationHelper.SerializeCallResultsPost<xDTO.{entityName}>(");
-                sb.AppendLine("\t\tLog, HttpClient,");
+                sb.AppendLine("\t\tLog, await GetHttpClientAsync(),");
                 sb.AppendLine($"\t\t$\"{apiUrl}/{entityName}/\", item);");
                 sb.AppendLine("\treturn retVal;");
 
@@ -335,7 +335,7 @@ namespace CodeGenHero.Template.Blazor6.Generators
                 sb.AppendLine("{");
                 
                 sb.AppendLine($"\tvar retVal = await SerializationHelper.SerializeCallResultsPut<xDTO.{entityName}>(");
-                sb.AppendLine("\t\tLog, HttpClient,");
+                sb.AppendLine("\t\tLog, await GetHttpClientAsync(),");
                 sb.Append($"\t\t\t\t$\"{apiUrl}/{entityName}");
                 foreach (var key in primaryKeys)
                 {
@@ -372,7 +372,7 @@ namespace CodeGenHero.Template.Blazor6.Generators
                 sb.AppendLine("{");
 
                 sb.AppendLine($"\tvar retVal = await SerializationHelper.SerializeCallResultsDelete<xDTO.{entityName}>(");
-                sb.AppendLine("\t\tLog, HttpClient,");
+                sb.AppendLine("\t\tLog, await GetHttpClientAsync(),");
                 sb.AppendLine($"\t\t\t\t$\"{apiUrl}/{entityName}/{{{apiSignature}}}\");");
                 sb.AppendLine(string.Empty);
 
