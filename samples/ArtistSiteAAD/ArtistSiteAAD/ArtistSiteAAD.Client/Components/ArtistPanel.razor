@@ -1,0 +1,22 @@
+﻿@inherits ArtistPanelViewModel
+
+<ConditionalAnchor Condition="@ActAsLink" Href="@PanelHref">
+
+    <MudPaper Elevation="5" Style="@PanelStyle">
+        <br />
+        <Image Source="@ProfileImageUrl" Style="max-width: 100%; height: 400px; text-align: center;" />
+        <br />
+        <MudText Typo="Typo.h4">
+            @Artist.Name
+        </MudText>
+        @if (ProfilePage)
+        {
+            <br />
+            <MudText>
+                @Artist.AboutBlurb
+            </MudText>
+            <br />
+        }
+    </MudPaper>
+
+</ConditionalAnchor>

@@ -1,0 +1,12 @@
+﻿@page "/Media/{MediumId:int}/{ArtworkId:int}"
+@page "/Artists/{ArtistId:int}/{ArtworkId:int}"
+
+@inherits ArtworkDetailViewModel
+
+<LoadingMask WaitFor="Artwork">
+
+    <div style="text-align:center">
+        <ArtworkPanel Artwork="Artwork" />
+    </div>
+
+</LoadingMask>

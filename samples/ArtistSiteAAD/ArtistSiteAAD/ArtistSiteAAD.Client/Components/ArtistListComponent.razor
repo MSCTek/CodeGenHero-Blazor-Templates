@@ -1,0 +1,36 @@
+﻿@inherits ArtistListComponentViewModel
+
+@if (FirstLoad)
+{
+    <MudText Typo="Typo.body1" Style="padding: 5px;">Loading, Please Wait</MudText>
+}
+else
+{
+    <MudGrid>
+
+        @foreach (var artist in Artists)
+        {
+            <MudItem xs="12" md="4">
+                <ArtistPanel Artist="artist" ActAsLink="true" />
+            </MudItem>
+        }
+
+    </MudGrid>
+}
+
+@*<MudPaper Width="20%">
+    <MudList Clickable="true">
+
+        @if (FirstLoad)
+        {
+            <MudText Typo="Typo.body1" Style="padding: 5px;">Loading, Please Wait</MudText>
+        }
+
+        @foreach (var artist in Artists)
+        {
+            var artistHref = $"/Artwork/{artist.ArtistId}";
+            <MudListItem Href="@artistHref" Text="@artist.Name" />
+        }
+
+    </MudList>
+</MudPaper>*@

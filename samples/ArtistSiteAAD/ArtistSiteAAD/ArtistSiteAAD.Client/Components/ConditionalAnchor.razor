@@ -1,0 +1,20 @@
+﻿@if (Condition)
+{
+    <a href="@Href">
+        @ChildContent
+    </a>
+}
+else {
+    @ChildContent
+}
+
+@code {
+    [Parameter]
+    public RenderFragment? ChildContent { get; set; }
+
+    [Parameter, EditorRequired]
+    public bool Condition { get; set; }
+
+    [Parameter, EditorRequired]
+    public string Href { get; set; } = string.Empty;
+}

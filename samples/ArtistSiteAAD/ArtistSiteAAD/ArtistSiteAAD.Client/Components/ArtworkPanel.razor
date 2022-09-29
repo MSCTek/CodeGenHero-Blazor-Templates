@@ -1,0 +1,30 @@
+﻿@inherits ArtworkPanelViewModel
+
+<ConditionalAnchor Condition="@ActAsLink" Href="@PanelHref">
+    <MudPaper Elevation="3">
+        <div style="@GetPanelStyle()">
+            <br />
+            <Image Source="@GetArtworkSource()" Style="@GetImageStyle()" />
+            <br />
+            <MudText Typo="Typo.h4">
+                @Artwork.Name
+            </MudText>
+            <br />
+            @if (FullSize)
+            {
+                if (Artwork.Artist != null)
+                {
+                    var artistHref = $"/Artists/{Artwork.ArtistId}";
+                    <MudText Typo="Typo.h5">
+                        <p>By <a href="@artistHref">@Artwork.Artist.Name</a></p>
+                    </MudText>
+                    <br />
+                }
+                <MudText Typo="Typo.body1">
+                    @Artwork.Description
+                </MudText>
+                <br />
+            }
+        </div>
+    </MudPaper>
+</ConditionalAnchor>

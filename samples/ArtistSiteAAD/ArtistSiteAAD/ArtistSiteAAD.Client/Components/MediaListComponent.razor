@@ -1,0 +1,18 @@
+﻿@inherits MediaListComponentViewModel
+
+<MudPaper MinWidth="20%" MaxWidth="60%">
+    <MudList Clickable="true">
+
+        @if (FirstLoad)
+        {
+            <MudText Typo="Typo.body1" Style="padding: 5px;">Loading, Please Wait</MudText>
+        }
+
+        @foreach(var medium in Media)
+        {
+            var mediumHref = $"/Media/{medium.MediumId}";
+            <MudListItem Href="@mediumHref" Text="@medium.Name" />
+        }
+
+    </MudList>
+</MudPaper>

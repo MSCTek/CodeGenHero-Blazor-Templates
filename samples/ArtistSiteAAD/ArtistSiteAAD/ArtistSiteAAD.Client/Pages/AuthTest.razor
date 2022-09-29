@@ -1,0 +1,51 @@
+﻿@page "/authtest"
+@inherits AuthTestViewModel
+@attribute [Authorize]
+
+<MudText Typo="Typo.h3">Authentication Tests</MudText>
+<br />
+<br />
+<div>
+    @((MarkupString)$"You are running in the:<b>{Env.Environment}</b> environment.")
+</div>
+<br />
+<br />
+<AuthorizeView Policy=@Consts.ACCESS_USER Context="authorizeViewContext">
+    <Authorizing>
+        <h1>Authentication in progress...</h1>
+    </Authorizing>
+    <NotAuthorized>
+        <p>You're not authorized with the HasUserAccess policy.</p>
+    </NotAuthorized>
+    <Authorized>
+        <h1>You passed the HasUserAccess access policy.</h1>
+    </Authorized>
+</AuthorizeView>
+
+<br />
+<br />
+<div>
+    @if ((CurrentUser?.Identity?.IsAuthenticated ?? false) == true)
+    {
+        <div>
+            @((MarkupString)$"{CurrentUser.Identity.Name} is authenticated.");
+        </div>
+
+        var claims = CurrentUser.Claims.ToList();
+        foreach (var claim in claims)
+        {
+            <div>
+                @((MarkupString)$"Claim type: {claim.Type} - Claim value: {claim.Value}");
+            </div>
+        }
+    }
+</div>
+<br />
+<br />
+<h3>Manual Checks:</h3>
+<div>
+    @((MarkupString)$"IsAdmin: {base.IsAdmin}");
+</div>
+<div>
+    @((MarkupString)$"HasUserAccess: {base.HasUserAccess}");
+</div>

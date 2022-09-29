@@ -1,0 +1,26 @@
+﻿@inherits IndexViewModel
+@page "/"
+@page "/Index"
+
+<PageTitle>CodeGenHero Blazor with Azure Active Directory</PageTitle>
+
+<AuthorizeView>
+    <NotAuthorized>
+        <MudText>To continue, please <LoginDisplay /></MudText>
+    </NotAuthorized>
+    <Authorized>
+        Welcome to your application, @context?.User?.Identity?.Name
+    </Authorized>
+</AuthorizeView>
+
+<br /><br />
+<MudDivider />
+<br /><br />
+
+<div>
+    <MudText><p>Hello, Welcome to ArtistSite!</p></MudText><br />
+
+    <MudText><p>This sample solution demonstrates a rapidly developed use-case scenario for the CodeGenHero Blazor Enterprise Architecture available at www.CodeGenHero.com and https://github.com/MSCTek/CodeGenHero-Blazor-Templates</p></MudText><br />
+
+    <MudText>If you have your Azure Active Directory instance configured, try logging in - A set of example "Admin" pages will open up to you in the navigation drawer.</MudText>
+</div>
