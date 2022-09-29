@@ -71,6 +71,8 @@ builder.Services.AddAuthorizationCore(configure => {
     configure.AddPolicy(Consts.ACCESS_USER, policy => policy.RequireClaim("groups", aadGroupConfiguration.AuthorizedUserGroupIdsArray));
 });
 
+builder.Services.AddScoped<ILocalHttpClientService, LocalHttpClientService>();
+
 builder.Services.AddMudServices();
 
 builder.Services.AddScoped<ISerializationHelper, SerializationHelper>();
