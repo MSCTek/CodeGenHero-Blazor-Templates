@@ -20,6 +20,7 @@ namespace CodeGenHero.Template.Blazor6.Generators
             string namespacePostfix,
             IEntityType entity,
             string className,
+            string adminPageAuthorizedRoles,
             string webApiDataServiceInterfaceClassName,
             string webApiDataServiceClassName)
         {
@@ -33,7 +34,14 @@ namespace CodeGenHero.Template.Blazor6.Generators
 
             sb.Append(GenerateHeader(usings, classNamespace));
 
-            sb.AppendLine("\t[Authorize(Roles = Consts.ROLE_ADMIN_OR_USER)]");
+            if (!string.IsNullOrEmpty(adminPageAuthorizedRoles))
+            {
+                sb.AppendLine($"\t[Authorize(Roles = {adminPageAuthorizedRoles})]");
+            }
+            else
+            {
+                sb.AppendLine("\t[Authorize]");
+            }
             sb.AppendLine($"\tpublic partial class {className} : AdminPageBase");
             sb.AppendLine("\t{");
             sb.AppendLine($"\t\tpublic {className}()");

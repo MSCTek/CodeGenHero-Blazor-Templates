@@ -34,6 +34,9 @@ namespace CodeGenHero.Template.Blazor6.Templates
         [TemplateVariable(defaultValue: Consts.PTG_DtoNamespace_DEFAULT, description: Consts.PTG_DtoNamespace_DESC)]
         public string DtoNamespace { get; set; }
 
+        [TemplateVariable(defaultValue: Consts.PTG_AdminPageAuthorizedRoles_DEFAULT, description: Consts.PTG_AdminPageAuthorizedRoles_DESC)]
+        public string AdminPageAuthorizedRoles { get; set; }
+
         [TemplateVariable(defaultValue: Consts.PTG_ApplicationProjectName_DEFAULT, description: Consts.PTG_ApplicationProjectName_DESC)]
         public string ApplicationProjectName { get; set; }
 
@@ -78,7 +81,7 @@ namespace CodeGenHero.Template.Blazor6.Templates
                     string className = TokenReplacements(AdminEditViewModelClassName, entity);
 
                     var generator = new AdminEditViewModelGenerator(inflector: Inflector);
-                    var generatedCode = generator.Generate(usings, AdminPageNamespace, NamespacePostfix, entity, className, WebApiDataServiceInterfaceClassName, WebApiDataServiceClassName);
+                    var generatedCode = generator.Generate(usings, AdminPageNamespace, NamespacePostfix, entity, className, AdminPageAuthorizedRoles, WebApiDataServiceInterfaceClassName, WebApiDataServiceClassName);
 
                     retVal.Files.Add(new OutputFile()
                     {

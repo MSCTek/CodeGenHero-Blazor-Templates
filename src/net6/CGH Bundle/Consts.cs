@@ -196,6 +196,9 @@
 
         #endregion
 
+        public const string PTG_AdminPageAuthorizedRoles_DEFAULT = "Consts.ROLE_ADMIN_OR_USER";
+        public const string PTG_AdminPageAuthorizedRoles_DESC = "Comma-delimited roles authorized to access generated Admin pages, based off roles established in your Identity Provider. Should be promoted to Global.";
+
         /// Class-specific variables
         // Web API Data Service
         public const string WebApiDataServiceCheckForIsActiveRegex = "Regular Expression to determine which Entities should have an \"IsActive\" check in their Get Methods. Only include entities that have a boolean property of this name.";
