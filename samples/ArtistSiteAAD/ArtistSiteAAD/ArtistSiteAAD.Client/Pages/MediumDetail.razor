@@ -1,0 +1,10 @@
+﻿@page "/Media/{MediumId:int}"
+@inherits MediumDetailViewModel
+
+<LoadingMask WaitFor="Medium">
+    <MudText Typo="Typo.h3">
+        @Medium.Name
+    </MudText>
+
+    <ArtworkListComponent MediumId="@MediumId" />
+</LoadingMask>

@@ -1,0 +1,75 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.1.32210.238
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ArtistSiteAAD.Api", "ArtistSiteAAD\ArtistSiteAAD.Api\ArtistSiteAAD.Api.csproj", "{C35B1B29-6F46-42CD-85C7-A4305F0FF00D}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ArtistSiteAAD.CodeGenHero", "ArtistSiteAAD\ArtistSiteAAD.CodeGenHero\ArtistSiteAAD.CodeGenHero.csproj", "{DCD412E2-1386-4AE8-8BCE-FA2E2977982F}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ArtistSiteAAD.Client", "ArtistSiteAAD\ArtistSiteAAD.Client\ArtistSiteAAD.Client.csproj", "{8B0E7A22-A342-4AAC-8D32-D7AC3D547F25}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ArtistSiteAAD.Repository", "ArtistSiteAAD\ArtistSiteAAD.Repository\ArtistSiteAAD.Repository.csproj", "{CC034296-A23D-4C65-B751-D4EA8D1560CA}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ArtistSiteAAD.Server", "ArtistSiteAAD\ArtistSiteAAD.Server\ArtistSiteAAD.Server.csproj", "{F1D756D1-A6F0-4D71-9674-034EFA4BFC94}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ArtistSiteAAD.Shared", "ArtistSiteAAD\ArtistSiteAAD.Shared\ArtistSiteAAD.Shared.csproj", "{49CEBA6C-0971-47AF-8F5D-27F238D714BE}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{BD924563-AF19-495E-A82D-BF47348F2BA8}"
+	ProjectSection(SolutionItems) = preProject
+		.gitignore = .gitignore
+		ReadMe.md = ReadMe.md
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Development|Any CPU = Development|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C35B1B29-6F46-42CD-85C7-A4305F0FF00D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C35B1B29-6F46-42CD-85C7-A4305F0FF00D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C35B1B29-6F46-42CD-85C7-A4305F0FF00D}.Development|Any CPU.ActiveCfg = Debug|Any CPU
+		{C35B1B29-6F46-42CD-85C7-A4305F0FF00D}.Development|Any CPU.Build.0 = Debug|Any CPU
+		{C35B1B29-6F46-42CD-85C7-A4305F0FF00D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C35B1B29-6F46-42CD-85C7-A4305F0FF00D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DCD412E2-1386-4AE8-8BCE-FA2E2977982F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DCD412E2-1386-4AE8-8BCE-FA2E2977982F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DCD412E2-1386-4AE8-8BCE-FA2E2977982F}.Development|Any CPU.ActiveCfg = Debug|Any CPU
+		{DCD412E2-1386-4AE8-8BCE-FA2E2977982F}.Development|Any CPU.Build.0 = Debug|Any CPU
+		{DCD412E2-1386-4AE8-8BCE-FA2E2977982F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DCD412E2-1386-4AE8-8BCE-FA2E2977982F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8B0E7A22-A342-4AAC-8D32-D7AC3D547F25}.Debug|Any CPU.ActiveCfg = Development|Any CPU
+		{8B0E7A22-A342-4AAC-8D32-D7AC3D547F25}.Debug|Any CPU.Build.0 = Development|Any CPU
+		{8B0E7A22-A342-4AAC-8D32-D7AC3D547F25}.Development|Any CPU.ActiveCfg = Development|Any CPU
+		{8B0E7A22-A342-4AAC-8D32-D7AC3D547F25}.Development|Any CPU.Build.0 = Development|Any CPU
+		{8B0E7A22-A342-4AAC-8D32-D7AC3D547F25}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8B0E7A22-A342-4AAC-8D32-D7AC3D547F25}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CC034296-A23D-4C65-B751-D4EA8D1560CA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CC034296-A23D-4C65-B751-D4EA8D1560CA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CC034296-A23D-4C65-B751-D4EA8D1560CA}.Development|Any CPU.ActiveCfg = Debug|Any CPU
+		{CC034296-A23D-4C65-B751-D4EA8D1560CA}.Development|Any CPU.Build.0 = Debug|Any CPU
+		{CC034296-A23D-4C65-B751-D4EA8D1560CA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CC034296-A23D-4C65-B751-D4EA8D1560CA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F1D756D1-A6F0-4D71-9674-034EFA4BFC94}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F1D756D1-A6F0-4D71-9674-034EFA4BFC94}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F1D756D1-A6F0-4D71-9674-034EFA4BFC94}.Development|Any CPU.ActiveCfg = Debug|Any CPU
+		{F1D756D1-A6F0-4D71-9674-034EFA4BFC94}.Development|Any CPU.Build.0 = Debug|Any CPU
+		{F1D756D1-A6F0-4D71-9674-034EFA4BFC94}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F1D756D1-A6F0-4D71-9674-034EFA4BFC94}.Release|Any CPU.Build.0 = Release|Any CPU
+		{49CEBA6C-0971-47AF-8F5D-27F238D714BE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{49CEBA6C-0971-47AF-8F5D-27F238D714BE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{49CEBA6C-0971-47AF-8F5D-27F238D714BE}.Development|Any CPU.ActiveCfg = Debug|Any CPU
+		{49CEBA6C-0971-47AF-8F5D-27F238D714BE}.Development|Any CPU.Build.0 = Debug|Any CPU
+		{49CEBA6C-0971-47AF-8F5D-27F238D714BE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{49CEBA6C-0971-47AF-8F5D-27F238D714BE}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {2D242E3C-7AC6-45A1-916E-78948E236B62}
+		CodeGenHero_Project_Name = ArtistSiteAAD\ArtistSiteAAD.CodeGenHero\ArtistSiteAAD.CodeGenHero.csproj
+	EndGlobalSection
+EndGlobal

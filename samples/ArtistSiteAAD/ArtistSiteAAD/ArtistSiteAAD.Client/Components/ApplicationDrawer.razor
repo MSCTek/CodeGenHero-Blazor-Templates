@@ -1,0 +1,13 @@
+﻿@inherits ApplicationDrawerViewModel
+
+<MudAppBar Color="Color.Primary">
+    <MudIconButton ButtonType="ButtonType.Button" Icon="@Icons.Filled.Menu" Edge="Edge.Start" OnClick="ToggleDrawer" />
+    <LoginDisplay />
+</MudAppBar>
+
+<MudDrawer Variant="DrawerVariant.Responsive" @bind-Open="DrawerOpen">
+    <MudDrawerHeader>
+        <MudText Typo="Typo.h4">ArtistSite</MudText>
+    </MudDrawerHeader>
+    <ApplicationNav />
+</MudDrawer>

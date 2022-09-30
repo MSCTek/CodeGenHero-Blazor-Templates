@@ -1,0 +1,11 @@
+﻿@page "/Artists/{ArtistId:int}"
+@inherits ArtistDetailViewModel
+
+<LoadingMask WaitFor="Artist">
+    @*<MudText Typo="Typo.h3">
+        @Artist.Name
+    </MudText>*@
+    <ArtistPanel Artist="Artist" ProfilePage="true" ActAsLink="false" />
+
+    <ArtworkListComponent ArtistId="@ArtistId" />
+</LoadingMask>

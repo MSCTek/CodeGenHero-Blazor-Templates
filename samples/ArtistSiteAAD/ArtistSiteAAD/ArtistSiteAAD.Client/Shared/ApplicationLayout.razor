@@ -1,0 +1,18 @@
+﻿@inherits ApplicationLayoutViewModel
+
+<MudLayout>
+
+    <ApplicationDrawer />
+
+    <MudMainContent Style="Padding-top: 80px;">
+        <MudContainer MaxWidth="MaxWidth.Large">
+            <MudBreadcrumbs Items="Breadcrumbs" />
+            @Body
+        </MudContainer>
+    </MudMainContent>
+
+</MudLayout>
+
+<MudThemeProvider Theme="ApplicationCustomTheme" />
+<MudDialogProvider />
+<MudSnackbarProvider />

@@ -1,0 +1,22 @@
+﻿<MudNavMenu>
+    <MudNavLink Href="/Index">Index</MudNavLink>
+    <MudNavLink Href="/Media">Browse Media</MudNavLink>
+    <MudNavLink Href="/Artists">Browse Artists</MudNavLink>
+
+    <AuthorizeView Context="authorizeViewContext">
+        <Authorized>
+            <MudDivider />
+
+            <MudNavLink Href="/authtest">Authorized Test Page</MudNavLink>
+            <MudNavGroup Title="Admin">
+                <MudNavLink Href="/admin/artists">Artists</MudNavLink>
+                @*<MudNavLink Href="/admin/artworkcategoryxrefs">Artwork-Category XRefs</MudNavLink>*@
+                @*<MudNavLink Href="/admin/artworkmediumxrefs">Artwork-Medium XRefs</MudNavLink>*@
+                <MudNavLink Href="/admin/artworks">Artworks</MudNavLink>
+                @*<MudNavLink Href="/admin/categories">Categories</MudNavLink>*@
+                <MudNavLink Href="/admin/media">Media</MudNavLink>
+                @*<MudNavLink Href="/admin/newsitems">News Items</MudNavLink>*@
+            </MudNavGroup>
+        </Authorized>
+    </AuthorizeView>
+</MudNavMenu>
