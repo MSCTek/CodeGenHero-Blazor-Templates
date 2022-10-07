@@ -21,6 +21,7 @@ namespace CodeGenHero.Template.Blazor6.Generators
             string namespacePostfix,
             IEntityType entity,
             string className,
+            string adminPageAuthorizedRoles,
             string webApiDataServiceInterfaceClassName,
             string webApiDataServiceClassName)
         {
@@ -28,7 +29,14 @@ namespace CodeGenHero.Template.Blazor6.Generators
 
             sb.Append(GenerateHeader(usings, classNamespace));
 
-            sb.AppendLine("\t[Authorize(Roles = Consts.ROLE_ADMIN_OR_USER)]");
+            if (!string.IsNullOrEmpty(adminPageAuthorizedRoles))
+            {
+                sb.AppendLine($"\t[Authorize(Roles = {adminPageAuthorizedRoles})]");
+            }
+            else
+            {
+                sb.AppendLine("\t[Authorize]");
+            }
             sb.AppendLine($"\tpublic partial class {className} : AdminPageBase");
             sb.AppendLine("\t{");
 
@@ -197,19 +205,9 @@ namespace CodeGenHero.Template.Blazor6.Generators
             sb.AppendLine("\t\t\t\t{");
 
             sb.AppendLine($"\t\t\t\t\tvar {entityNameLower} = result.Data;");
-            sb.AppendLine("\t\t\t\t\t// Admins and other approved user claims (Add below) only");
-            sb.AppendLine("\t\t\t\t\tif (!User.IsInRole(Consts.ROLE_ADMIN))");
-            sb.AppendLine("\t\t\t\t\t{");
+            sb.AppendLine($"\t\t\t\t\t{entityName} = {entityNameLower};");
 
-            sb.AppendLine("\t\t\t\t\t\tNavigationManager.NavigateTo($\"/Authorization/AccessDenied\");");
-
-            sb.AppendLine("\t\t\t\t\t}");
-            sb.AppendLine("\t\t\t\t\telse");
-            sb.AppendLine("\t\t\t\t\t{");
-
-            sb.AppendLine($"\t\t\t\t\t\t{entityName} = {entityNameLower};");
-
-            sb.AppendLine("\t\t\t\t\t}");
+            // The "User.IsInRole" check redirect to "Access Denied" that was here is redundant with the use of the Authorize attribute at the top of the class.
 
             sb.AppendLine("\t\t\t\t}");
 
