@@ -30,6 +30,7 @@ namespace $safeprojectname$.Services
                 HttpClientName = httpClientName;
             }
             IsServiceOnlineRelativeUrl = isServiceOnlineRelativeUrl;
+            AuthenticationStateProvider = authenticationStateProvider;
         }
 
         public IHttpClientFactory HttpClientFactory { get; set; }

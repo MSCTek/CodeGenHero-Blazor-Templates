@@ -91,6 +91,13 @@ namespace $safeprojectname$
                 c.DefaultRequestHeaders.Add("api-version", "1");
             });
 
+            services.AddHttpClient(Consts.HTTPCLIENTNAME_ANONYMOUS,
+            client =>
+            {
+                client.BaseAddress = new Uri(apiBaseAddress);
+                client.DefaultRequestHeaders.Add("api-version", "1");
+            });
+
             services.AddScoped<ISerializationHelper, SerializationHelper>();
             services.AddScoped<ITestAuthDataService, TestAuthDataService>();
             services.AddScoped<IImageUploadDataService, ImageUploadDataService>();
